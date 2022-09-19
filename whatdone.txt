@@ -1,0 +1,48 @@
+##This file will record things I have done for my thesis so far##
+##I am learning c/c++ for my thesis to run an ABC-MCMC
+
+1. Created function which takes an integer value and generates a
+random amino acid sequence of that length (I used the string class
+from c++ for this part)
+
+std::string createSeq(int n){
+
+    char aminoAcids[numAA] = { AMINO ACID SYMBOLS };
+
+    std::string protein = "";
+    for (int i = 0; i < n; i++){
+        protein =  protein + aminoAcids[rand() % numAA];}
+
+    std::cout << protein << "\n" << "\n" ;
+    //printf("%s", protien.c_str());
+    return protein;
+}
+
+2. The second function I began working on reads in the SRP40
+protein which acts as the data that is already known, and it
+creates a vector with characteristics like the length of the
+sequence, the number of LCR's in the sequence, average entropy of
+the LCRs - we must use segA to determine these characteristics.
+- in C, we need to figure out how to call segA and record the value
+  of the output and manipulate the value of the output as well (SEP
+19 2022)
+- I have created a symbolic link to the program segA and I will use
+  that when I call segA from c/c++. (SEP 19 2022)
+
+int og_protein(){
+
+    std::string srp40 = "SRP40 AMINO ACID SEQUENCE"
+
+    int length = srp40.length();
+    int num_lcr =
+    int avg_entropy_lcr =
+
+    std::cout << srp40 << "\n" << "\n" << length << "\n";
+    return 0;
+
+3. I created a repository on github so I could work both from home
+and from the lab and push changes on both different devices (SEP 19
+2022)
+- always need to remember to push the changes from where I am
+  working - once segA is involved, the code will only work when
+running on the server
