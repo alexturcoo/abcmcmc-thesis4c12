@@ -4,7 +4,7 @@
 #include <iostream>
 #include "myRandomFunctions.c"
 
-
+// THIS IS A TEST TO SEE IF I CAN PUSH AND PULL FROM GITHUB
 // PUT THINGS YOURE GONNA DEFINE HERE
 // 21 amino acids because of 0 at the end which is not an amino acid
 #define numAA 20
