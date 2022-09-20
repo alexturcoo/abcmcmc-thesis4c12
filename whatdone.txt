@@ -28,17 +28,33 @@ the LCRs - we must use segA to determine these characteristics.
 19 2022)
 - I have created a symbolic link to the program segA and I will use
   that when I call segA from c/c++. (SEP 19 2022)
+- Converted srp40 protein string into fasta file, fed that fasta file to segA, figured out how many low complexity regions are in the srp40 protien sequence (SEP 20 2022) 
 
 int og_protein(){
 
-    std::string srp40 = "SRP40 AMINO ACID SEQUENCE"
+    std::string srp40 = "MASKKIKVDEVPKLSVKEKEIEEKSSSSSSSSSSSSSSSSSSSSSSSSSGESSSSSSSSSSSSSSDSSDS\
+SDSESSSSSSSSSSSSSSSSDSESSSESDSSSSGSSSSSSSSSDESSSESESEDETKKRARESDNEDAKE\
+TKKAKTEPESSSSSESSSSGSSSSSESESGSESDSDSSSSSSSSSDSESDSESDSQSSSSSSSSDSSSDS\
+DSSSSDSSSDSDSSSSSSSSSSDSDSDSDSSSDSDSSGSSDSSSSSDSSSDESTSSDSSDSDSDSDSGSS\
+SELETKEATADESKAEETPASSNESTPSASSSSSANKLNIPAGTDEIKEGQRKHFSRVDRSKINFEAWEL\
+TDNTYKGAAGTWGEKANEKLGRVRGKDFTKNKNKMKRGSYRGGSITLESGSYKFQD";
 
+    //creating fasta file of protein string to use in segA
+    std::ofstream MyFile("srp40.fasta"); //Create and open a fasta file
+    MyFile << ">srp40_saccharomyces_cerevisiae\n" << srp40; //Write to the file
+    MyFile.close(); //Close the file
+
+    //getting the characteristics of the sequence
     int length = srp40.length();
-    int num_lcr =
-    int avg_entropy_lcr =
+    system("segA srp40.fasta 15 1.9 2.2 -l | grep '>' | wc -l >> numlcr.txt"); //Write the results of counting the LCRs to a txt file
+    std::ifstream myreadfile("numlcr.txt"); //Declaring fstream variable and connecting it to a stream object by opening the file
+    int num_lcr; //Declare int variable which holds the contents of the 'numlcr.txt' file
+    myreadfile >> num_lcr; //Pipe file's content into stream
+    //int avg_entropy_lcr =
 
-    std::cout << srp40 << "\n" << "\n" << length << "\n";
+    std::cout << srp40 << "\n" << "\n" << length << "\n" << "\n"<< num_lcr << "\n" ;
     return 0;
+}
 
 3. I created a repository on github so I could work both from home
 and from the lab and push changes on both different devices (SEP 19
