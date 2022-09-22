@@ -77,11 +77,38 @@ a lot of generations (Brian suggested 1000 generations for 100 Amino acid sequen
 - Need to figure out a way to store the deviates in the same positions as amino acids so when we find the lowest number it matches the
   amino acid position
 
+- SEPT 22 - Today I figured out that using a c++ vector is better
+than using an array because arrays in c cant change size at runtime.
+Vectors on the other hand can change size at runtime so we can add
+values to it while iterating through the loop - today I just used
+the rand() function because I could not get ran1 working for the
+exponential deviates - I have basically intialized a vector,
+iterated through the length of the simulated amino acid sequence and
+produced a random number for that position in the amino acid - I
+store these random values in a vector which is also 0 indexed and
+matches the indices of the amino acid string.
+
 std::string mutateSeq(std::string simulated_protein){
 
-    std::cout << simulated_protein << "/n";
+    std::vector<double> exp_deviates_vtr ; // Creating a vector to hold the values of the deviates
+
+    // Traversing the string
+    for (int i = 0; i < simulated_protein.length(); i++) {
+
+        // Code to apply random exponential deviates to AA
+        int deviate =  rand();
+        exp_deviates_vtr.push_back(deviate);
+    }
+
+    // THIS IS JUST TO PRINT THE VECTOR
+    for (int x = 0; x < exp_deviates_vtr.size(); i++) {
+        std::cout << x << ' ';
+    }
+    
+
     return simulated_protein;
 }
+
 
 
 

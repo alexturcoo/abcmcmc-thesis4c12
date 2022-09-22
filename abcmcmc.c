@@ -77,17 +77,22 @@ TDNTYKGAAGTWGEKANEKLGRVRGKDFTKNKNKMKRGSYRGGSITLESGSYKFQD";
 
 std::string mutateSeq(std::string simulated_protein){
 
+    std::vector<double> exp_deviates_vtr ; // Creating a vector to hold the values of the deviates
+
     // Traversing the string
     for (int i = 0; i < simulated_protein.length(); i++) {
 
         // Code to apply random exponential deviates to AA
-        long initial = -50 ;
-        std::vector<int> exp_deviates_vtr ; //creating a vector to store deviates
-        int deviate = ran1(&initial) ;  
-        exp_deviates_vtr.push_back (deviate) ;
+        int deviate =  rand();
+        exp_deviates_vtr.push_back(deviate);
     }
 
-    std::cout << exp_deviates_vtr << "\n";
+    // THIS IS JUST TO PRINT THE VECTOR
+    for (int x = 0; x < exp_deviates_vtr.size(); x++) {
+        std::cout << exp_deviates_vtr[x] << ' ';
+    }
+    
+
     return simulated_protein;
 }
 
