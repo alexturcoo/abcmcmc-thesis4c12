@@ -1,9 +1,11 @@
 ##This file will record things I have done for my thesis so far##
 ##I am learning c/c++ for my thesis to run an ABC-MCMC
 
-1. Created function which takes an integer value and generates a
+####################################################################
+1. Created function which takes an integer value and generates a  
 random amino acid sequence of that length (I used the string class
-from c++ for this part)
+from c++ for this part)                                           
+
 
 std::string createSeq(int n){
 
@@ -18,6 +20,7 @@ std::string createSeq(int n){
     return protein;
 }
 
+####################################################################
 2. The second function I began working on reads in the SRP40
 protein which acts as the data that is already known, and it
 creates a vector with characteristics like the length of the
@@ -56,9 +59,30 @@ TDNTYKGAAGTWGEKANEKLGRVRGKDFTKNKNKMKRGSYRGGSITLESGSYKFQD";
     return 0;
 }
 
+###################################################################################################
 3. I created a repository on github so I could work both from home
 and from the lab and push changes on both different devices (SEP 19
 2022)
 - always need to remember to push the changes from where I am
   working - once segA is involved, the code will only work when
 running on the server
+
+####################################################################################################
+4. The third function I am working on is the function responsible for mutating the randomly generated protein sequence (SEP 21)
+- Basically I need it to iterate through each amino acid in the generated sequence and choose a random exponential deviate from the
+  exponential distribution (which models waiting times between events). Once I have generated a random exponential deviate for each amino
+acid in the simulated sequence, I have to select the amino acid with the lowest value and select that amino acid to mutate into another
+amino acid - I repeat this process of iterating through the sequence and assigning exponential deviates and mutating the lowest value for
+a lot of generations (Brian suggested 1000 generations for 100 Amino acid sequence).
+- Need to figure out a way to store the deviates in the same positions as amino acids so when we find the lowest number it matches the
+  amino acid position
+
+std::string mutateSeq(std::string simulated_protein){
+
+    std::cout << simulated_protein << "/n";
+    return simulated_protein;
+}
+
+
+
+

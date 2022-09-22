@@ -5,14 +5,17 @@
 #include <bits/stdc++.h>
 #include <fstream> //The fstream library allows us to work with files
 #include "myRandomFunctions.c"
+#include <vector> // Working with vectors is nicer than arrays, more c++
 
 // THIS IS A TEST TO SEE IF I CAN PUSH AND PULL FROM GITHUB - WORKS
 // PUT THINGS YOURE GONNA DEFINE HERE
 // 21 amino acids because of 0 at the end which is not an amino acid
 #define numAA 20
 
-// FIRST FUNCTION TAKES AN INTEGER VALUE AND GENERATES A RANDOM
-// AMINO ACID SEQUENCE OF THAT LENGTH
+////////////////////////////////////////////////////////////////
+// FIRST FUNCTION TAKES AN INTEGER VALUE AND GENERATES A RANDOM/
+// AMINO ACID SEQUENCE OF THAT LENGTH                          / 
+////////////////////////////////////////////////////////////////
 
 std::string createSeq(int n){
 
@@ -23,13 +26,15 @@ std::string createSeq(int n){
     for (int i = 0; i < n; i++){
         protein = protein + aminoAcids[rand() % numAA];}
     
-    std::cout << protein << "\n" << "\n" ;
-   // printf("%s", protein.c_str());
+    // std::cout << protein << "\n" << "\n" ;
+    // printf("%s", protein.c_str());
     return protein;
 }
 
-// SECOND FUNCTION READS IN SRP40 PROTEIN AND CREATES A VECTOR WITH
-// CHARACTERISTICS - THIS IS EITHER S or D - THE ORIGINAL DATA
+////////////////////////////////////////////////////////////////////
+// SECOND FUNCTION READS IN SRP40 PROTEIN AND CREATES A VECTOR WITH/
+// CHARACTERISTICS - THIS IS EITHER S or D - THE ORIGINAL DATA     /
+////////////////////////////////////////////////////////////////////
 
 int og_protein(){
 
@@ -57,17 +62,45 @@ TDNTYKGAAGTWGEKANEKLGRVRGKDFTKNKNKMKRGSYRGGSITLESGSYKFQD";
 
 
     //TO TEST THE OUTPUT
-    std::cout << srp40 << "\n" << "\n" << length << "\n" << "\n"<< num_lcr << "\n" ;
+    std::cout << srp40 << "\n" << "\n" << length << "\n" << "\n"<< num_lcr << "\n" << "\n" ;
     return 0;
-
 }
 
-// THE MAIN FUNCTION - WHERE EXECUTION BEGINS
+////////////////////////////////////////////////////////////////////////
+// THIS FUNCTION WILL MUTATE THE SIMULATED PROTEIN SEQUENCE
+// BY CHOOSING A RANDOM EXPONENTIAL DEVIATE (WITH MEAN = MUTATION RATE)
+// FOR EACH AMINO ACID IN THE SEQUENCE AND SUBSEQUENTLY SELECTING
+// THE AMINO ACID WITH THE LOWEST NUMBER (QUICKEST TO MUTATE) AND
+// MUTATING IT RANDOMLY, THIS IS DONE SUCCESSIVELY TO PRODUCE A 
+// PROTEIN AND CREATE A VECTOR OF VALUES SIMILAR TO ABOVE (SEP 21)     /
+////////////////////////////////////////////////////////////////////////
+
+std::string mutateSeq(std::string simulated_protein){
+
+    // Traversing the string
+    for (int i = 0; i < simulated_protein.length(); i++) {
+
+        // Code to apply random exponential deviates to AA
+        long initial = -50 ;
+        std::vector<int> exp_deviates_vtr ; //creating a vector to store deviates
+        int deviate = ran1(&initial) ;  
+        exp_deviates_vtr.push_back (deviate) ;
+    }
+
+    std::cout << exp_deviates_vtr << "\n";
+    return simulated_protein;
+}
+
+//////////////////////////////////////////////
+// THE MAIN FUNCTION - WHERE EXECUTION BEGINS/
+//////////////////////////////////////////////
+
 int main() {
     
     srand(18);
-    createSeq(100); // Creating the Protein
-    og_protein();   // Generating data for SRP40 protein
+    //createSeq(100); // Creating the Protein
+    og_protein(); // Generating data for SRP40 protein
+    mutateSeq(createSeq(10)); // Mutating the simulated Sequence
     return 0;
 }
 
