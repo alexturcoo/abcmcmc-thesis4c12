@@ -66,16 +66,31 @@ TDNTYKGAAGTWGEKANEKLGRVRGKDFTKNKNKMKRGSYRGGSITLESGSYKFQD";
     return 0;
 }
 
+//THIS FUNCTION WILL CHOOSE A RANDOM POISSON DEVIATE WITH A MEAN
+//EQUAL TO (MUTATION RATE * # OF SITES) - WHATEVER THE VALUE OF THE
+//RANDOM DEVIATE, CHOOSE THAT MANY MUTATIONS IN THE SEQUENCE AT
+//RANDOM
+
+std::string mutateSeqAA(std::string simulated_protein){
+
+    float mutation_rate = 0.14 ;
+    float avg_mutations = mutation_rate * simulated_protein.length() ;
+    //Choose random poisson deviate with mean = avg_mutations
+
+    std::cout << avg_mutations << "\n" ;
+    return simulated_protein ;
+}
+
 ////////////////////////////////////////////////////////////////////////
 // THIS FUNCTION WILL MUTATE THE SIMULATED PROTEIN SEQUENCE
 // BY CHOOSING A RANDOM EXPONENTIAL DEVIATE (WITH MEAN = MUTATION RATE)
 // FOR EACH AMINO ACID IN THE SEQUENCE AND SUBSEQUENTLY SELECTING
 // THE AMINO ACID WITH THE LOWEST NUMBER (QUICKEST TO MUTATE) AND
 // MUTATING IT RANDOMLY, THIS IS DONE SUCCESSIVELY TO PRODUCE A 
-// PROTEIN AND CREATE A VECTOR OF VALUES SIMILAR TO ABOVE (SEP 21)     /
-////////////////////////////////////////////////////////////////////////
+// PROTEIN AND CREATE A VECTOR OF VALUES SIMILAR TO ABOVE (SEP 21)     
+// SEP 26 - PROCESS CHANGE, THIS FUNCTION WILL BE USED FOR AMINO ACID EXPANSION
 
-std::string mutateSeq(std::string simulated_protein){
+std::string mutateSeqExp(std::string simulated_protein){
 
     std::vector<double> exp_deviates_vtr ; // Creating a vector to hold the values of the deviates
 
@@ -105,7 +120,7 @@ int main() {
     srand(18);
     //createSeq(100); // Creating the Protein
     og_protein(); // Generating data for SRP40 protein
-    mutateSeq(createSeq(10)); // Mutating the simulated Sequence
+    mutateSeqAA(createSeq(10));
     return 0;
 }
 

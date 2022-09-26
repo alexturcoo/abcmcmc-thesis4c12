@@ -110,6 +110,13 @@ std::string mutateSeq(std::string simulated_protein){
 }
 
 
-
+##################################################################################################################
+5. SEPT 26 2022 - SO, mutation function got split up today into kind of 2 separate parts. Basically, we will not choose exponential deviates for
+mutation, but rather choose a random poisson deviate with a mean equal to (mutation rate * # of sites) - choosing a random value from this
+distribution could yield the same # of mutations as the mean, or more or less. Then we assign mutations randomly to the number of amino acids that we
+get from this poisson distribution deviate. The second function will be created in order to handle amino acid expansion, and in this step we will use
+exponential deviates - breaking the process up like this will save time. SIDE NOTE: We are using a poisson distribution because any kind of rare event
+(like mutation rate) can be modeled by this. We will keep the function from above but modify it slightly - it will be the function that does the amino
+acid expansion part
 
 
