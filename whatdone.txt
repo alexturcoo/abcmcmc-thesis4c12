@@ -1,10 +1,13 @@
 ##This file will record things I have done for my thesis so far##
 ##I am learning c/c++ for my thesis to run an ABC-MCMC
+##Might need to organize this file a little better to improve
+readability
 
 ####################################################################
 1. Created function which takes an integer value and generates a  
 random amino acid sequence of that length (I used the string class
-from c++ for this part)                                           
+from c++ for this part) - string class allows for easy string
+manipulation compared to using "an array of chars in c)                                         
 
 
 std::string createSeq(int n){
@@ -16,7 +19,7 @@ std::string createSeq(int n){
         protein =  protein + aminoAcids[rand() % numAA];}
 
     std::cout << protein << "\n" << "\n" ;
-    //printf("%s", protien.c_str());
+    //printf("%s", protein.c_str());
     return protein;
 }
 
@@ -109,7 +112,6 @@ std::string mutateSeq(std::string simulated_protein){
     return simulated_protein;
 }
 
-
 ##################################################################################################################
 5. SEPT 26 2022 - SO, mutation function got split up today into kind of 2 separate parts. Basically, we will not choose exponential deviates for
 mutation, but rather choose a random poisson deviate with a mean equal to (mutation rate * # of sites) - choosing a random value from this
@@ -118,5 +120,111 @@ get from this poisson distribution deviate. The second function will be created 
 exponential deviates - breaking the process up like this will save time. SIDE NOTE: We are using a poisson distribution because any kind of rare event
 (like mutation rate) can be modeled by this. We will keep the function from above but modify it slightly - it will be the function that does the amino
 acid expansion part
+- I think I finished the function responsible for mutating the
+sequence (choosing the number of mutations from a poisson
+        distribution with a mean equal to the mutation rate * length
+        of the sequence) - I just need to now get ran1 and the
+poisson distribution in there because I am using rand() right now to
+generate the sequences - CHECK ON THIS ASAP - the only thing I have
+done is basically make a loop which uses the number of mutation
+sites provided by the rand() function between 1-10 and changes that
+- STILL WORKING ON FUNCTION TO LOOK BACKWARDS AND FORWARDS IN AMINO
+ACID SEQUENCE TO CHECK FOR REPEATS AND ASSIGN DEVIATES (SEPT 26
+        2022)
+
+- SEPT 27 2022 - Updated code for the second mutation function.
+Today I attempted to write the function which iterates through the
+mutated protein sequence and assigns exponential deviates
+(mutateSeqExp). Right now, the code looks for matching amino acids both upstream and
+downstream the protein and the number of repeats is assessed per
+amino acid. This means each amino acid is iterated through and the
+same amino acids are looked for on either side of the amino
+acid. The length of the repeat is then used in subsequent steps
+like solving for beta = (mutation rate, length of repeat) and then
+this beta value is used in the exponential distribution as the mean
+- TRY TO FIND A WAY TO REMOVE BOTH COUNTERS AND JUST USE 1 COUNTER
+IN mutateSeqExp - issue with counters getting incorrect values, fix
+this.
+
+//THIS FUNCTION WILL CHOOSE A RANDOM POISSON DEVIATE WITH A MEAN
+//EQUAL TO (MUTATION RATE * # OF SITES) - WHATEVER THE VALUE OF THE
+//RANDOM DEVIATE, CHOOSE THAT MANY MUTATIONS IN THE SEQUENCE AT
+//RANDOM
+
+std::string mutateSeqAA(std::string simulated_protein){
+
+    float mutation_rate = 0.14 ; // just setting mutation rate here now
+    float avg_mutations = mutation_rate * simulated_protein.length() ;
+    int poisson_deviate_num_mutations = (rand() % 10) + 1 ; //Choose random poisson deviate with mean = avg_mutations
+    
+    //This for loop will give 5 random sites mutations
+    for (int i = 0; i < poisson_deviate_num_mutations; i++) {
+
+        char aminoAcids[numAA] = { 'G', 'A', 'L', 'M', 'F', 'W', 'K', 'Q', 'E', 'S', 'P', 'V', 
+                                   'I', 'C', 'Y', 'H', 'R', 'N', 'D', 'T' };
+        
+        char random_AA = aminoAcids[rand() % numAA]; // sets up the random amino acid, same used in first function to createSeq
+        int random_site = rand() % simulated_protein.length(); // Gives random number in range (0 - length of protein sequence)
+        simulated_protein[random_site] = random_AA; // indexes the simulated protein at a random spot and replaces the existing AA with a new random one
+    }
+
+    //std::cout << avg_mutations << "\n" << "\n" << simulated_protein << "\n" ;
+    return simulated_protein ;
+}
+
+////////////////////////////////////////////////////////////////////////
+// THIS FUNCTION WILL MUTATE THE SIMULATED PROTEIN SEQUENCE
+// BY CHOOSING A RANDOM EXPONENTIAL DEVIATE (WITH MEAN = MUTATION RATE)
+// FOR EACH AMINO ACID IN THE SEQUENCE AND SUBSEQUENTLY SELECTING
+// THE AMINO ACID WITH THE LOWEST NUMBER (QUICKEST TO MUTATE) AND
+// MUTATING IT RANDOMLY, THIS IS DONE SUCCESSIVELY TO PRODUCE A 
+// PROTEIN AND CREATE A VECTOR OF VALUES SIMILAR TO ABOVE (SEP 21)     
+// SEP 26 - PROCESS CHANGE, THIS FUNCTION WILL BE USED FOR AMINO ACID EXPANSION
+
+std::string mutateSeqExp(std::string simulated_protein){
+
+    std::vector<double> exp_deviates_vtr ; // Creating a vector to hold the values of the deviates
+
+    // Traversing the string
+    for (int i = 1; i < simulated_protein.length() + 1; i++) {
+
+        int forward_counter = 1 ;
+        int reverse_counter = 1 ;
+
+        //Code to scan back and forth to find repeats
+        if (simulated_protein[i] != simulated_protein[i+1] && simulated_protein[i] != simulated_protein[i-1]) {
+            float mutation_rate = 0.14 ; //mutation rate == alpha
+            float beta = mutation_rate*1 ; // 1 will always be used here because the length if no repeats is 1
+            int deviate = rand() ;//here we choose exp_deviate(mean of beta)
+            exp_deviates_vtr.push_back(deviate) ; //Here we are storing the exponential deviates
+        } else {
+            int x = 1 ;
+            int y = 1 ;
+
+            while (simulated_protein[i] == simulated_protein[i + x]) {
+                forward_counter += 1 ;
+                x++;
+            } 
+
+            while (simulated_protein[i] == simulated_protein[i - y]) {
+                reverse_counter += 1 ;
+                y++;
+            }
+
+            float mutation_rate = 0.14 ;
+            float beta = mutation_rate*(forward_counter + reverse_counter);
+            int deviate = rand();
+            exp_deviates_vtr.push_back(deviate);
+        }
+    }
+    // THIS IS JUST TO PRINT THE VECTOR
+    for (int x = 0; x < exp_deviates_vtr.size(); x++) {
+        std::cout << exp_deviates_vtr[x] << ' ';
+    }
+    
+    std::cout << simulated_protein << "\n" << "\n" ;
+    return simulated_protein;
+}
+
 
 
