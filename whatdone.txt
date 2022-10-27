@@ -1,7 +1,8 @@
 ##This file will record things I have done for my thesis so far##
 ##I am learning c/c++ for my thesis to run an ABC-MCMC
 ##Might need to organize this file a little better to improve
-readability
+#ifndef FOO_DOT_H    /* This is an "include guard" */
+#define FOO_DOT_H readability
 
 ####################################################################
 1. Created function which takes an integer value and generates a  
@@ -145,6 +146,20 @@ this beta value is used in the exponential distribution as the mean
 - TRY TO FIND A WAY TO REMOVE BOTH COUNTERS AND JUST USE 1 COUNTER
 IN mutateSeqExp - issue with counters getting incorrect values, fix
 this.
+- Today I also coded in the ability to scan for repeats (part 2 of the mutation function) - it is able to assign amino acids within repeats a longer length value than individual amino acids
+which are not within repeats - this means we will be able to assign a random exponential deviate with a mean equal to the mutation rate times the length of the repeats. I am still having
+issues with the random number generation and distribution functions, need to solve this ASAP (SEPT 27 2022)
+- QUESTION (wrote in notebook as well), need to think about it - What does a larger mean, mean in terms of the exponential distribution? If I am saying to multiply the mutation rate by
+the length of the repeats, this would mean a larger beta value going in as the mean of the exponential deviate, does a larger mean make a random number that will be small more likely?
+
+- OCTOBER 3 2022 - Today I finally figured out how to implement Ran1 into my code. I have both the file that brian sent me "myRandomFunctions.c" which utilizes functions from the second edition of
+  Numerical Recipes. Brian also gave me the third edition of the book which includes a newer random number generator called Ran - this one can be used as well to generate the deviates, I just need
+to add the functions from numerical recipes thrid edition into the file called "functions.cpp" - I still need to add random deviate functions for normal distribution (to choose new mutation rates),
+for exponential deviate function (for amino acid extension function), and poission deviates (to choose how many mutations to give my simulated protein per generation)
+- So I used the functions from Numerical recipes third edition, I am trying to now test out using the poisson deviates and exponential deviates. The poisson deviates kept giving me 0 as an int
+  because it was a float number but for a number of mutations should I be rounding the nearest whole number? Do I use floats or ints? I should not be getting such low numbers for my poisson deviate,
+my poisson deviate is supposed to tell me how many mutations the sequence should undergo and right now I cant even get 1 mutation. FIGURE THIS OUT
+
 
 //THIS FUNCTION WILL CHOOSE A RANDOM POISSON DEVIATE WITH A MEAN
 //EQUAL TO (MUTATION RATE * # OF SITES) - WHATEVER THE VALUE OF THE

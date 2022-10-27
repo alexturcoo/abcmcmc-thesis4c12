@@ -1,16 +1,21 @@
+//#include "myRandomFunctions.c"
+#include "functions.cpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <iostream>
 #include <bits/stdc++.h>
 #include <fstream> //The fstream library allows us to work with files
-#include "myRandomFunctions.c"
 #include <vector> // Working with vectors is nicer than arrays, more c++
 
 // THIS IS A TEST TO SEE IF I CAN PUSH AND PULL FROM GITHUB - WORKS
 // PUT THINGS YOURE GONNA DEFINE HERE
 // 21 amino acids because of 0 at the end which is not an amino acid
 #define numAA 20
+
+long int idum = -12345; //FOR RAN1
+Ran myran(17); //FOR RAN
+
 
 ////////////////////////////////////////////////////////////////
 // FIRST FUNCTION TAKES AN INTEGER VALUE AND GENERATES A RANDOM/
@@ -66,17 +71,18 @@ TDNTYKGAAGTWGEKANEKLGRVRGKDFTKNKNKMKRGSYRGGSITLESGSYKFQD";
     return 0;
 }
 
-//THIS FUNCTION WILL CHOOSE A RANDOM POISSON DEVIATE WITH A MEAN
-//EQUAL TO (MUTATION RATE * # OF SITES) - WHATEVER THE VALUE OF THE
-//RANDOM DEVIATE, CHOOSE THAT MANY MUTATIONS IN THE SEQUENCE AT
-//RANDOM
+/*THIS FUNCTION WILL CHOOSE A RANDOM POISSON DEVIATE WITH A MEAN
+EQUAL TO (MUTATION RATE * # OF SITES) - WHATEVER THE VALUE OF THE
+RANDOM DEVIATE, CHOOSE THAT MANY MUTATIONS IN THE SEQUENCE AT
+RANDOM*/
 
 std::string mutateSeqAA(std::string simulated_protein){
 
     float mutation_rate = 0.14 ; // just setting mutation rate here now
     float avg_mutations = mutation_rate * simulated_protein.length() ;
-    int poisson_deviate_num_mutations = (rand() % 10) + 1 ; //Choose random poisson deviate with mean = avg_mutations
-    
+    Expondev myexpdev(avg_mutations, 100); //creating an instance
+    float poisson_deviate_num_mutations = myexpdev.dev() ; //Choose random poisson deviate with mean = avg_mutations
+    std::cout << simulated_protein << "\n" << poisson_deviate_num_mutations << "\n" ; 
     //This for loop will give 5 random sites mutations
     for (int i = 0; i < poisson_deviate_num_mutations; i++) {
 
@@ -88,53 +94,53 @@ std::string mutateSeqAA(std::string simulated_protein){
         simulated_protein[random_site] = random_AA; // indexes the simulated protein at a random spot and replaces the existing AA with a new random one
     }
 
-    //std::cout << avg_mutations << "\n" << "\n" << simulated_protein << "\n" ;
+    std::cout << "after mutateSeqAA: " << simulated_protein << "\n" ;
     return simulated_protein ;
 }
 
-////////////////////////////////////////////////////////////////////////
-// THIS FUNCTION WILL MUTATE THE SIMULATED PROTEIN SEQUENCE
-// BY CHOOSING A RANDOM EXPONENTIAL DEVIATE (WITH MEAN = MUTATION RATE)
-// FOR EACH AMINO ACID IN THE SEQUENCE AND SUBSEQUENTLY SELECTING
-// THE AMINO ACID WITH THE LOWEST NUMBER (QUICKEST TO MUTATE) AND
-// MUTATING IT RANDOMLY, THIS IS DONE SUCCESSIVELY TO PRODUCE A 
-// PROTEIN AND CREATE A VECTOR OF VALUES SIMILAR TO ABOVE (SEP 21)     
-// SEP 26 - PROCESS CHANGE, THIS FUNCTION WILL BE USED FOR AMINO ACID EXPANSION
+/*THIS FUNCTION WILL MUTATE THE SIMULATED PROTEIN SEQUENCE
+BY CHOOSING A RANDOM EXPONENTIAL DEVIATE (WITH MEAN = MUTATION RATE)
+FOR EACH AMINO ACID IN THE SEQUENCE AND SUBSEQUENTLY SELECTING
+THE AMINO ACID WITH THE LOWEST NUMBER (QUICKEST TO MUTATE) AND
+MUTATING IT RANDOMLY, THIS IS DONE SUCCESSIVELY TO PRODUCE A 
+PROTEIN AND CREATE A VECTOR OF VALUES SIMILAR TO ABOVE (SEP 21)     
+SEP 26 - PROCESS CHANGE, THIS FUNCTION WILL BE USED FOR AMINO ACID EXPANSION */
 
 std::string mutateSeqExp(std::string simulated_protein){
 
     std::vector<double> exp_deviates_vtr ; // Creating a vector to hold the values of the deviates
 
     // Traversing the string
-    for (int i = 1; i < simulated_protein.length() + 1; i++) {
+    for (int i = 0; i < simulated_protein.length(); i++) {
 
-        int forward_counter = 1 ;
-        int reverse_counter = 1 ;
+        int counter = 1 ;
 
         //Code to scan back and forth to find repeats
         if (simulated_protein[i] != simulated_protein[i+1] && simulated_protein[i] != simulated_protein[i-1]) {
             float mutation_rate = 0.14 ; //mutation rate == alpha
             float beta = mutation_rate*1 ; // 1 will always be used here because the length if no repeats is 1
-            int deviate = rand() ;//here we choose exp_deviate(mean of beta)
+            double deviate = myran.doub();//here we choose exp_deviate(mean of beta)
             exp_deviates_vtr.push_back(deviate) ; //Here we are storing the exponential deviates
         } else {
             int x = 1 ;
             int y = 1 ;
-
+            
+            //Be careful in these while loops, for i-y, when i is 0
+            //and y is 1, how does it not throw error
             while (simulated_protein[i] == simulated_protein[i + x]) {
-                forward_counter += 1 ;
+                counter += 1 ;
                 x++;
             } 
 
             while (simulated_protein[i] == simulated_protein[i - y]) {
-                reverse_counter += 1 ;
+                counter += 1 ;
                 y++;
             }
 
             float mutation_rate = 0.14 ;
-            float beta = mutation_rate*(forward_counter + reverse_counter);
-            int deviate = rand();
-            exp_deviates_vtr.push_back(deviate);
+            float beta = mutation_rate * counter ;
+            int deviate = rand() % 10;
+            exp_deviates_vtr.push_back(beta);
         }
     }
     // THIS IS JUST TO PRINT THE VECTOR
@@ -142,7 +148,7 @@ std::string mutateSeqExp(std::string simulated_protein){
         std::cout << exp_deviates_vtr[x] << ' ';
     }
     
-    std::cout << simulated_protein << "\n" << "\n" ;
+    std::cout << "after mutateSeqEXP: " << simulated_protein << "\n" << "\n" ;
     return simulated_protein;
 }
 
@@ -156,7 +162,7 @@ int main() {
     srand(10); //Setting seed to test
     //createSeq(100); // Creating the Protein
     og_protein(); // Generating data for SRP40 protein
-    std::string mutated_seq = mutateSeqAA(createSeq(20)); // testing first mutation step
+    std::string mutated_seq = mutateSeqAA(createSeq(100)); // testing first mutation step
     mutateSeqExp(mutated_seq); // testing second mutation step
     return 0;
 }
