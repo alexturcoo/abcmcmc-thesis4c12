@@ -248,4 +248,6 @@ create a Makefile to compile each of the functions for initial testing.
 - observed_protein.cpp function is still in the works but it works on its own and will be the vector of summary statistics for the observed data (srp40 right now)
 - mutations.cpp contains both functions which will be used in the mutation step - I have got the first part working where a random poisson deviate is selected and
   that number is the number of amino acids to mutate - this step works, now I have to get the second function with the exponential deviates to work. (Updated code
-on github)
+on github) - exponential deviates part is working, just having difficulty generating random exponential deviates on each iteration of the loop. I get the same
+value of exponential deviate for individual residues and the same value of exponential deviate for residues part of a repeat, run the code for mutations.cpp to
+check it out - get some help with this.
