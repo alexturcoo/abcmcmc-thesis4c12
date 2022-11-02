@@ -241,5 +241,11 @@ std::string mutateSeqExp(std::string simulated_protein){
     return simulated_protein;
 }
 
-
-
+November 2 2022 - Things have been busy recently, but today I separated all
+of my functions that were in one file, into their own respective file. I will also
+create a Makefile to compile each of the functions for initial testing.
+- createseq.cpp works on its own and produces a random sequence of amino acids - this is using the c++ rand, I think its okay in this case
+- observed_protein.cpp function is still in the works but it works on its own and will be the vector of summary statistics for the observed data (srp40 right now)
+- mutations.cpp contains both functions which will be used in the mutation step - I have got the first part working where a random poisson deviate is selected and
+  that number is the number of amino acids to mutate - this step works, now I have to get the second function with the exponential deviates to work. (Updated code
+on github)
