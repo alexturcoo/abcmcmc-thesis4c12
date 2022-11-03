@@ -255,3 +255,5 @@ check it out - get some help with this.
 
 November 3 2022 - Still trying to get different random deviates in mutations.cpp program. When I run it I am getting the same deviates for individual residues and the
 same deviates for repeats part of a bunch of repeats. It is very weird. I am talking to Brian about the issue today in our meeting.
+- After meeting with Brian, he basically figured that using time was not working as a way to get different seeds on each iteration of the loop, we instead used
+  myran.int64() as the argument for the seeds of the exponential deviates and now we have different deviates for each amino acid!!!1 SO HYPE LETS GO
