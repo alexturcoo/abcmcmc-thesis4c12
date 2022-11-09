@@ -252,8 +252,33 @@ on github) - exponential deviates part is working, just having difficulty genera
 value of exponential deviate for individual residues and the same value of exponential deviate for residues part of a repeat, run the code for mutations.cpp to
 check it out - get some help with this.
 
-
 November 3 2022 - Still trying to get different random deviates in mutations.cpp program. When I run it I am getting the same deviates for individual residues and the
 same deviates for repeats part of a bunch of repeats. It is very weird. I am talking to Brian about the issue today in our meeting.
 - After meeting with Brian, he basically figured that using time was not working as a way to get different seeds on each iteration of the loop, we instead used
   myran.int64() as the argument for the seeds of the exponential deviates and now we have different deviates for each amino acid!!!1 SO HYPE LETS GO
+
+November 7 2022 - today I am working on adding to the mutations.cpp code. What I need to do is first select the lowest exponential deviate which represents the amino acid
+that is going to change the quickest. Then, at that site we either insert or remove a repeat. To do this we will have Ran select a random number between 0 and 1, and
+if the number is less than 0.5, we do a deletion of the site and if the random number is larger than 0.5, we insert another of the same amino acid.
+- added a function called getIndex which grabs the index of the lowest number in the vector by supplying it with the vector and the value and it will find the
+  index. 
+- Next I am adding code to generate a random number between 0 and 1 and if its less than 0.5, deletion and if its larger than 0.5 insertion - is this where indel
+  rate comes up?
+QUESTION
+- need to figure out where to set indel rate... I have already set a mutation rate but I do not know where to add the indel rate... is it set at the part where we
+generate a random number and see if its less than or greater than 0.5? Talk to Brian - okay the answer for this is that we run once through with the mutation rate,
+and once through with the indel rate... lets see how that works lol
+
+November 8 2022 - Today before my c++ test, I wrote some code to select the lowest deviate and either insert or delete an amino acid based on a random number
+generated between 0 and 1. - the code ended up working and I am so so happy. At this point, my mutations.cpp program will first take an amino acid sequence,
+generate a single random possion deviate from a poisson distribution with mean = protein.length*mutation.rate. This gives us the number of amino acids to mutate and
+at random, that number of amino acids are mutated. The program then has a function which scans for repeats and inserts or deletes a repeat where the lowest exponential deviate was
+assigned.
+SAMPLE OUTPUT FROM MUTATIONS.CPP
+before mutateseqAA:	MKNHCHKISAKHHHHAM
+after mutateSeqAA:	MKLHCVSISFKAHHHAE
+
+after mutateSeqEXP:	MKLHCVSSISFKAHHHAE
+
+
+November 9 2022 - 

@@ -1,9 +1,14 @@
 #include "functions.cpp"
+#include "getindex.cpp"
+#include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
 #include <string>
 #include <ctime>
+#include <algorithm> //this is to get min element stuff, cool library
 #define numAA 20
+using namespace std;
+
 
 Ran myran(21); //We will use 21 as the random seed right now, used in Poissondev too
 /*THIS FUNCTION WILL CHOOSE A RANDOM POISSON DEVIATE WITH A MEAN
@@ -17,7 +22,8 @@ std::string mutateSeqAA(std::string simulated_protein){
     double avg_mutations = mutation_rate * simulated_protein.length() ;
     Poissondev mypoiss(avg_mutations, 21); //creating an instance
     int poisson_deviate_num_mutations = mypoiss.dev() ; //Choose random poisson deviate with mean = avg_mutations
-    std::cout << poisson_deviate_num_mutations << "\n" << "before mutateseqAA: " << simulated_protein << "\n" ; 
+    //std::cout << poisson_deviate_num_mutations << "\n"
+    std::cout << "before mutateseqAA:\t" << simulated_protein << "\n" ; 
     //This for loop will give 5 random sites mutations
     for (int i = 0; i < poisson_deviate_num_mutations; i++) {
 
@@ -29,7 +35,7 @@ std::string mutateSeqAA(std::string simulated_protein){
         simulated_protein[random_site] = random_AA; // indexes the simulated protein at a random spot and replaces the existing AA with a new random one
     }
 
-    std::cout << "after mutateSeqAA: " << simulated_protein << "\n" ;
+    std::cout << "after mutateSeqAA:\t" << simulated_protein << "\n" ;
     return simulated_protein ;
 }
 
@@ -63,11 +69,12 @@ std::string mutateSeqExp(std::string simulated_protein){
             
             //Be careful in these while loops, for i-y, when i is 0
             //and y is 1, how does it not throw error
+            //Looking forward for repeats
             while (simulated_protein[i] == simulated_protein[i + x]) {
                 counter += 1 ;
                 x++;
             } 
-
+            //Looking backwards for repeats
             while (simulated_protein[i] == simulated_protein[i - y]) {
                 counter += 1 ;
                 y++;
@@ -80,12 +87,29 @@ std::string mutateSeqExp(std::string simulated_protein){
             exp_deviates_vtr.push_back(deviate);
         }
     }
-    // THIS IS JUST TO PRINT THE VECTOR
-    for (int x = 0; x < exp_deviates_vtr.size(); x++) {
-        std::cout << exp_deviates_vtr[x] << ' ';
+
+    //selecting the lowest deviate and inserting or deleting am acid
+    double min = *min_element(exp_deviates_vtr.begin(), exp_deviates_vtr.end());
+    int position = getIndex(exp_deviates_vtr, min);
+    char aa_index = simulated_protein[position];
+    float random_number = myran.doub();
+
+    //Inserting or deleting a repeat
+    if (random_number < 0.5){
+        simulated_protein.erase(position, 1);
+    } else {
+        simulated_protein.insert(position+1,1, aa_index);
     }
+
+    //printing out this stuff to check its working
+    //std::cout << min << "\n" << position  << "\n" << aa_index << "\n" << random_number << "\n";
+
+    // THIS IS JUST TO PRINT THE VECTOR
+    //for (int x = 0; x < exp_deviates_vtr.size(); x++) {
+    //    std::cout << exp_deviates_vtr[x] << ' ';
+    //}
     
-    //std::cout << "after mutateSeqEXP: " << simulated_protein << "\n" << "\n" ;
+    std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
     return simulated_protein;
 }
 
