@@ -1,0 +1,15 @@
+>srp40_saccharomyces_cerevisiae(25-125) complexity=0.92 (12/2.20/2.50)
+sssssssssssssssssssssssssgessssssssssssssdssdssdsessssssssss
+ssssssdsesssesdssssgsssssssssdesssesesede
+
+>srp40_saccharomyces_cerevisiae(138-147) complexity=1.92 (12/2.20/2.50)
+aketkkakte
+
+>srp40_saccharomyces_cerevisiae(149-282) complexity=1.33 (12/2.20/2.50)
+esssssessssgsssssesesgsesdsdsssssssssdsesdsesdsqssssssssdsss
+dsdssssdsssdsdssssssssssdsdsdsdsssdsdssgssdsssssdsssdestssds
+sdsdsdsdsgssse
+
+>srp40_saccharomyces_cerevisiae(295-316) complexity=2.31 (12/2.20/2.50)
+aeetpassnestpsasssssan
+

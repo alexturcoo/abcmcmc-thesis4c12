@@ -16,10 +16,10 @@ std::string createSeq(int n){
     for (int i = 0; i < n; i++){
         protein += aminoAcids[rand() % numAA];} //this rand() % 20 means in the range 0-19
     
-    std::cout << protein << "\n" << "\n" ;
+    //std::cout << protein << "\n" << "\n" ;
     return protein;
 }
 
-int main() {
-    createSeq(10);
-}
+//int main() {
+//    createSeq(10);
+//}

@@ -281,4 +281,32 @@ after mutateSeqAA:	MKLHCVSISFKAHHHAE
 after mutateSeqEXP:	MKLHCVSSISFKAHHHAE
 
 
-November 9 2022 - 
+November 9 2022 - Today I spent the day figuring out how to call seg and find the average entropy of the observed protein sequence srp40. The way in which I did this was using
+a system call to segA with the chosen parameters, then using awk, and grep I manipulated the output to only get the complexity values and then I added these values up and
+divided by the number of values to get the average entropy of the LCRs. I will drop some cool commands that I used here, just taking a break.
+ 
+ system("segA srp40.fasta 15 1.9 2.2 -l | grep 'complexity' | awk '{print $2}' | egrep -o '([0.0-9.0]+)' | awk '{sum += $1} END {print mean=sum/NR}' >> avg_entropy_lcrs.txt");
+
+This command essentially grabs the output of segA and outputs the mean avg entropy of the LCRs. Basically it finds where the output has complexity
+in it and from here we grab all the numbers, add them up, nad divide them by how many numbers there were to get an average entropy. Cool command
+
+November 10 2022 - Today is my meeting with Brian. I have been doing alot of work on finding out which distance measure to use to find the
+difference in the vectors of summary statistics. This paper is a good one for showing the complete algorithm of an ABC with a weighted distance
+measure. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1449703/#eqn1 - First we need to find an appropriate way to store the vectors of summary
+statistics in order to successfully calculate the euclidean distance.
+- After talking to Brian, he confirmed that I should use euclidean distance to calculate the distance between the vector of both summary statistics. 
+I still need to ask him about normalizing the vector because some values are super large
+- Brian also suggested I follow the Hamilton Paper and attempt to calculate weighted values the same way they did in this paper. What this entails is running a linear regression
+and then pulling the R^2 value and using that to calculate the weight. This calculation is done after simulating over numerous generations. Also the paper first did this in a way that
+did not use weights and then they used weights to show how it improved it, maybe I could do the same but GET IT WORKING WITHOUT WEIGHTS FIRST.
+- I took a function from online which calculates the euclidean distance between two vectors which works. In order to better understand this I am also going to try to get this calculation 
+working with some of my own code!! - HAHAHHA I DID IT LETS GOO AMD ITS SO MUCH EASIER TO UNDERSTAND THAN THE OTHER CODE I TOOK FROM THE INTERNET
+- Now that I have the euclidean distance calculation working I need to go and put the values I got in observed_protein.cpp and store them in vectors so my distance function will work on them.
+- successfully stored the values of the observed protein in a std::vector<double> which is awesome because now once I get the simulated protein std::vector<double of summary statistics my function
+uses vectors of the double type so we will be able to calculate distance. 
+- The next thing I am going to do is write a separate function to store the summary statistics of the simulated protein. I made a new file which basically returns the same vector as the observed
+protein function. I now have a way to store the summary statistics for both observed and simulated data, AND a way to calculate the euclidean distance between those values!!
+- The next thing I started doing was assembling the abcmcmc.cpp file which is the main file that will connect all of the functions I created in different files. Basically I linked all the files to
+abcmcmc.cpp and now I am using the functions I made in that file, where I will write the algorithm now for an abc mcmc - we also need to think about the linear regression aspects to get the weights
+that we can use for the distances because right now we have no weights when calculating the distance. We still need to do some tests and try to calulate the distance for  some vectors I produce with my
+code! For today, I am stopping, uploading all this to github. ALSO A LITTLE SIDE NOTE FOR YOURSELF XANDER - GOOD NOTES ARE ON YOUR IPAD

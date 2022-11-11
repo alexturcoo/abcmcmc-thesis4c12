@@ -113,8 +113,8 @@ std::string mutateSeqExp(std::string simulated_protein){
     return simulated_protein;
 }
 
-int main() {
-    std::string x = mutateSeqAA("MKNHCHKISAKHHHHAM");
-    mutateSeqExp(x); 
-}
+//int main() {
+//    std::string x = mutateSeqAA("MKNHCHKISAKHHHHAM");
+//    mutateSeqExp(x); 
+//}
 
