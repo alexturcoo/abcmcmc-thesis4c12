@@ -8,7 +8,7 @@
 using namespace std;
 
 //Function to print the index of an element
-int getIndex(vector<double> v, double k){
+int getIndex(std::vector<double> v, double k){
 
     auto it = find(v.begin(), v.end(), k);
 
@@ -21,6 +21,7 @@ int getIndex(vector<double> v, double k){
     }
     else {
         //if the element is not present in the vector
-        return -1;
+        return 0;
     }
 }
+

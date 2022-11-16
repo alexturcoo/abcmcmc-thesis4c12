@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 #define numAA 20
 
 ////////////////////////////////////////////////////////////////
@@ -8,6 +10,8 @@
 ////////////////////////////////////////////////////////////////
 
 std::string createSeq(int n){
+
+    srand(time(NULL)); // Randomize seed for rand()
 
     char aminoAcids[numAA] = { 'G', 'A', 'L', 'M', 'F', 'W', 'K', 'Q', 'E', 'S', 'P', 'V', 
                                    'I', 'C', 'Y', 'H', 'R', 'N', 'D', 'T' };

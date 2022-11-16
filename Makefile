@@ -10,11 +10,11 @@ createseq: createseq.o
 createseq.o: createseq.cpp
 	c++ -c createseq.cpp
 
-mutations: mutations.o
-	c++ -o mutations mutations.o -lm
+mutations_2: mutations_2.o
+	c++ -o mutations_2 mutations_2.o -lm
 
-mutations.o: mutations.cpp
-	c++ -c mutations.cpp
+mutations_2.o: mutations_2.cpp
+	c++ -c mutations_2.cpp
 
 observed_protein: observed_protein.o
 	c++ -o observed_protein observed_protein.o -lm
@@ -39,3 +39,9 @@ simulated_protein: simulated_protein.o
 
 simulated_protein.o: simulated_protein.cpp
 	c++ -c simulated_protein.cpp
+
+getindex: getindex.o
+	c++ -o getindex getindex.o -lm
+
+getindex.o: getindex.cpp
+	c++ -c getindex.cpp

@@ -310,3 +310,36 @@ protein function. I now have a way to store the summary statistics for both obse
 abcmcmc.cpp and now I am using the functions I made in that file, where I will write the algorithm now for an abc mcmc - we also need to think about the linear regression aspects to get the weights
 that we can use for the distances because right now we have no weights when calculating the distance. We still need to do some tests and try to calulate the distance for  some vectors I produce with my
 code! For today, I am stopping, uploading all this to github. ALSO A LITTLE SIDE NOTE FOR YOURSELF XANDER - GOOD NOTES ARE ON YOUR IPAD
+- Servers went down for a btit, back on it
+
+
+November 14 2022 - Over the weekend I worked on getting a theme for a latex beamer presentation, have to start updating some of the
+intro and background slides, but also NEED RESULTS
+- Today I am going to focus on getting this algorithm down pat because right now it is sketchy in my head. Let's solidify this so on
+  thurday we can go over it with Brian. 
+- Pretty confused on this whole linear regression thing for the weighting of the euclidean distance. I think I will first have to try
+  and run this without weigting euclidean distance. I am struggling to understand this; if you choose 0.001 as your tolerance, how does
+setting your distance to being less than this give you only 1000 points? Im kinda confused and tired now, bad day Im gonna go, need to
+talk to brian tmrw
+
+November 15 2022 - Today I talked to Brian about some of the issues I was having from yesterday
+- He helped me come up with a way to modify the ABC algorithm from Marjoram to just accept or reject based on the euclidean distance.
+- Brian also said that I should change the poisson deviate mutation part to exponential deviates for indel rate and mutation rate. Basically
+  what this means is take the minimum exponential deviate out of both the exponential deviates based on mutation rate and the exponential
+deviates based on indel rate.
+- First what I am going to try and do today is fix the mutation function and then try to put together the algorithm without the weights right
+  now. I hope I can get it to work 
+- In a file called mutations2.cpp, I will try to remake the existing mutation function but with exponential deviates for everything, no more
+  poisson. OK so the way this is going to work is basically we will run through the sequence and assign an exponential deviate with a mean equal to the mutation rate for all the amino acids in the
+sequence. Then we will iterate through the sequence again and scan for repeats and assign deviates based on the indel rate. Once we have two vectors full of deviates, we choose the lowest one and
+depending on which vector it comes from (mutation or indel) we either mutate that lowest deviate site or insert or delete that site.
+- Ok so I fixed the mutation function to basically assign deviates based on both mutation rate and indel rate. It is working based on some tests of running it on its own
+- we also added this new code to the algorithm file and it works.
+- I also got the vectors for both observed and simulated proteins in my abcmcmc.cpp code and this works and also my distance calculation works!!!! Now time to fix up the parameter values
+  and get this loop going for mutations and the simulation as a whole
+ -Remember to propose a new value for a parameter lets use the normal distribution! - Updates coming soon.
+- Final update for the day, I fixed the mutation function the way Brian told me to change it with the vectors, might be inefficient but good. I also started messing around heavy in my
+  abcmcmc file playing around with looping the mutation function over time. It seems to be working I will do more tests tomorrow but I am happy I got something going.
+
+Things to aim for next - adding a loop to propose new parameter values, calculating 10 summary statistic vectors per parameter and averaging that before checking the distance. Although we
+do not have weights and we are kind of skipping step 4 in Marjorams ABC-MCMC algorithm steps, it should still give me decent results. Much more to come. 

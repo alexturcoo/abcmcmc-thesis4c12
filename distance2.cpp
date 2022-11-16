@@ -15,6 +15,7 @@ double vectors_distance2(std::vector<double> a, std::vector<double> b) {
         dist += pow((a[i] - b[i]), 2);
     }
 
+    std::cout << sqrt(dist) << "\n";
     return sqrt(dist);
 }
 
