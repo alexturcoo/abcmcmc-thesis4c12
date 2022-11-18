@@ -342,4 +342,28 @@ depending on which vector it comes from (mutation or indel) we either mutate tha
   abcmcmc file playing around with looping the mutation function over time. It seems to be working I will do more tests tomorrow but I am happy I got something going.
 
 Things to aim for next - adding a loop to propose new parameter values, calculating 10 summary statistic vectors per parameter and averaging that before checking the distance. Although we
-do not have weights and we are kind of skipping step 4 in Marjorams ABC-MCMC algorithm steps, it should still give me decent results. Much more to come. 
+do not have weights and we are kind of skipping step 4 in Marjorams ABC-MCMC algorithm steps, it should still give me decent results. Much more to come.
+
+NOVEMBER 17 2022 - Today is my weekly meeting with Brian. 
+- Will let him know I changed the mutation function to use exponential deviates based on both mutation and indel rates and select the lowest of both and either mutate or insert/delete accordingly
+- QUESTION: Models - What are the models we are using for indel and mutation rates? Stepwise Model IDK
+- ANSWER - The model we are using for mutation is just uniform where the exponential deviate is only dependent on the mutation rate. In the case of indels, deviate is dependent on the length of the
+  repeat, multiplied by the indel rate. These are the two models
+- QUESTION: Are accepted paramters producing the posterior distribution? Just Need to check this - Still need to check this
+- QUESTION: How can I move to the new parameter value with a certain probability if I dont calculate h=min(1, large equation)
+- ANSWER We are just going to use distance as the probability right now.
+- QUESTION: What should I set initial indel and mutation rates to? - did not ask this
+
+Today I am going to try to add an if statement to see if the distance satisfies the threshold condition. - Did not get to this today
+
+NOVEMBER 18 2022 - Today I will try and add an if statement to see if distance satisfies threshold condition
+- I also need to store variables like mutation rate, indel rate, and all those things so I can change them as we go
+- Moved createseq.cpp function into mutations_2.cpp so I could use ran to generate the protein sequence!
+- Added in correct normal deviate generator using ratio of uniforms - Not going to use box-muller method anymore, added new function in function.cpp -
+  this function also comes from numerical recipes thrid edition.
+- Added a lot of code into my main abcmcmc.cpp file. Added way to propose new parameter using normal deviate function which takes mean and stddev
+  parameter. Wrote a loop to propose these new values and within this loop, I have a loop that mutates the protein. The function seems to working well and
+today was a very productive day. I am going to push all these updates to github to keep testing
+- Next steps, try to print out the vector of accepted parameter values! We need to also figure out the results, what to show, what does it mean, ask
+  Brian. Read some papers to figure this out as well. What do we do with accepted parameters and how do we incorporate probability into that?
+- Also start to work on the powerpoint presentation for my BEAP presentation.

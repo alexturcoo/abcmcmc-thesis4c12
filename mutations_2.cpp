@@ -12,6 +12,25 @@ using namespace std;
 
 Ran myran(time(NULL)); //We will use 21 as the random seed right now, used in Poissondev too
 
+////////////////////////////////////////////////////////////////
+// FIRST FUNCTION TAKES AN INTEGER VALUE AND GENERATES A RANDOM/
+// AMINO ACID SEQUENCE OF THAT LENGTH                          / 
+////////////////////////////////////////////////////////////////
+
+std::string createSeq(int n){
+
+    char aminoAcids[numAA] = { 'G', 'A', 'L', 'M', 'F', 'W', 'K', 'Q', 'E', 'S', 'P', 'V', 
+                                   'I', 'C', 'Y', 'H', 'R', 'N', 'D', 'T' };
+
+    std::string protein = "";
+    for (int i = 0; i < n; i++){
+        protein += aminoAcids[myran.int64() % numAA];} //this rand() % 20 means in the range 0-19
+    
+    //std::cout << protein << "\n" << "\n" ;
+    return protein;
+}
+
+
 /*THIS FUNCTION WILL MUTATE THE SIMULATED PROTEIN SEQUENCE
 BY CHOOSING A RANDOM EXPONENTIAL DEVIATE (WITH MEAN = MUTATION RATE)
 FOR EACH AMINO ACID IN THE SEQUENCE AND SUBSEQUENTLY SELECTING
@@ -105,7 +124,7 @@ std::string mutateSeqExp(std::string simulated_protein){
             char random_AA = aminoAcids[myran.int64() % numAA]; // sets up the random amino acid, same used in first function to createSeq
             int position2 = getIndex(exp_deviates_vtr_mut, min_mut);
             simulated_protein[position2] = random_AA; // indexes the simulated protein at a random spot and replaces the existing AA with a new random one
-            std::cout << position2 << "\n";
+            //std::cout << position2 << "\n";
         }
 
     } else {
@@ -123,15 +142,25 @@ std::string mutateSeqExp(std::string simulated_protein){
     }
 
     //printing out this stuff to check its working
-    std::cout << min_mut << "\n" << min_ind << "\n" << smallest_num << "\n" << position <<  "\n";
+    //std::cout << min_mut << "\n" << min_ind << "\n" << smallest_num << "\n" << position <<  "\n";
 
     // THIS IS JUST TO PRINT THE VECTOR
-    for (int x = 0; x < exp_deviates_vtr_ind.size(); x++) {
-        std::cout << exp_deviates_vtr_ind[x] << ' ';
-    }
+    //for (int x = 0; x < exp_deviates_vtr_ind.size(); x++) {
+    //    std::cout << exp_deviates_vtr_ind[x] << ' ';
+    //}
     
     std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
     return simulated_protein;
+}
+
+
+
+
+double getNormalDev(double mu, double stdev) {
+    Normaldev mynorm(mu, stdev, myran.int64());
+    double dev = mynorm.dev();
+    //std::cout << dev << "\n";
+    return dev;
 }
 
 //int main() {

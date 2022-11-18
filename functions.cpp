@@ -49,7 +49,9 @@ struct Expondev : Ran {
 	}
 };
 
-//I dont know if this is the right normal distribution function
+// This code is for generating normal deviates by the Box-Muller
+// method - consider it for pedagogical use only. Below is a
+// significantly faster method for generating normal deviates
 struct Normaldev_BM : Ran {
 	double mu,sig;
 	double storedval;
@@ -72,6 +74,26 @@ struct Normaldev_BM : Ran {
 			return mu + sig*fac;
 		}
 	}
+};
+
+// Normal Deviates by Ratio-of-Uniforms
+// faster method than above
+
+struct Normaldev : Ran {
+    double mu, sig;
+    Normaldev(double mmu, double ssig, unsigned long long int i)
+    : Ran(i), mu(mmu), sig(ssig){}
+    double dev() {
+        double u,v,x,y,q;
+        do {
+            u = doub();
+            v = 1.7156*(doub()-0.5);
+            x = u - 0.449871;
+            y = abs(v) + 0.386595;
+            q = sqrt(x) + y*(0.19600*y-0.25472*x);
+        } while (q > 0.27597 && (q > 0.27846 || sqrt(v) > -4.*log(u)*sqrt(u)));
+        return mu + sig*v/u;
+    }
 };
 
 //CONSTRUCTOR ARGUMENTS ARE LAMBDA AND A RANDOM SEED SEQUENCE
