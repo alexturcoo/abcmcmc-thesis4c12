@@ -367,3 +367,10 @@ today was a very productive day. I am going to push all these updates to github 
 - Next steps, try to print out the vector of accepted parameter values! We need to also figure out the results, what to show, what does it mean, ask
   Brian. Read some papers to figure this out as well. What do we do with accepted parameters and how do we incorporate probability into that?
 - Also start to work on the powerpoint presentation for my BEAP presentation.
+
+November 21 2022 - Today I moved my beap presentation slide deck from my linux machine onto Brians machine and github.
+- Started preparing an outline for my presentation in latex, looks pretty good actually.
+- I have a few questions for Brian concerning how Im gonna collect results for this. I also still need to figure if the accepted parameters are forming a posterior
+distribution
+- Continue to try and get some results, get some graphs under different parameters etc WE NEED RESULTS XANDER. But also start filling out presentation now and lay the rest
+of the slides down and take notes and kill this presentation.
