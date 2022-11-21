@@ -1,3 +1,5 @@
 \beamer@sectionintoc {1}{Introduction}{1}{0}{1}
-\beamer@sectionintoc {2}{Lists in Beamer}{3}{0}{2}
-\beamer@sectionintoc {3}{Blocks in Beamer}{4}{0}{3}
+\beamer@sectionintoc {2}{Background}{3}{0}{2}
+\beamer@sectionintoc {3}{Research Questions/Exploration}{9}{0}{3}
+\beamer@sectionintoc {4}{Experimental Approach}{10}{0}{4}
+\beamer@sectionintoc {5}{Blocks in Beamer}{12}{0}{5}

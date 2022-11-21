@@ -1,12 +1,16 @@
 % Inbuilt themes in beamer
 \documentclass{beamer}
 
+
+%Defining some colours
+\definecolor{darkred}{rgb}{0.8,0,0}
+
 % Theme choice: there a number of preset themes to choose from
 % Play around with them, Cambridge is nice for first pres
 %\usetheme{Szeged}
 \usetheme{CambridgeUS} %setting the main theme
-\usecolortheme{beaver} % setting colour theme
-%\usefonttheme{} %font theme
+%\usecolortheme{beaver} % setting colour theme
+\usefonttheme{professionalfonts} %font theme
 %\useinnertheme{} %inner theme
 %\useoutertheme{} %outer theme
 
@@ -17,6 +21,9 @@
 \setbeamertemplate{navigation symbols}{} %removes navigation symbols
 \setbeamertemplate{footline}[page number] %removes footer line, keeps pg#
 
+%Setting colours for boxes
+\setbeamercolor{block title}{bg=darkred, fg=white}
+\setbeamercolor{block body}{bg=darkred!10}
 
 
 % Title page details: 
@@ -27,44 +34,93 @@
 
 \begin{document}
 	
+	% For my introduction slides, there will be the slide with my title and name as well as an outline slide with the brief overview of what I will discuss.
+	% Title page frame - SLIDE 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Introduction}
-	% Title page frame
 	\begin{frame}
 		\titlepage 
 	\end{frame}
-
 	
 	% Remove logo from the next slides
 	\logo{}
 	
+	% Outline frame - SLIDE 2
+	\begin{frame}{Overview}
+		
+		\begin{center}
+		\begin{minipage}{6cm}
+				
+		  		\begin{block}{} Background information \end{block}
+		  		\begin{block}{} Research Questions/Explorations \end{block}
+		  		\begin{block}{} Experimental Approach \end{block}
+		  		\begin{block}{} Results \end{block}
+
+		\end{minipage}
+		\end{center}
 	
-	% Outline frame
-	\begin{frame}{Outline}
-		\tableofcontents
 	\end{frame}
 	
-	
-	% Lists frame
-	\section{Lists in Beamer}
-	\begin{frame}{Lists in Beamer}
+	% For my Background slides, I will talk about important things such as
+	%SLIDE 3 - WHAT ARE LCRs%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Background}
+	\begin{frame}{What are LCR's?}
 		
-		This is an unordered list:
-		\begin{itemize}
-			\item Item 1
-			\item Item 2
-			\item Item 3
-		\end{itemize}
-		
-		and this is an ordered list:
-		\begin{enumerate}
-			\item Item 1
-			\item Item 2
-			\item Item 3
-		\end{enumerate}
 		
 	\end{frame}
+
+	%SLIDE 4 - I do Not Know if I am including this slide
+	\begin{frame}{Information and Entropy Content - MAYBE }
 	
 	
+	\end{frame}
+
+	%SLIDE 5 - LCR's PRESENT IN UNIQUE WAYS
+	\begin{frame}{LCR's Present in Unique Ways }
+	
+	
+	\end{frame}
+
+	%SLIDE 6 LCRs are hypermutable
+	\begin{frame}{LCR's are Hypermutable }
+	
+	
+	\end{frame}
+
+	%SLIDE 7 - Mechanisms of LCR Evolution
+	\begin{frame}{Proposed Mechanisms of LCR Evolution }
+	
+	
+	\end{frame}
+
+	%SLIDE 9 - Why Care About LCR Evolution?
+	\begin{frame}{Why Care about LCRs and Their Evolution? }
+	
+	
+	\end{frame}
+
+	%For my Research questions/Exploration slides, I will talk about things such as
+	%SLIDE 10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Research Questions/Exploration}
+	\begin{frame}{What will this Study Explore?}
+		
+		
+	\end{frame}
+
+	%For my Experimental approach slides, I will talk about things such as 
+	%SLIDE 11
+	\section{Experimental Approach}
+	\begin{frame}{What Approach will be Taken?}
+	
+	
+	\end{frame}
+
+	%SLIDE 12
+	\begin{frame}{Why use an ABC-MCMC}
+	
+	
+	\end{frame}
+	
+		
 	% Blocks frame
 	\section{Blocks in Beamer}
 	\begin{frame}{Blocks in Beamer}
