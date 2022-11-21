@@ -29,18 +29,18 @@ int main() {
     std::vector<double> ind_rate_vtr;
 
     //First for loop is for the number of simulations
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 1000000; i++) {
         // 0. Proposing new parameter values
         double new_mut_rate = getNormalDev(mean, stdev) + mutation_rate;
         double new_indel_rate = getNormalDev(mean, stdev) + indel_rate;
 
         // 1. We need to generate the random protein sequence
-        std::string simulated_protein = createSeq(15);
+        std::string simulated_protein = createSeq(400);
 
         // 2. Next we need to mutate the simulated protein
         // Going to try and mutate over 2 gens
         // this for loop is just to mutate the protein
-        for (int j = 0; j < 2; j++){
+        for (int j = 0; j < 4000; j++){
             std::string mutated_protein = mutateSeqExp(simulated_protein);
             simulated_protein = mutated_protein;
         }
