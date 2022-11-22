@@ -374,3 +374,7 @@ November 21 2022 - Today I moved my beap presentation slide deck from my linux m
 distribution
 - Continue to try and get some results, get some graphs under different parameters etc WE NEED RESULTS XANDER. But also start filling out presentation now and lay the rest
 of the slides down and take notes and kill this presentation.
+
+November 22 2022 - Today I continued working on my beap presentation slides.
+- Added hyperlinks in outline slide to go to the beginning of each section
+- added content for my third slide, looking good, lets keep going, taking a break rn

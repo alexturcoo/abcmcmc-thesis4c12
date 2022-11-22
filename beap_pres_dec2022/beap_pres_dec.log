@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.21)  21 NOV 2022 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.21)  22 NOV 2022 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -790,7 +790,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./beap_pres_dec.nav)
-<logo.png, id=45, 305.14pt x 326.21875pt>
+<logo.png, id=53, 305.14pt x 326.21875pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 42.
@@ -798,13 +798,13 @@ Package pdftex.def Info: logo.png  used on input line 42.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./logo.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -832,6 +832,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [12
 
+] [13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
 ]
 \tf@nav=\write6
 \openout6 = `beap_pres_dec.nav'.
@@ -844,23 +854,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  (./beap_pres_dec.aux)
 Package rerunfilecheck Info: File `beap_pres_dec.out' has not changed.
-(rerunfilecheck)             Checksum: 032DEECED40F8B99E455BDA00EABE4EB;672.
+(rerunfilecheck)             Checksum: 56C6ED073ADDE2A9B36785DB4509CFE7;843.
  ) 
 Here is how much of TeX's memory you used:
- 21592 strings out of 480247
- 422483 string characters out of 5896150
- 669231 words of memory out of 5000000
- 39072 multiletter control sequences out of 15000+600000
- 475419 words of font info for 51 fonts, out of 8000000 for 9000
+ 21641 strings out of 480247
+ 423296 string characters out of 5896150
+ 670264 words of memory out of 5000000
+ 39107 multiletter control sequences out of 15000+600000
+ 475775 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,15n,104p,393b,590s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on beap_pres_dec.pdf (12 pages, 75827 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb>
+Output written on beap_pres_dec.pdf (17 pages, 101790 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 464 words of extra memory for PDF output out of 10000 (max. 10000000)
 
