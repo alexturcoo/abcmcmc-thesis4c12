@@ -84,9 +84,12 @@
 
 	% SLIDE 4 - I do Not Know if I am including this slide
 	% The Graphic for this slide is an  
-	\begin{frame}{Information and Entropy Content - MAYBE }
-	
-	
+	% Entropy, which is measured by Shannon's Entropy equation is a measure of compositional complexity which uses the proportion of residue(s)
+	% in a subsequence to measure the compositional state of that subseequence - A lower variety of residues = lower entropy 
+	\begin{frame}{Shannon's Entropy - MAYBE }
+		
+			$H = -L\sum p_i log_2(p_i)$
+		
 	\end{frame}
 
 	%SLIDE 5 - LCR's PRESENT IN UNIQUE WAYS
@@ -136,14 +139,30 @@
 	\end{frame}
 
 	%Slide 12 - Here put the ABC-MCMC algorithm described by Marjoram (one Brian used in his MCMC slides)
-	\begin{frame}{ABC-MCMC Algorithm}
+	\begin{frame}{MCMC for ABC}
+		
+		\begin{enumerate}
+			\item Propose a move from $\theta$ to $\theta'$ according to a transition kernel $q(\theta,\theta')$.
+			\item Generate simulated dataset $D'$ using $\theta'$ and calculate $S'$.
+			\item If $\rho(S', S) \le \epsilon$ continue to 4, otherwise remain at $\theta$ and go to 1.
+			\item Calculate \newline \begin{center}$\alpha(\theta, \theta') = min(1, \frac{\pi(\theta')q(\theta',\theta)}{\pi(\theta)q(\theta, \theta')})$ \end{center}
+			\item Accept $\theta'$ with probability $\alpha$, otherwise stay at $\theta$.
+			\item Return to 1.
+		\end{enumerate}
 	
 	
 	\end{frame}
 
 	%Slide 13 - Here we put MY version of the algorithm - We could also put these on the same slide and just compare! SLIDE 14 AND 15
 	\begin{frame}{ABC-MCMC Algorithm - MY VERSION}
-	
+		
+		\begin{enumerate}
+			\item 
+			\item
+			\item
+			\item
+			\item
+		\end{enumerate}
 	
 	\end{frame}
 
