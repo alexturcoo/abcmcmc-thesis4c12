@@ -378,3 +378,9 @@ of the slides down and take notes and kill this presentation.
 November 22 2022 - Today I continued working on my beap presentation slides.
 - Added hyperlinks in outline slide to go to the beginning of each section
 - added content for my third slide, looking good, lets keep going, taking a break rn
+
+November 23 2022 - Today I actually fixed up the changes that Brian made on my literature review
+- Fixed the bibliography because Journal names were not capitalized
+- OA genet for marjoram 2013 ABC article is the journal so if he asks show him that, couldnt fix it because that is the journal
+- Fixed up citations where Brian said he did not suggest something first, same with Mirkin comment
+- Today I will also continue working on my powerpoint, maybe try to add in algorithm slide or something. ADD LOTS OF SLIDES COME ON XANDER
