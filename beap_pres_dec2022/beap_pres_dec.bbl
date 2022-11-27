@@ -1,0 +1,134 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{levinson1987slipped}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3cd7b9d1326cbe7cd65499451963b379}{%
+           family={Levinson},
+           familyi={L\bibinitperiod},
+           given={Gene},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5cd0c770fe4d4f18413dddca70ded6e1}{%
+           family={Gutman},
+           familyi={G\bibinitperiod},
+           given={George\bibnamedelima A},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c490bd31d0fe481f2bb222da897c7043}
+      \strng{fullhash}{c490bd31d0fe481f2bb222da897c7043}
+      \strng{bibnamehash}{c490bd31d0fe481f2bb222da897c7043}
+      \strng{authorbibnamehash}{c490bd31d0fe481f2bb222da897c7043}
+      \strng{authornamehash}{c490bd31d0fe481f2bb222da897c7043}
+      \strng{authorfullhash}{c490bd31d0fe481f2bb222da897c7043}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Molecular Biology and Evolution}
+      \field{number}{3}
+      \field{title}{Slipped-strand mispairing: a major mechanism for DNA sequence evolution.}
+      \field{volume}{4}
+      \field{year}{1987}
+      \field{pages}{203\bibrangedash 221}
+      \range{pages}{19}
+    \endentry
+    \entry{newfeld1991interspecific}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=08ad5fe62f465a749e4228d2f71b22a5}{%
+           family={Newfeld},
+           familyi={N\bibinitperiod},
+           given={Stuar\bibnamedelima J},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=884b10a2fca2c804e21bcf00967fcb80}{%
+           family={Smoller},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1f69042b3636bb1a9312a7dff92e35b2}{%
+           family={Yedvobnick},
+           familyi={Y\bibinitperiod},
+           given={Barry},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c603207a39d3bcc05106ee955730e0fd}
+      \strng{fullhash}{c603207a39d3bcc05106ee955730e0fd}
+      \strng{bibnamehash}{c603207a39d3bcc05106ee955730e0fd}
+      \strng{authorbibnamehash}{c603207a39d3bcc05106ee955730e0fd}
+      \strng{authornamehash}{c603207a39d3bcc05106ee955730e0fd}
+      \strng{authorfullhash}{c603207a39d3bcc05106ee955730e0fd}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Molecular Evolution}
+      \field{number}{5}
+      \field{title}{Interspecific comparison of the unusually repetitiveDrosophila locusmastermind}
+      \field{volume}{32}
+      \field{year}{1991}
+      \field{pages}{415\bibrangedash 420}
+      \range{pages}{6}
+    \endentry
+    \entry{sehn2015insertions}{incollection}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7c837362e9ea011d2340917c7d5b2ccb}{%
+           family={Sehn},
+           familyi={S\bibinitperiod},
+           given={Jennifer\bibnamedelima K},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{7c837362e9ea011d2340917c7d5b2ccb}
+      \strng{fullhash}{7c837362e9ea011d2340917c7d5b2ccb}
+      \strng{bibnamehash}{7c837362e9ea011d2340917c7d5b2ccb}
+      \strng{authorbibnamehash}{7c837362e9ea011d2340917c7d5b2ccb}
+      \strng{authornamehash}{7c837362e9ea011d2340917c7d5b2ccb}
+      \strng{authorfullhash}{7c837362e9ea011d2340917c7d5b2ccb}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Clinical genomics}
+      \field{title}{Insertions and deletions (indels)}
+      \field{year}{2015}
+      \field{pages}{129\bibrangedash 150}
+      \range{pages}{22}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

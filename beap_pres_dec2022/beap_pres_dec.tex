@@ -22,12 +22,29 @@
 \setbeamercolor{block title}{bg=darkred, fg=white}
 \setbeamercolor{block body}{bg=darkred!10}
 
+%Trying this out for captions
+\setbeamertemplate{caption}{%
+	\begin{beamercolorbox}[wd=.5\columnwidth, sep=.2ex]{block body}\insertcaption%
+	\end{beamercolorbox}%
+}
+
+
+
+
 
 % Title page details: 
 \title[BEAP Dec 2022]{Estimating Evolutionary Parameters for Protein Low Complexity Regions using an Approximate Bayesian Computation} 
 \author{Alexander Turco}
 \date{\today}
 \logo{\includegraphics[height=1cm, width=1cm]{logo.png}}
+
+% Bibliography stuff
+\usepackage[natbib=true, sorting=nyt, style=authoryear-comp]{biblatex}
+\addbibresource{ABC1.bib}
+
+%Extra packages
+\usepackage{makecell}
+
 
 \begin{document}
 	
@@ -123,15 +140,63 @@
 	\end{frame}
 
 	%SLIDE 6 LCRs are hypermutable
+	% Maybe change the lines from the fly to dashed - as per photo Lauren Sent
 	\begin{frame}{LCR's are Hypermutable }
+		
+		
+		\begin{center}	
+		\includegraphics[width=8cm, height=3cm]{drosophila.png}
+		\end{center}
 	
+		\begin{center}	
+		\begin{tabular}{|cccc|}
+			\hline
+			\makecell{\textbf{mam} \\ \textbf{domain}} & \textbf{Size (bp)} & \makecell{\textbf{Amino Acid} \\ \textbf{Substitutions}} & \makecell{\textbf{Amino Acid/} \\ \textbf{Total Substitutions}}  \\ 
+			\hline
+			Unique & 933 & 26 & 0.15\\ 
+			\hline
+			Repetitive & 810 & 47 & 0.42\\ 
+			\hline
+		\end{tabular}\newline\newline
+		\end{center}
 	
+	%\footer{\tiny\citep{newfeld1991interspecific}}
+	\footnotetext[1]{\tiny\cite{newfeld1991interspecific}}	
 	\end{frame}
 
 	%SLIDE 7 - Mechanisms of LCR Evolution
-	\begin{frame}{Proposed Mechanisms of LCR Evolution }
+	\begin{frame}{Proposed Mechanisms of LCR Evolution}
+		\textit{1. Polymerase Slippage/Slipped Strand Mispairing}
+		\begin{columns}
+			
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[width=\columnwidth, height=2.5cm]{slippage2.png} \\~\\
+				\caption{\centering Polymerase Slips Forward}
+			\end{figure}
+			
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[width=\columnwidth, height=2.5cm]{slippage1.png} \\~\\
+				\caption{\centering Polymerase Slips Backwards}
+			\end{figure}
+		
+		\end{columns}
+	
+	\footnotetext[2]{\tiny\cite{levinson1987slipped,sehn2015insertions}}
+	\end{frame}
 
-
+	%SLIDE 8 - Mechanisms of LCR Evolution
+	\begin{frame}{Proposed Mechanisms of LCR Evolution}
+		\textit{2. Unequal Recombination} \newline\newline
+		
+		\begin{figure}
+			\includegraphics[width=8cm, height=1.8cm]{unequal.png} \\~\\
+		\end{figure}
+		
+	\footnotetext[3]{\tiny\cite{levinson1987slipped,sehn2015insertions}}	
 	\end{frame}
 	
 	%SLIDE 8 - Why Care About LCR Evolution?
@@ -178,20 +243,22 @@
 	\end{frame}
 
 	%Slide 13 - Here we put MY version of the algorithm - We could also put these on the same slide and just compare! SLIDE 14 AND 15
-	\begin{frame}{ABC-MCMC Algorithm - MY VERSION}
+	%Should I put the equation for calculating distance in this slide? or at the end in the appendix idk yet.
+	\begin{frame}{MCMC for ABC: Modified Algorithm}
 		
 		\begin{enumerate}
-			\item 
-			\item
-			\item
-			\item
-			\item
+			\item Propose a move from $\theta$ to $\theta'$ according to the normal distribution
+			\item Create a random protein sequence and mutate over many generations using $\theta'$ to generate simulated Dataset $D'$
+			\item Calculate summary statistics for simulated dataset $D'$ 
+			\item If $d(S',S) \le \epsilon$, go to next step, otherwise stay at $\theta$ and return to 1
+			\item Accept $\theta'$ with probability ?? Ask Brian ab this again lol
+			\item Return to step 1
 		\end{enumerate}
 	
 	\end{frame}
 
 	%Slide 14 - Maybe to this slide - Maybe throw in extra slides for reference
-	\begin{frame}{Simulation Step}
+	\begin{frame}{Simulation Step - MAYBE}
 	
 	
 	\end{frame}
