@@ -11,25 +11,25 @@
 \usetheme{CambridgeUS} %setting the main theme
 %\usecolortheme{beaver} % setting colour theme
 \usefonttheme{professionalfonts} %font theme
-%\useinnertheme{} %inner theme
+\useinnertheme[shadow=true]{rounded}
 %\useoutertheme{} %outer theme
 
 %\setbeamertemplate{footline} %Remove footer line in all slides
 \setbeamertemplate{navigation symbols}{} %removes navigation symbols
 \setbeamertemplate{footline}[page number] %removes footer line, keeps pg#
+\setbeamertemplate{caption}{\insertcaption} 
 
-%Setting colours for boxes
+%Setting colours for boxes and captions
 \setbeamercolor{block title}{bg=darkred, fg=white}
 \setbeamercolor{block body}{bg=darkred!10}
 
-%Trying this out for captions
-\setbeamertemplate{caption}{%
-	\begin{beamercolorbox}[wd=.5\columnwidth, sep=.2ex]{block body}\insertcaption%
-	\end{beamercolorbox}%
-}
-
-
-
+% For the Flowchart
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 
 % Title page details: 
@@ -44,6 +44,10 @@
 
 %Extra packages
 \usepackage{makecell}
+
+%For itemize
+\setbeamertemplate{itemize item}[triangle]
+
 
 
 \begin{document}
@@ -118,7 +122,7 @@
 	
 		\begin{center}
 			\includegraphics[width=5cm, height=1cm]{poyglut.png}
-		\end{center}
+		\end{center} \pause
 	
 		\begin{alertblock}{Direpeats}
 			Consecutive iterations of two ordered, different residues
@@ -126,7 +130,7 @@
 	
 		\begin{center}
 			\includegraphics[width=5cm, height=1cm]{direpeat.png}
-		\end{center}
+		\end{center} \pause
 
 		\begin{alertblock}{Tandem Repeats}
 			Sequence of residues which are repeated a number of times
@@ -173,14 +177,14 @@
 			\centering
 			\begin{figure}
 				\includegraphics[width=\columnwidth, height=2.5cm]{slippage2.png} \\~\\
-				\caption{\centering Polymerase Slips Forward}
+				\caption{\centering \textbf{Polymerase Slips Forward}}
 			\end{figure}
 			
 			\column{0.5\textwidth}
 			\centering
 			\begin{figure}
 				\includegraphics[width=\columnwidth, height=2.5cm]{slippage1.png} \\~\\
-				\caption{\centering Polymerase Slips Backwards}
+				\caption{\centering \textbf{Polymerase Slips Backwards}}
 			\end{figure}
 		
 		\end{columns}
@@ -202,14 +206,58 @@
 	%SLIDE 8 - Why Care About LCR Evolution?
 	\begin{frame}{Why Care about LCRs and Their Evolution? }
 	
+	\begin{center}	
+		\begin{tikzpicture}[node distance=2cm]
+			\node[startstop] (1) {Disease};
+			\node[startstop, right of=1, xshift=2cm] (2) {Biological Processes};
+			\node[startstop, right of=2, xshift=2cm] (3) {Presence in Bacteria};
+			\node[startstop, above=2, xshift=4cm, yshift=1cm] (4) {LCR's};
+			
+			\draw [arrow] (4) -- (1);
+			\draw [arrow] (4) -- (2);
+			\draw [arrow] (4) -- (3);
+			
+		\end{tikzpicture}
+	\end{center}
+
+		\begin{columns}
+			
+			\column{0.33\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[width=\columnwidth, height=2.5cm]{huntington.jpg} \\~\\
+				\caption{\centering \textit{Huntington's Disease}}
+			\end{figure}
+			
+			\column{0.33\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[width=2.5cm, height=2.5cm]{chrom.png} \\~\\
+				\caption{\centering \textit{Genetic Recombination}}
+			\end{figure}
+		
+			\column{0.33\textwidth}
+			\centering
+			\begin{figure}
+				\vspace{-0.4cm}
+				\includegraphics[width=\columnwidth, height=2.5cm]{menin.jpg} \\~\\
+				\caption{\centering \textit{Neisseria meningitidis}}
+			\end{figure}
+			
+		\end{columns}
 	
 	\end{frame}
 
 	%For my Research questions/Exploration slides, I will talk about things such as
 	%SLIDE 9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Research Questions/Exploration}
+	
 	\begin{frame}{What will this Study Explore?}
-		
+		\begin{itemize}
+			\item Estimation of evolutionary parameters (mutation rate, indel rates) \newline
+			\item Various models of insertions and deletions \newline
+			\item Summary statistics which best explain data
+		\end{itemize}
 		
 	\end{frame}
 
@@ -239,19 +287,19 @@
 			\item Return to 1.
 		\end{enumerate}
 	
-	
+		\footnotetext[3]{\tiny\cite{marjoram2003markov}}	
 	\end{frame}
 
 	%Slide 13 - Here we put MY version of the algorithm - We could also put these on the same slide and just compare! SLIDE 14 AND 15
 	%Should I put the equation for calculating distance in this slide? or at the end in the appendix idk yet.
 	\begin{frame}{MCMC for ABC: Modified Algorithm}
-		
+	
 		\begin{enumerate}
-			\item Propose a move from $\theta$ to $\theta'$ according to the normal distribution
-			\item Create a random protein sequence and mutate over many generations using $\theta'$ to generate simulated Dataset $D'$
-			\item Calculate summary statistics for simulated dataset $D'$ 
-			\item If $d(S',S) \le \epsilon$, go to next step, otherwise stay at $\theta$ and return to 1
-			\item Accept $\theta'$ with probability ?? Ask Brian ab this again lol
+			\item Propose a move from $\theta$ to $\theta'$ according to the normal distribution \pause
+			\item Create a random protein sequence and mutate over many generations using $\theta'$ to generate simulated Dataset $D'$ \pause
+			\item Calculate summary statistics for simulated dataset $D'$ \pause
+			\item If $d(S',S) \le \epsilon$, go to next step, otherwise stay at $\theta$ and return to 1 \pause
+			\item Accept $\theta'$ with probability ?? Ask Brian ab this again lol \pause
 			\item Return to step 1
 		\end{enumerate}
 	
@@ -275,7 +323,6 @@
 	%SLIDE 16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Conclusion}
 	\begin{frame}{Conclusion/Future Work}
-		
 		
 	\end{frame}
 		

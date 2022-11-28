@@ -54,6 +54,56 @@
       \field{pages}{203\bibrangedash 221}
       \range{pages}{19}
     \endentry
+    \entry{marjoram2003markov}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=8975150812eeabfb3955083a402560e1}{%
+           family={Marjoram},
+           familyi={M\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9557976d10e3a1cedaea0829bc261066}{%
+           family={Molitor},
+           familyi={M\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8fac4e88e17173616e8df6a01b02b83e}{%
+           family={Plagnol},
+           familyi={P\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=82612528b855cb223ff1e88634cdabca}{%
+           family={Tavaré},
+           familyi={T\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {National Acad Sciences}%
+      }
+      \strng{namehash}{2701f5eb6f456f52e3b732678437d117}
+      \strng{fullhash}{4e6e69f033547be3d0e74423a698cd8a}
+      \strng{bibnamehash}{2701f5eb6f456f52e3b732678437d117}
+      \strng{authorbibnamehash}{2701f5eb6f456f52e3b732678437d117}
+      \strng{authornamehash}{2701f5eb6f456f52e3b732678437d117}
+      \strng{authorfullhash}{4e6e69f033547be3d0e74423a698cd8a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{26}
+      \field{title}{Markov chain Monte Carlo without likelihoods}
+      \field{volume}{100}
+      \field{year}{2003}
+      \field{pages}{15324\bibrangedash 15328}
+      \range{pages}{5}
+    \endentry
     \entry{newfeld1991interspecific}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=08ad5fe62f465a749e4228d2f71b22a5}{%

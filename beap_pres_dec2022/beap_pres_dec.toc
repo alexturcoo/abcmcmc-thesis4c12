@@ -1,7 +1,7 @@
 \beamer@sectionintoc {1}{Introduction}{1}{0}{1}
 \beamer@sectionintoc {2}{Background}{3}{0}{2}
-\beamer@sectionintoc {3}{Research Questions/Exploration}{10}{0}{3}
-\beamer@sectionintoc {4}{Experimental Approach}{11}{0}{4}
-\beamer@sectionintoc {5}{Results}{16}{0}{5}
-\beamer@sectionintoc {6}{Conclusion}{17}{0}{6}
-\beamer@sectionintoc {7}{Blocks in Beamer}{18}{0}{7}
+\beamer@sectionintoc {3}{Research Questions/Exploration}{12}{0}{3}
+\beamer@sectionintoc {4}{Experimental Approach}{13}{0}{4}
+\beamer@sectionintoc {5}{Results}{23}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{24}{0}{6}
+\beamer@sectionintoc {7}{Blocks in Beamer}{25}{0}{7}
