@@ -400,4 +400,7 @@ November 28 2022 - ABC toolkit - toolkit that helps running ABC MCMC
 - I also added some code to my abcmcmc.cpp file which basically calculates 10 vectors of summary statistics for the same parameter and then
   the function I mentioned above takes those 10 vectors and finds the average of them - I did this using a vector of vectors super cool haha
 - Next steps are to get some graphs going and to ask Brian about the threshold lol.
-- Powerpoint is almost done, need to begin writing script and practicing.  
+- Powerpoint is almost done, need to begin writing script and practicing. 
+- Code is up to date and it is now calculating 10 vectors of summary statistics for one parameter and getting an average which is then compared to the observed data
+- The values are not being accepted yet, I have not seen one be accepted and so we need to figure this out - also need to figure out the changing threshold issue.
+- Also started writing script to practice my presentation.
