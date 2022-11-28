@@ -104,6 +104,38 @@
       \field{pages}{15324\bibrangedash 15328}
       \range{pages}{5}
     \endentry
+    \entry{mirkin2007expandable}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=71275d7310ad1871e0039b450810c883}{%
+           family={Mirkin},
+           familyi={M\bibinitperiod},
+           given={Sergei\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{71275d7310ad1871e0039b450810c883}
+      \strng{fullhash}{71275d7310ad1871e0039b450810c883}
+      \strng{bibnamehash}{71275d7310ad1871e0039b450810c883}
+      \strng{authorbibnamehash}{71275d7310ad1871e0039b450810c883}
+      \strng{authornamehash}{71275d7310ad1871e0039b450810c883}
+      \strng{authorfullhash}{71275d7310ad1871e0039b450810c883}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{7147}
+      \field{title}{Expandable DNA repeats and human disease}
+      \field{volume}{447}
+      \field{year}{2007}
+      \field{pages}{932\bibrangedash 940}
+      \range{pages}{9}
+    \endentry
     \entry{newfeld1991interspecific}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=08ad5fe62f465a749e4228d2f71b22a5}{%

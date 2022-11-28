@@ -30,33 +30,28 @@
 \headcommand {\beamer@sectionpages {12}{12}}
 \headcommand {\beamer@subsectionpages {12}{12}}
 \headcommand {\sectionentry {4}{Experimental Approach}{13}{Experimental Approach}{0}}
-\headcommand {\slideentry {4}{0}{1}{13/13}{}{0}}
-\headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {4}{0}{2}{14/14}{}{0}}
-\headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {4}{0}{3}{15/15}{}{0}}
-\headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {4}{0}{4}{16/21}{}{0}}
-\headcommand {\beamer@framepages {16}{21}}
-\headcommand {\slideentry {4}{0}{5}{22/22}{}{0}}
-\headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@sectionpages {13}{22}}
-\headcommand {\beamer@subsectionpages {13}{22}}
-\headcommand {\sectionentry {5}{Results}{23}{Results}{0}}
-\headcommand {\slideentry {5}{0}{1}{23/23}{}{0}}
-\headcommand {\beamer@framepages {23}{23}}
-\headcommand {\beamer@sectionpages {23}{23}}
-\headcommand {\beamer@subsectionpages {23}{23}}
-\headcommand {\sectionentry {6}{Conclusion}{24}{Conclusion}{0}}
-\headcommand {\slideentry {6}{0}{1}{24/24}{}{0}}
+\headcommand {\slideentry {4}{0}{1}{13/14}{}{0}}
+\headcommand {\beamer@framepages {13}{14}}
+\headcommand {\slideentry {4}{0}{2}{15/16}{}{0}}
+\headcommand {\beamer@framepages {15}{16}}
+\headcommand {\slideentry {4}{0}{3}{17/17}{}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {4}{0}{4}{18/23}{}{0}}
+\headcommand {\beamer@framepages {18}{23}}
+\headcommand {\slideentry {4}{0}{5}{24/24}{}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\beamer@sectionpages {24}{24}}
-\headcommand {\beamer@subsectionpages {24}{24}}
-\headcommand {\sectionentry {7}{Blocks in Beamer}{25}{Blocks in Beamer}{0}}
-\headcommand {\slideentry {7}{0}{1}{25/25}{}{0}}
+\headcommand {\beamer@sectionpages {13}{24}}
+\headcommand {\beamer@subsectionpages {13}{24}}
+\headcommand {\sectionentry {5}{Results}{25}{Results}{0}}
+\headcommand {\slideentry {5}{0}{1}{25/25}{}{0}}
 \headcommand {\beamer@framepages {25}{25}}
-\headcommand {\beamer@partpages {1}{25}}
-\headcommand {\beamer@subsectionpages {25}{25}}
 \headcommand {\beamer@sectionpages {25}{25}}
-\headcommand {\beamer@documentpages {25}}
-\headcommand {\gdef \inserttotalframenumber {18}}
+\headcommand {\beamer@subsectionpages {25}{25}}
+\headcommand {\sectionentry {6}{Conclusion}{26}{Conclusion}{0}}
+\headcommand {\slideentry {6}{0}{1}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@partpages {1}{26}}
+\headcommand {\beamer@subsectionpages {26}{26}}
+\headcommand {\beamer@sectionpages {26}{26}}
+\headcommand {\beamer@documentpages {26}}
+\headcommand {\gdef \inserttotalframenumber {17}}

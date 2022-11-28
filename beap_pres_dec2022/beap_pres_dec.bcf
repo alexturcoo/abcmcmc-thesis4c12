@@ -2348,13 +2348,13 @@
     <bcf:citekey order="1">newfeld1991interspecific</bcf:citekey>
     <bcf:citekey order="2">levinson1987slipped</bcf:citekey>
     <bcf:citekey order="2">sehn2015insertions</bcf:citekey>
-    <bcf:citekey order="3">levinson1987slipped</bcf:citekey>
-    <bcf:citekey order="3">sehn2015insertions</bcf:citekey>
+    <bcf:citekey order="3">mirkin2007expandable</bcf:citekey>
     <bcf:citekey order="4">marjoram2003markov</bcf:citekey>
     <bcf:citekey order="5">newfeld1991interspecific</bcf:citekey>
     <bcf:citekey order="6">levinson1987slipped</bcf:citekey>
     <bcf:citekey order="7">sehn2015insertions</bcf:citekey>
-    <bcf:citekey order="8">marjoram2003markov</bcf:citekey>
+    <bcf:citekey order="8">mirkin2007expandable</bcf:citekey>
+    <bcf:citekey order="9">marjoram2003markov</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

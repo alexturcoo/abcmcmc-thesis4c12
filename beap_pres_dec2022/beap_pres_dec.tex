@@ -200,7 +200,7 @@
 			\includegraphics[width=8cm, height=1.8cm]{unequal.png} \\~\\
 		\end{figure}
 		
-	\footnotetext[3]{\tiny\cite{levinson1987slipped,sehn2015insertions}}	
+	\footnotetext[3]{\tiny\cite{mirkin2007expandable}}	
 	\end{frame}
 	
 	%SLIDE 8 - Why Care About LCR Evolution?
@@ -266,12 +266,54 @@
 	\section{Experimental Approach}
 	\begin{frame}{What Approach will be Taken?}
 	
+	\textbf{Bayesian Statistics: Model-based statistical inference}
+	
+	\begin{figure}
+		
+		\begin{equation} \tag{1}
+			p(D|\theta)
+		\end{equation}
+	\caption{\textit{Likelihood}} \pause
+	
+		\begin{equation} \tag{2}
+			p(\theta|D)
+		\end{equation}
+	\caption{\textit{Posterior}}
+	
+	\end{figure}
 	
 	\end{frame}
 
 	%SLIDE 11
 	\begin{frame}{Why use an ABC-MCMC}
 	
+	\uncover<1>{
+	\begin{itemize}
+		\item The increasing complexity and magnitude of available data can make the likelihood difficult to calculate   \newline
+	\end{itemize}
+	
+	\begin{figure}
+	\scalebox{2}{
+		$ p(D|\theta)$}
+	\end{figure}} \pause
+	
+	\uncover<2>{
+	\begin{figure}
+		\vspace{-1.5cm}
+		\scalebox{2}{
+			$ p(D|\theta)$}
+	\end{figure}
+		
+	\begin{tikzpicture}[remember picture,overlay]
+		\node at (current page.center) {\includegraphics[width=5cm]{no.png}};
+	\end{tikzpicture}
+	
+	\begin{figure}
+		\vspace{1.5cm}
+	\begin{itemize}
+		\item Calculation of the likelihood is replaced with a simulation step
+	\end{itemize}
+	\end{figure}}
 	
 	\end{frame}
 
@@ -327,17 +369,16 @@
 	\end{frame}
 		
 	% Blocks frame
-	\section{Blocks in Beamer}
-	\begin{frame}{Blocks in Beamer}
-		\begin{block}{Standard Block}
-			This is a standard block.
-		\end{block}
-		\begin{alertblock}{Alert Message}
-			This block presents alert message.
-		\end{alertblock}
-		\begin{exampleblock}{An example of typesetting tool}
-			Example: MS Word, \LaTeX{}
-		\end{exampleblock}
-	\end{frame} 
+	%\section{Blocks in Beamer}
+	%\begin{frame}{Blocks in Beamer}
+	%	\begin{block}{Standard Block}
+	%		This is a standard block.
+	%	\end{block}
+	%	\begin{alertblock}{Alert Message}
+	%		This block presents alert message.
+	%	\end{alertblock}
+	%	\begin{exampleblock}{An example of typesetting tool}
+	%	\end{exampleblock}
+	%\end{frame} 
 	
 \end{document}

@@ -384,3 +384,11 @@ November 23 2022 - Today I actually fixed up the changes that Brian made on my l
 - OA genet for marjoram 2013 ABC article is the journal so if he asks show him that, couldnt fix it because that is the journal
 - Fixed up citations where Brian said he did not suggest something first, same with Mirkin comment
 - Today I will also continue working on my powerpoint, maybe try to add in algorithm slide or something. ADD LOTS OF SLIDES COME ON XANDER
+
+November 27 2022 - Have not recorded progress in a little bit because I have been absolutely occupied with this powerpoint in latex
+- I created a layout for my beap presentation on my ipad where I gave a brief overview of what I wanted each slide to be - I should transfer this into latex comments it would be super helpful
+- I am just about done the presentation now, I just really need to focus on getting results to present which I dont honestly know if I will have, but I think I have a good background
+  and I explain my method and the algorithm well, I hop
+- I have to write down all my questions for brian tomorrow whatever comes to mind - Ask about, why calculate the posterior distribution, am I building the posterior distribution from accepted parameters? - does entropy describe information loss or gain - refer to 3S03 slides, what does the rho mean in marjorams equation. FIND OTHER QUESTIONS TOMORROW PLEASE AND TALK ABOUT RESULTS
+
+November 28 2022 - 
