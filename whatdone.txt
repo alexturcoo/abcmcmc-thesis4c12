@@ -391,4 +391,4 @@ November 27 2022 - Have not recorded progress in a little bit because I have bee
   and I explain my method and the algorithm well, I hop
 - I have to write down all my questions for brian tomorrow whatever comes to mind - Ask about, why calculate the posterior distribution, am I building the posterior distribution from accepted parameters? - does entropy describe information loss or gain - refer to 3S03 slides, what does the rho mean in marjorams equation. FIND OTHER QUESTIONS TOMORROW PLEASE AND TALK ABOUT RESULTS
 
-November 28 2022 - 
+November 28 2022 - ABC toolkit - toolkit that helps running ABC MCMC 
