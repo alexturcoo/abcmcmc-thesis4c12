@@ -391,4 +391,13 @@ November 27 2022 - Have not recorded progress in a little bit because I have bee
   and I explain my method and the algorithm well, I hop
 - I have to write down all my questions for brian tomorrow whatever comes to mind - Ask about, why calculate the posterior distribution, am I building the posterior distribution from accepted parameters? - does entropy describe information loss or gain - refer to 3S03 slides, what does the rho mean in marjorams equation. FIND OTHER QUESTIONS TOMORROW PLEASE AND TALK ABOUT RESULTS
 
-November 28 2022 - ABC toolkit - toolkit that helps running ABC MCMC 
+November 28 2022 - ABC toolkit - toolkit that helps running ABC MCMC
+- Today was a good day, I got alot done
+- First of all, I asked Brian my questions, answers are on the ipad, only question now is about how the error changes during the ABC idk
+  about this to be honest, ask brian again
+- I created another function which calculates the average of 10 vectors of summary statistics and outputs one single vector which we will
+  then use in the next step
+- I also added some code to my abcmcmc.cpp file which basically calculates 10 vectors of summary statistics for the same parameter and then
+  the function I mentioned above takes those 10 vectors and finds the average of them - I did this using a vector of vectors super cool haha
+- Next steps are to get some graphs going and to ask Brian about the threshold lol.
+- Powerpoint is almost done, need to begin writing script and practicing.  

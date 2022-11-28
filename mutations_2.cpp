@@ -50,7 +50,7 @@ std::string mutateSeqExp(std::string simulated_protein){
     std::vector<double> exp_deviates_vtr_mut; // Creating a vector to hold the values of the deviates for mutation rate
     std::vector<double> smallest_vtr; // Creating a vector to store the smallest element of each of the 2 vectors
                                       
-    std::cout << "before mutateseqEXP:\t" << simulated_protein << "\n"; // Initially printing the non-mutated strin.
+    //std::cout << "before mutateseqEXP:\t" << simulated_protein << "\n"; // Initially printing the non-mutated strin.
 
     // Mutation and indel rate set here now
     float mutation_rate = 0.14;
@@ -149,7 +149,7 @@ std::string mutateSeqExp(std::string simulated_protein){
     //    std::cout << exp_deviates_vtr_ind[x] << ' ';
     //}
     
-    std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
+    //std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
     return simulated_protein;
 }
 
