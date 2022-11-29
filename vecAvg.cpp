@@ -34,9 +34,9 @@ std::vector<double> vectors_average(std::vector<vector<double>> a) {
     new_ss_vtr.push_back(avg_entropy);
 
     //TO TEST THE OUTPUT/PRINT THE VECTOR
-    for (int x = 0; x < new_ss_vtr.size(); x++) {
-        std::cout << new_ss_vtr[x] << ' ' << "\n";
-    }
+    //for (int x = 0; x < new_ss_vtr.size(); x++) {
+    //    std::cout << new_ss_vtr[x] << ' ' << "\n";
+    //}
 
 
 

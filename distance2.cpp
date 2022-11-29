@@ -7,6 +7,28 @@
 #include <cmath>
 #include <numeric>
 
+//this function I made to normalize vectors
+std::vector<double> normalize_vector(std::vector<double> vec1) {
+    std::vector<double> normalized_vec;
+    double normalize_value = 0.00;
+    int vecSize = vec1.size();
+    for (int i = 0; i < vecSize; i++) {
+        normalize_value += vec1[i] * vec1[i];
+    }
+    for (int j = 0; j < vecSize; j++) {
+        normalized_vec.push_back(vec1[j]/sqrt(normalize_value));
+    }
+
+    // TO TEST THE OUTPUT/PRINT THE VECTOR
+    for (int x = 0; x < normalized_vec.size(); x++) {
+        std::cout << normalized_vec[x] << ' ' << "\n";
+    }
+
+
+    return normalized_vec;
+}
+
+
 //this is my function I made to solve euclidean distance
 double vectors_distance2(std::vector<double> a, std::vector<double> b) {
     int vecSize = a.size();
@@ -24,4 +46,4 @@ double vectors_distance2(std::vector<double> a, std::vector<double> b) {
 //    std::vector<double> v2 = {-0.1,-0.3, -0.4};
 
 //    std::cout << vectors_distance2(v1,v2) << "\n";
-//}
+

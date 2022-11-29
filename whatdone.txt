@@ -404,3 +404,16 @@ November 28 2022 - ABC toolkit - toolkit that helps running ABC MCMC
 - Code is up to date and it is now calculating 10 vectors of summary statistics for one parameter and getting an average which is then compared to the observed data
 - The values are not being accepted yet, I have not seen one be accepted and so we need to figure this out - also need to figure out the changing threshold issue.
 - Also started writing script to practice my presentation.
+
+November 29 2022 - Wrote more code today
+- Today I first tried to see if I could graph, pgplot not on these machines so I will try gnuplot
+- Ran into problems with my acceptance. I tried calculating distance with normalizing the vectors and
+  without normalizing the vectors of summary statistics. When I don't normalize, no values are being
+accepted because my threshold is too small and the distance calculated is large. When I do normalize, I
+accept basically everything because normalizing makes them much closer together the only way to not accept
+everything is to change the threshold to like 0.005 which does not make sense in terms of 30-50%
+proportions me and Brian talked about. I do not know what to do
+in terms of the threshold right now - ASK BRIAN TOMORROW
+- Also I feel like my proposals are a little wonky, I am getting very large postive numbers and small
+  negative numbers which I don't think is right. - ASK BRIAN ABOUT THIS TOO.
+- I think for the rest of today I will try to just do my powerpoint script and practice.
