@@ -18,16 +18,18 @@
 int main() {
 
     // Setting initial parameters
-    double mutation_rate = 5.00;
-    double indel_rate = 5.00;
+    double mutation_rate = 0.14;
+    double indel_rate = 0.14;
     double threshold = 0.005;
 
-    //First for loop is for the number of simulations
-    for (int i = 0; i < 100 ; i++) {
-    
-    //setting these in the loop so they are new each time
     double mut_rate_arr[10];
     double ind_rate_arr[10];
+    double index[10];
+
+    //First for loop is for the number of simulations
+    for (int i = 0; i < 10; i++) {
+    
+    //setting this in the loop
     std::vector<vector<double>> vec_of_vecs;
 
         // 0. Proposing new parameter values
@@ -40,7 +42,7 @@ int main() {
         // For loop here is to generate 10 vectors of summary
         // statistics for each parameter and get the average of all
         for (int k = 0; k<10; k++){
-        std::string simulated_protein = createSeq(350);
+        std::string simulated_protein = createSeq(400);
         
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
@@ -76,16 +78,29 @@ int main() {
         double distance = vectors_distance2(sim_prot_vtravg, obs_prot_vtr);
 
         // 6. Does the distance satisfy the conditions?
+        // If it does, add new parameter to corresponding list
+        // otherwise stay at same value
         if (distance < threshold) {
             mutation_rate = new_mut_rate;
             indel_rate = new_indel_rate;
             mut_rate_arr[i] = mutation_rate;
             ind_rate_arr[i] = indel_rate;
+            index[i] = i;
             std::cout << "ACCPETED" << "\n" << "\n";
         } else {
             std::cout << "NOT ACCEPTED" << "\n" << "\n";
+            mut_rate_arr[i] = mutation_rate;
+            ind_rate_arr[i] = indel_rate;
+            index[i] = i;
             continue;
         }
+
+  }
+
+    std::ofstream myfile("parameters.txt"); //Create and open txt file
+    // Printing the arrays of parameter values
+    for (int b = 0; b<10; b++) {
+        myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\n';
     }
 }
 

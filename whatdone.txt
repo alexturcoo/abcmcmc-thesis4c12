@@ -417,3 +417,15 @@ in terms of the threshold right now - ASK BRIAN TOMORROW
 - Also I feel like my proposals are a little wonky, I am getting very large postive numbers and small
   negative numbers which I don't think is right. - ASK BRIAN ABOUT THIS TOO.
 - I think for the rest of today I will try to just do my powerpoint script and practice.
+
+November 30 2022 - GOOD DAY
+- Talked to Brian about a few of my issues - Good news is that for the beap presentation in December I do not need to have results he said
+- Brian basically said to play around with some of the values, the summary statistics could be bad, the distance measure could be bad
+- Brian also suggested trying without the length statistic, or multiplying it by a very small number to give it smaller weight so I will have to play around with that
+- He also said the threshold I can play around with and I need to figure out a way to see if the threshold is giving me a certain proportion of acceptances.
+- Today I actually wrote some more code to get arrays for the index and both values of parameters in order to plot them
+- I outputted these into a file with 3 columns and then wrote a little basic gnuplot script to graph the values of the two parameters and it does work - this makes it easier to just load the plot
+  when the text file is updated after running the ABC.
+- I am proud I figured out gnuplot because pgplot (what I use to graph in datasci2G03) was not available on this computer so I switched to something new.
+- For today we NEED to finish the script for my presentation - USE EMAIL FROM ZACH TO ADDRESS ENTROPY/INFORMATION SLIDES
+- When we finsh this script and practice we can then play around with some of the ABC stuff more.
