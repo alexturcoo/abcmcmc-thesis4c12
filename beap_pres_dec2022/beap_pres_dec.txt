@@ -15,5 +15,52 @@ Before we begin heres just a little framework of some things I'm gonna touch on 
 ######What are LCR's######
 To put simply, Low complexity regions are segments of protein or DNA sequences (protein in this case on my slide) that are skewed/biased in their composition.
 - if you take a look on the slide you can see three Low Complexity Regions found in the SRP40 protein from Saccharomyces Cerivisea. The SRP40 protein is serine rich and plays a role in preribosome assembly and transport and we will be mentioning it later as well.
-- The reason for these numbers on the slide is to highlight the more formal definition of LCRs. 
-- They contain low information and have a low ENTROPY.  
+- The reason for these numbers on the slide is to highlight the more formal definition of LCRs which is that They contain low information and have a low ENTROPY.
+- So on the slide you can see a value called complexity and this value is calculated using Shannon's Entropy Equation 
+
+######Shannon's Entropy######
+Here is the equation for Shannon's Entropy shown on the slide.
+- L is the number of elements, pi is the probability of occurrence, and H is the units which are measured in bits (bits because log base 2)
+- This equation measures the disorder or randomness in a system and is commonly used to search for patterns and complexity in both DNA and protein sequences
+- Just for better understanding, I show here two DNA sequences. One consists of all the same nucleotide (it is of minimal complexity) and once consists of each nucleotide being represented equally (maximal complexity)
+- The sequence made up of all the same nucleotide has an entropy of 0 (minimum for DNA sequence) and the sequence made up of equal frequencies of each nucleotide has an entropy of 2 (maximum entropy for DNA sequence)
+- So essentially the lower the entropy, the less random the sequence is and vice versa!
+
+######LCR's Present in Unique Ways 1######
+So hopefully at this point (after all the LCR presentations lol) everybody understands how LCRs are defined.
+- It is also important to mention that although LCRs share an overall low diversity of amino acids or nucleotides, there are so many different ways they present this low diversity
+- All the examples I am showing in the next few slides are different forms of LCRs based on amino acid periodicity but it is important to understand that not all LCRs contain patterns like these but rather they deviate from a random composition
+- THe first example shown here are homorepeats - these are consecutive runs of a single residues and the reason for mentioning them is beecause of the role they play in human diseases (we will talk about that later).
+
+######LCR's Present in Unique Ways 2######
+- The second example shown are direpeats - these are consecutive runs of two ordered different residues, you can see this highlighted by the difference in color showing the different amino acids
+
+######LCR's Present in Unique Ways 3######
+- Finally we have tandem repeats
+
+
+######LCR's Are Hypermutable######
+
+
+######Proposed Mechanisms of LCR Evolution 1######
+
+
+######Proposed Mechanisms of LCR Evolution 2######
+
+
+######Why care about LCR's and Their Evolution?######
+
+
+######What will this study Explore######
+
+
+######What approach will be taken 1######
+
+
+######What approach will be taken 2######
+
+
+######Why use an ABC-MCMC 1######
+
+
+######Why use an ABC-MCMC 2######
