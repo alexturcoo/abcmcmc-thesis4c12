@@ -1,6 +1,19 @@
 ##########BEAP DECEMBER 2022 SCRIPT/WHAT TO SAY##############
 
-######TITLE SLIDE#####
+######TITLE SLIDE######
 Hello Everyone, my name is Alexander Turco and I am a fourth year thesis student in Brians lab. Before I begin I just want to say thank you to everyone in advance for making it. I also want to say how amazing it feels to be up here presenting to a crowd that I've learned so much from. 
 
-Today I am going to be talking about 
+Today I am going to be talking about how I am trying to use an Approximate Bayesian Computation to estimate evolutionary parameters like mutation and indel rates for protein low complexity Regions. 
+
+######Overview######
+Before we begin heres just a little framework of some things I'm gonna touch on in this short period of time.
+- I will first provide some background information on Low Complexity Regions (what defines them, how do they look, why are they important, types)
+- Then I'm going to talk about some Questions that have been kind of guiding the study as well as things I'm exploring 
+- Next I'll describe the approach I am using to actually answer some of those questions (Model based inference, bayesian statistics, ABC MCMC)
+- And finally we will briefly touch on some results (if I have any lol) and then conclude the presentation.
+
+######What are LCR's######
+To put simply, Low complexity regions are segments of protein or DNA sequences (protein in this case on my slide) that are skewed/biased in their composition.
+- if you take a look on the slide you can see three Low Complexity Regions found in the SRP40 protein from Saccharomyces Cerivisea. The SRP40 protein is serine rich and plays a role in preribosome assembly and transport and we will be mentioning it later as well.
+- The reason for these numbers on the slide is to highlight the more formal definition of LCRs. 
+- They contain low information and have a low ENTROPY.  
