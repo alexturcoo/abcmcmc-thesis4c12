@@ -36,20 +36,33 @@ So hopefully at this point (after all the LCR presentations lol) everybody under
 - The second example shown are direpeats - these are consecutive runs of two ordered different residues, you can see this highlighted by the difference in color showing the different amino acids
 
 ######LCR's Present in Unique Ways 3######
-- Finally we have tandem repeats
-
+- Finally we have tandem repeats. These are sequences of typically 1-6 residues that are repeated numerous times.
+- Regions composed of tandem repeats are commonly called microsatellites and these are actually one of the best studied types of LCR's
+- The number of repeated segments within a microsatellite sequence differs among individuals which makes these sequences interesting. This difference in the number of repeated segments makes microsatellites useful as polymorphic markers for studying inheritence patterns in families, or for creating DNA fingerprints from crime scene samples. 
 
 ######LCR's Are Hypermutable######
-
+- So another characteristic of Low complexity regions is that they have been found to be hypermutable - meaning over evolutionary time, it is thought that they frequently gained and lost repeats
+- Just to provide a little evidence for this, there was a study done using 2 different species of Drosophila (I know we have a lot of Drosophila lovers in the room so I thought this would be fitting lol). 
+- Essentially the researchers performed an interspecific comparison between the mastermind gene in Drosophila Melanogaster and Drosophila Virilis which are believed to have separated approximately 60x10^6 years ago (enough time for nonessential sequences to diverge).
+- The mastermind gene encodes a highly repetitive nuclear protein required for neural development. Part of this gene is highly conserved but extensive variation is noted in homopolymer domains which flank the conserved region.
+- The researchers characterized these into unique and repetitive regions and discovered that repetitive regions are characterized by almost a threefold higher rate of amino acid replacement.
 
 ######Proposed Mechanisms of LCR Evolution 1######
-
+- There are two mechanisms that have been proposed which try to explain the evolution of Low complexity regions/repetitive regions.
+- The first being polymerase Slippage or Slipped Strand Mispairing - there are a lot of names for this lol.
+- During replication, what can sometimes happen is that the DNA polymerase and the newwly synthesized DNA strand complex can temporarily dissociate from the template DNA
+- In areas that have repetitive sequences, as shown on the slide, the polymerase may join back with the template strand in a position one or two repeats ahead or behind where it left off
+- What Im showing here is just a very simple example of the polymerase slipping forward and backwards. 
+- Slipping forward means the polymerase skips one of the template repeats resulting in the deletion of the repeat in the newly synthesized strand.
+- Slipping backwards means the polymerase copies an extra repeat into the newly synthesized DNA strand
 
 ######Proposed Mechanisms of LCR Evolution 2######
-
+- The second Proposed Mechanism of LCR Evolution is unequal recombination
+- So what Ive shown on the slide is a simple illustration of unequal crossing over between repetitive runs on homologous chromosomes during meiosis.
+- Homologous chromosomes are shown in light blue and tan, repetitive DNA strands are shown in red and green - When unequal crossing over occurs (shown on the left), it results in the reciprocal appearance of expanded and contracted repeats (shown on the right). 
 
 ######Why care about LCR's and Their Evolution?######
-
+- 
 
 ######What will this study Explore######
 
@@ -64,3 +77,12 @@ So hopefully at this point (after all the LCR presentations lol) everybody under
 
 
 ######Why use an ABC-MCMC 2######
+
+
+######MCMC for ABC - Marjoram######
+
+
+######MCMC for ABC: Modified Algorithm 1######
+
+
+######MCMC for ABC: Modified Algorithm 2######
