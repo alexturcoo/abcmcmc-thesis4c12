@@ -59,18 +59,34 @@ So hopefully at this point (after all the LCR presentations lol) everybody under
 ######Proposed Mechanisms of LCR Evolution 2######
 - The second Proposed Mechanism of LCR Evolution is unequal recombination
 - So what Ive shown on the slide is a simple illustration of unequal crossing over between repetitive runs on homologous chromosomes during meiosis.
-- Homologous chromosomes are shown in light blue and tan, repetitive DNA strands are shown in red and green - When unequal crossing over occurs (shown on the left), it results in the reciprocal appearance of expanded and contracted repeats (shown on the right). 
+- Homologous chromosomes are shown in light blue and tan, repetitive DNA strands are shown in red and green - When unequal crossing over occurs (shown on the left), it can result in the reciprocal appearance of expanded and contracted repeats (shown on the right). 
 
 ######Why care about LCR's and Their Evolution?######
-- 
+- But why should we care about LCRs and the way they evolve anyways?
+- Because LCRs are implicated in a wide variety of diseases as well as Biological processes
+- LCRs can appear as trinucleotide repeats and these form repeated units of 3 nucleotides and are a well known form of deleterious mutation in humans - in fact these trinucleotide repeats are found to be associated with several human neeurodegenerative diseases including Huntington's disease, fragile X syndrom, muscular dystrophy and others.
+- LCRs have also been found to be associated with important biological processes such as genetic recombination and antigen diversification and this is actually evident through studying the genomes of bacteria such as neisseria meningitidis which causes meningococcal disease. 
+- This bacteria is abundant in LCRs and they are actually thought to cause phase variation (phenotypic changes resulting from genetic alterations) which can give the bacteria the ability to change adherance patterns to host cells (helps with survival of pathogens)
 
 ######What will this study Explore######
+- Okay so with that little background (which im sure youre all sick of now) we can move into some of things I'm trying to explore in the study
+- First off is estimating evolutionary parameters. Using a type of model based statistical inference that includes a simulation (which we will get into soon), I am essentially trying to estimate distributions of possible parameters like mutation and indel rates in order to better understand how LCRs evolve.
 
+- While exploring these parameter values we will also be exploring various models of indels for LCRs. For example, seeing if the length of a repetitive segment is a factor involved in insertion or deletion of repetitive segments
+
+- Finally Im also using summary statistics (quantitivate way to summarize/explain data) in this study. These summary statistics must capture important information about LCR's so for example, the number of LCRs in a protein sequence, or the Average entropy of those LCRs.
+
+- The simplest way to put it, we want a randomly generated protein sequence to be mutated over and over again under certain parameter values. Then we want to compare the simulated protein to a protein which we know the sequence for (in my case I chose SRP40 - I think I mentioned this above, has lots of repeats) and assess the difference in values of their summary statistics.
 
 ######What approach will be taken 1######
-
+- Going back to what I previously mentioned Im gonna be using a specific type of model based inference approach (which I will get to) but it is important to understand the main principles of model based inference first and for the purpose of this study we will focus on model based inference in the Bayesian paradigm (not freqentist)
+- Any model based statistical inference generally revolves around calculating the likelihood fucntion which is shown here on the slide. 
+- This likelihood function represents the probability of the observed data under a chosen model. It basically quantifies how well the data supports the parameter values and the model
 
 ######What approach will be taken 2######
+- This likelihood is  then used as a step towards calculating the posterior distribution.
+- To a Byaesian statistician, the posterior disribution is the complete answer the question, what is the value of the parameter?
+- Posterior distributions are important because they will be what provides the interval estimates for parameter values which describe the uncertainty about the parameter.
 
 
 ######Why use an ABC-MCMC 1######
@@ -86,3 +102,15 @@ So hopefully at this point (after all the LCR presentations lol) everybody under
 
 
 ######MCMC for ABC: Modified Algorithm 2######
+
+
+######MCMC for ABC: Modified Algorithm 3######
+
+
+######MCMC for ABC: Modified Algorithm 4######
+
+
+######MCMC for ABC: Modified Algorithm 5######
+
+
+######MCMC for ABC: Modified Algorithm 6######
