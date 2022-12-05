@@ -35,7 +35,7 @@
 % Title page details: 
 \title[BEAP Dec 2022]{Estimating Evolutionary Parameters for Protein Low Complexity Regions using an Approximate Bayesian Computation} 
 \author{Alexander Turco}
-\date{\today}
+\date{December 5, 2022}
 \logo{\includegraphics[height=1cm, width=1cm]{logo.png}}
 
 % Bibliography stuff
@@ -68,11 +68,10 @@
 		\begin{center}
 		\begin{minipage}{6cm}
 				
-		  		\begin{block}{} \hyperlink{link1}{Background information} \end{block}
+		  		\begin{block}{} \hyperlink{link1}{Background Information} \end{block}
 		  		\begin{block}{} Research Questions/Explorations \end{block}
 		  		\begin{block}{} Experimental Approach \end{block}
-		  		\begin{block}{} Results \end{block}
-		  		\begin{block}{} Conclusion and Future Work \end{block}
+		  		\begin{block}{} Future Work \end{block}
 
 		\end{minipage}
 		\end{center}
@@ -83,7 +82,7 @@
 	% SLIDE 3 - WHAT ARE LCRs%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% The graphic for this slide is an image of some output from segA with the parameters in the brackets
 	\section{Background}
-	\begin{frame}{What are LCR's?}
+	\begin{frame}{What are Low Complexity Regions?}
 		\label{link1}
 		
 		\begin{block}{\textit{Saccharomyces cerevisiae} SRP40 Protein LCRs}
@@ -107,14 +106,14 @@
 	% The Graphic for this slide is an  
 	% Entropy, which is measured by Shannon's Entropy equation is a measure of compositional complexity which uses the proportion of residue(s)
 	% in a subsequence to measure the compositional state of that subseequence - A lower variety of residues = lower entropy 
-	\begin{frame}{Shannon's Entropy - MAYBE }
+	%\begin{frame}{Shannon's Entropy - MAYBE }
 		
-			$H = -L\sum p_i log_2(p_i)$
+	%		$H = -L\sum p_i log_2(p_i)$
 		
-	\end{frame}
+	%\end{frame}
 
 	%SLIDE 5 - LCR's PRESENT IN UNIQUE WAYS
-	\begin{frame}{LCR's Present in Unique Ways }
+	\begin{frame}{LCRs Present in Unique Ways }
 		
 		\begin{alertblock}{Homorepeats}
 			Consecutive iterations of a single residue
@@ -145,7 +144,7 @@
 
 	%SLIDE 6 LCRs are hypermutable
 	% Maybe change the lines from the fly to dashed - as per photo Lauren Sent
-	\begin{frame}{LCR's are Hypermutable }
+	\begin{frame}{LCRs are Hypermutable }
 		
 		
 		\begin{center}	
@@ -176,14 +175,15 @@
 			\column{0.5\textwidth}
 			\centering
 			\begin{figure}
-				\includegraphics[width=\columnwidth, height=2.5cm]{slippage2.png} \\~\\
+				\includegraphics[width=\columnwidth, height=2.5cm]{slippage2n.png} \\~\\
 				\caption{\centering \textbf{Polymerase Slips Forward}}
 			\end{figure}
 			
 			\column{0.5\textwidth}
 			\centering
 			\begin{figure}
-				\includegraphics[width=\columnwidth, height=2.5cm]{slippage1.png} \\~\\
+				\vspace{0.5cm}
+				\includegraphics[width=\columnwidth, height=2.5cm]{slippage1n.png} \\~\\
 				\caption{\centering \textbf{Polymerase Slips Backwards}}
 			\end{figure}
 		
@@ -204,14 +204,14 @@
 	\end{frame}
 	
 	%SLIDE 8 - Why Care About LCR Evolution?
-	\begin{frame}{Why Care about LCRs and Their Evolution? }
+	\begin{frame}{Why Care about LCRs and their Evolution? }
 	
 	\begin{center}	
 		\begin{tikzpicture}[node distance=2cm]
 			\node[startstop] (1) {Disease};
 			\node[startstop, right of=1, xshift=2cm] (2) {Biological Processes};
 			\node[startstop, right of=2, xshift=2cm] (3) {Presence in Bacteria};
-			\node[startstop, above=2, xshift=4cm, yshift=1cm] (4) {LCR's};
+			\node[startstop, above=2, xshift=4cm, yshift=1cm] (4) {LCRs};
 			
 			\draw [arrow] (4) -- (1);
 			\draw [arrow] (4) -- (2);
@@ -329,7 +329,7 @@
 			\item Return to 1.
 		\end{enumerate}
 	
-		\footnotetext[3]{\tiny\cite{marjoram2003markov}}	
+		\footnotetext[4]{\tiny\cite{marjoram2003markov}}	
 	\end{frame}
 
 	%Slide 13 - Here we put MY version of the algorithm - We could also put these on the same slide and just compare! SLIDE 14 AND 15
@@ -341,31 +341,50 @@
 			\item Create a random protein sequence and mutate over many generations using $\theta'$ to generate simulated Dataset $D'$ \pause
 			\item Calculate summary statistics for simulated dataset $D'$ \pause
 			\item If $d(S',S) \le \epsilon$, go to next step, otherwise stay at $\theta$ and return to 1 \pause
-			\item Accept $\theta'$ with probability ?? Ask Brian ab this again lol \pause
+			\item Accept $\theta'$ \pause
 			\item Return to step 1
 		\end{enumerate}
 	
 	\end{frame}
 
 	%Slide 14 - Maybe to this slide - Maybe throw in extra slides for reference
-	\begin{frame}{Simulation Step - MAYBE}
+	%\begin{frame}{Simulation Step - MAYBE}
 	
 	
-	\end{frame}
+	%\end{frame}
 
 	%For my Results slides, I will talk about things such as the results I have, But i don't have any right now
 	%SLIDE 15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{Results}
-	\begin{frame}{Results}
+	%\section{Results}
+	%\begin{frame}{Results}
 		
 		
-	\end{frame}
+	%\end{frame}
 
 	%For my Concluding slides, I will talk about things such as 
 	%SLIDE 16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{Conclusion}
-	\begin{frame}{Conclusion/Future Work}
+	\section{Future Work}
+	\begin{frame}{Future Work}
 		
+		\begin{itemize}
+			\item Graphical representations of simulation iteration versus parameter values 
+			\item Implementation of weighted summary statistics in distance calculation
+			\item Adjustment of values such as mean and standard deviation of the proposal distribution
+			
+			\centering\includegraphics[width=7cm, height=5cm]{graph.png}
+			
+		\end{itemize}
+		
+	\end{frame}
+
+	\section{Acknowledgements}
+	\begin{frame}{Acknowledgements}
+		\begin{itemize}
+			\item Dr. Brian Golding \newline
+			\item Sam Long \newline
+			\item Zachery Dickson \newline
+			\item Johanna Enright
+		\end{itemize}
 	\end{frame}
 		
 	% Blocks frame

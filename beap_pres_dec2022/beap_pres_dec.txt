@@ -80,7 +80,7 @@ So hopefully at this point (after all the LCR presentations lol) everybody under
 
 ######What approach will be taken 1######
 - Going back to what I previously mentioned Im gonna be using a specific type of model based inference approach (which I will get to) but it is important to understand the main principles of model based inference first and for the purpose of this study we will focus on model based inference in the Bayesian paradigm (not freqentist)
-- Any model based statistical inference generally revolves around calculating the likelihood fucntion which is shown here on the slide. 
+- Any model based statistical inference generally requires DATA, A MODEL, and A SET OF MODEL PARAMETERS and the task often revolves around calculating the likelihood fucntion which is shown here on the slide. 
 - This likelihood function represents the probability of the observed data under a chosen model. It basically quantifies how well the data supports the parameter values and the model
 
 ######What approach will be taken 2######
@@ -88,29 +88,41 @@ So hopefully at this point (after all the LCR presentations lol) everybody under
 - To a Byaesian statistician, the posterior disribution is the complete answer the question, what is the value of the parameter?
 - Posterior distributions are important because they will be what provides the interval estimates for parameter values which describe the uncertainty about the parameter.
 
-
 ######Why use an ABC-MCMC 1######
-
+- But we are at a point in time where both the complexity and magnitude of available data are increasing
+- Because of this increase, many current model-based analyses have become intractable because calculation of the likelihood becomes extremely difficult
+- For example there are a lack of models which explain insertions and deletions and the reason for this is because insertions and deletions alter the landscape of a sequence and make the calculation of the likelihood extremely difficult
 
 ######Why use an ABC-MCMC 2######
-
+- Thats why in this Study we are going to use an Approximate Bayesian Computation.
+- An approximate bayesian computation is rooted in Bayesian Statistics (so most things I've mentioned before apply to this) but what differs is that the likelihood calculation is replaced by a simulation step which basically estimates the likelihood function and allows for a posterior distribution to be created.
+- Replacing the likelihood function with a simulation step is beneficial in areas such as the inference of genetic networks because as the complexity of the network grows, we are still able to perform a simulation where we would normally struggle to calculate the likelihood as complexity increased.
 
 ######MCMC for ABC - Marjoram######
-
+- So shown here is the general method/algorithm for an ABC MCMC which is the type of ABC we are utilizing. (taken from Marjoram 2003 where he first called the paper an MCMC method without the use of likelihoods)
+- It starts with a selected parameter value and proposes a move to a new parameter value based on a proposal distribution
+- Then using this new parameter value, we generate a simulated dataset and calculate summary statistics 
+- the summary statistics make it possible to quantitatively compare differences between the dataset we simulated and the observed dataset (real data)
+- Then we assess how similar the summary statistics between the observed data and simulated data are (there are many ways to do this, one way being to calculate a distance between the summary statistics). If this difference is less than a certain threshold value (epsilon), then we continue to the next step, otherwise we remain at our initial parameter and go back to step 1
+- So essentially if the difference between summary statistics is small, the hastings ratio is calculated and the proposed parameter can be accepted with a probability equal to the value of the hastings ratio. THen we return to step 1.
 
 ######MCMC for ABC: Modified Algorithm 1######
-
+So now I'm gonna go through the same algorithm, but this time explaining how Im using it in my study.
+- First things first we propose a move from one parameter value to another according to the normal distribution
 
 ######MCMC for ABC: Modified Algorithm 2######
-
+- Step 2 - Next we generate a random protein sequence and use the new parameter value to mutate the random protein sequence over a number of generations (testing with 2000 now).
 
 ######MCMC for ABC: Modified Algorithm 3######
-
+- Once we mutate the simulated protein, we then calculate our summary statistics - right now we have a vector of 3 summary statistics - they are length of the protein, number of LCRs, and the average entropy of the LCRs
+- At this point I am also going to mention that the same summary statistics are used for the observed protein (what 
 
 ######MCMC for ABC: Modified Algorithm 4######
-
+- Now we need some way of quantitatively assessing how similar the summary statistics between the observed and simulated data are.
+- Using the summary statistics we calculated for the simulated and observed data, we calculate the euclidean distance between the vectors of summary statistics and if this distance is larger (summary statistics not similar) than some threshold value, we reject the proposed parameter value but if the calculated distance is smaller than the threshold value (summary statistics similar), we accept the proposed parameter value
 
 ######MCMC for ABC: Modified Algorithm 5######
-
+- When we accept the proposed parameter, it essentially means we use the parameter in calculating the posterior distribution
 
 ######MCMC for ABC: Modified Algorithm 6######
+- We then return to step 1 and iterate through this for a desired number of simulations.
