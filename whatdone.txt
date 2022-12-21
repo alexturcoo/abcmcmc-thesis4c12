@@ -439,3 +439,4 @@ Dec 20 2022 - NOTE TO XANDER
 - look in the mutation file for the mutation rate, it is not changing!! it needs to change in this file in order for new values to be generated.
 - Linux boot got messed up on laptop so I lost my latex files for my paper - I created a new document and copied the text from the corrections I made from brian
 - I am going to add this template on github now so this does not happen again.
+- Updated the simulation code in the latex file from the last time brian checked my paper so the code is newer than the one on the document brian commented on. Eberything should be the same writing wise, only thing that differs is the code in the latex file.
