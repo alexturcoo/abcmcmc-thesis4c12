@@ -1,0 +1,418 @@
+\documentclass{article}
+%\documentclass[twocolumn]{article}
+%\documentclass[onecolumn]{article}
+% \usepackage{scrtime} % for \thistime (this package MUST be listed first!)
+\DeclareUnicodeCharacter{0301}{\'{e}}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{notoccite}
+\usepackage{pgfplotstable}
+%\usepackage[round]{natbib}
+%\setcitestyle{aysep={}} %removes the comma between the author and year in citations
+%\usepackage{underscore}
+\usepackage{pdfpages}
+\usepackage{xcolor,colortbl}%for changing cell colour
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{xspace}
+\usepackage{booktabs}
+\usepackage{capt-of}
+\pagestyle{fancy}
+\setlength{\headheight}{15.2pt}
+\setlength{\headsep}{13 pt}
+\setlength{\parindent}{28 pt}
+\setlength{\parskip}{12 pt}
+\pagestyle{fancyplain}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+% \usepackage{color,amsmath,amssymb,amsthm,mathrsfs,amsfonts,dsfont}
+\usepackage{xspace}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc, arrows}
+\usetikzlibrary{external}
+\usepackage{pgfplots}
+\pgfplotsset{layers/my layer set/.define layer set={background,main,foreground}{},
+        set layers=my layer set,}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%for code
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+% \usetikzlibrary{pgfplots.clickable}
+% \usepgfplotslibrary{clickable}
+% tables
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{multirow}
+% figs
+%\usepackage{subfig}% http://ctan.org/pkg/subfig
+\usepackage{subcaption}
+%\newsubfloat{figure}% Allow sub-figures
+\usepackage{caption}%lable fig caption as fig
+%\captionsetup[subfigure]{labelfont=bf, justification=raggedright, labelformat=empty} %no caption label
+\usepackage{stackengine} %places caption inside figure?
+\captionsetup{subrefformat=parens} %when you reference the subcaption it will be (a) for example %{labelfont={color=blue}}
+%\captionsetup[subfigure]{labelsep=colon}
+
+
+% \usepackage{acronym}
+% \usepackage{lineno}%for line numbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[backend=biber, giveninits=true, doi=false, isbn=false, natbib=true, url=true, eprint=false, style=authoryear-comp, sorting=nyt, sortcites=ynt, maxcitenames=2, maxbibnames=10, minbibnames = 10, uniquename=false, uniquelist=false, dashed=false]{biblatex} % can change the maxbibnames to cut long author lists to specified length followed by et al., currently set to 99.
+
+%% bibliography for each chapter...
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1\isdot} % removes quotes around title
+\renewbibmacro*{volume+number+eid}{%
+	\printfield{volume}%
+	%  \setunit*{\adddot}% DELETED
+	\printfield{number}%
+	\setunit{\space}%
+	\printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+%\renewcommand*{\newunitpunct}{\space} % remove period after date, but I like it. 
+\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}} % this remove the "In: Journal Name" from articles in the bibliography, which happens with the ynt 
+\renewbibmacro*{note+pages}{%
+	\printfield{note}%
+	\setunit{,\space}% could add punctuation here for after volume
+	\printfield{pages}%
+	\newunit}    
+\DefineBibliographyStrings{english}{% clears the pp from pages
+	page = {\ifbibliography{}{\adddot}},
+	pages = {\ifbibliography{}{\adddot}},
+} 
+\DeclareFieldFormat{journaltitle}{#1\isdot}
+\renewcommand*{\revsdnamepunct}{}%remove comma between last name and first name
+\DeclareNameAlias{sortname}{family-given}
+% \DeclareNameAlias{sortname}{last-first}
+\renewcommand*{\nameyeardelim}{\addspace} % remove comma in text between name and date
+\addbibresource{ABC1.bib} % The filename of the bibliography
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\renewrobustcmd*{\bibinitperiod}{}
+% you'll have to play with the citation styles to resemble the standard in your field, or just leave them as is here. 
+% or, if there is a bst file you like, just get rid of all this biblatex stuff and go back to bibtex. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% generally hyperref needs to be loaded last
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=darkbrown]{hyperref}
+%\usepackage[hidelinks,colorlinks=false,citecolor=blue,urlcolor=darkbrown]{hyperref}
+\tikzexternalize
+
+\lhead{ABC-MCMC} %This needs to change
+\rhead{Alexander Turco and GB Golding}
+\title{\sc Estimating Evolutionary Parameters for Low Complexity Regions using an Approximate Bayesian Computation}
+\author{\sc Alexander Turco}
+
+\providecommand{\figref}[1]{(Figure \ref{#1})}  %what?
+\providecommand{\tabref}[1]{(Table \ref{#1})}  %what?
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\newcommand{\seg}{\texttt{Seg}\xspace}
+\newcommand{\ecoli}{\mbox{\textit{E.\,coli}}\xspace}
+\newcommand{\sclong}{\textit{Saccharomyces cerevisiae}\xspace}
+\newcommand{\scshrt}{\mbox{\textit{S.\,cerevisiae}}\xspace}
+\newcommand{\sce}{\mbox{\textit{S.\,cerevisiae}}\xspace}
+\newcommand{\hslong}{\textit{Homo sapiens}\xspace}
+\newcommand{\hsshrt}{\mbox{\textit{H.\,sapiens}}\xspace}
+\newcommand{\hse}{\mbox{\textit{H.\,sapiens}}\xspace}
+\newcommand{\celong}{\textit{Caenorhabditis elegans}\xspace}
+\newcommand{\ceshrt}{\mbox{\textit{C.\,elegans}}\xspace}
+\newcommand{\dmlong}{\textit{Drosophila melanogaster}\xspace}
+\newcommand{\dmshrt}{\mbox{\textit{D.\,melanogaster}}\xspace}
+\newcommand{\atlong}{\textit{Arabidopsis thaliana}\xspace}
+\newcommand{\atshrt}{\mbox{\textit{A.\,thaliana}}\xspace}
+\newcommand{\pflong}{\textit{Plasmodium falciparum}\xspace}
+\newcommand{\pfshrt}{\mbox{\textit{P.\,falciparum}}\xspace}
+
+%%%%BIBLIOGRAPHY
+
+%Supplementary File Table Numbers:
+\newcommand{\expdata}{S1\xspace}
+\newcommand{\seqdata}{S2\xspace}
+\newcommand{\protdata}{S3\xspace}
+\newcommand{\blast}{S4\xspace}
+\newcommand{\tabvar}{S5\xspace}
+%Supplementary File Fig Numbers:
+
+\newcommand{\expcor}{S1\xspace}
+\newcommand{\expdistATCC}{S3\xspace}
+\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\newcommand{\beginsupplement}{%
+	\setcounter{table}{0}
+	\renewcommand{\thetable}{S\arabic{table}}%    %thetable references table counter 
+	\setcounter{figure}{0}
+	\renewcommand{\thefigure}{S\arabic{figure}}%
+	\setcounter{equation}{0}
+	\renewcommand{\theequation}{S\arabic{equation}}%
+
+}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{}
+\usepackage{setspace}
+%adjust spacing
+\doublespacing
+\usepackage{titlesec}
+
+\titlespacing\section{0pt}{12pt plus 2pt minus 2pt}{0pt plus 1pt minus 1pt}
+\titlespacing\subsection{0pt}{12pt plus 2pt minus 2pt}{0pt plus 1pt minus 1pt}
+\titlespacing\subsubsection{0pt}{12pt plus 2pt minus 2pt}{0pt plus 1pt minus 1pt}
+
+% below 3 lines will put ALL table captions at the top...not sure if
+% this is what we want but it is good enough for now
+
+% \usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        \definecolor{atomictangerine}{rgb}{1.0, 0.6, 0.4}
+        \definecolor{darkbrown}{rgb}{1.0, 0.56, 0.24}
+        \colorlet{darkcol}{black!30!white}
+        \colorlet{lightcol}{black!10!white}
+        \definecolor{txtcol}{HTML}{F40000}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\widowpenalty10000
+\clubpenalty10000
+
+%\linenumbers %for line numbers
+\onecolumn
+%\twocolumn[  
+%       \begin{@twocolumnfalse}
+%               \begin{center}
+                        \maketitle
+%               \end{center}
+%                       \bigskip
+
+\thispagestyle{empty}
+\noindent \textsuperscript{1} Department of Biology, McMaster University, Hamilton, ON, Canada
+
+\newpage
+\tableofcontents
+\newpage
+       
+\section{Abstract} 
+
+\bigskip
+                        
+%\textbf{Key Words: Low complexity, entropy, amino acid sequence,
+%DNA sequence \vspace*{15pt}}
+                        
+                        
+\newpage
+%       \thispagestyle{empty}   
+%       \end{@twocolumnfalse}
+%
+%       \thispagestyle{empty}
+%       \tableofcontents
+%       \newpage
+%       \onehalfspacing
+
+\section{Literature Review/Proposal}
+\subsection{What are Low Complexity Regions?}
+For decades, it was believed that peptide sequences which lack the ability to form stable three-dimensional structures also lack specific biological function \citep{haerty2010low}. Interestingly, among eukaryotic proteomes, the most commonly
+shared peptide sequences are found to be sequences with a low information content which lack a stable three-dimensional
+structure \citep{haerty2010low, marcotte1999census, bannen2007effect}. These sequences have been termed ‘low-
+complexity regions’ (LCRs) due to their low information content and entropy, as well as their lack of diversity in amino acid
+composition \citep{wootton1993statistics, coletta2010low}. LCRs are found in DNA as well as protein sequences and can
+present in a variety of ways, all of which skew the composition of amino acids in a different manner \citep{wootton1993statistics, mier2020disentangling}. Homorepeats, direpeats, tandem repeats, and imperfect repeats are common definitions of LCRs based
+on the periodicity of amino acids in a given sequence, but not every LCR is defined by a specific pattern \citep{mier2020disentangling}.Most of the time, these patterns are found to occur in non-coding regions and evolve with minimal selective pressure \citep{kruglyak2000distribution}. Further research is being done in order to uncover the function of LCRs in protein coding regions, as well as theevolutionary background of these repetitive regions \citep{huntley2006selection}. To investigate the process of LCR evolution,this study proposes an Approximate Bayesian Computation (ABC) approach which will enable the prediction of evolutionary
+parameters such as mutation rates and insertion/deletion rates.
+
+\subsection{Characteristics and Types of LCRs}
+Algorithms to detect the presence of low complexity regions in a sequence are available, and continue to be improved
+with further research into LCRs. \citet{wootton1993statistics} first developed an algorithm called SEG to find low complexity
+regions in protein sequences using information content \citep{huntley2002simple}. Information content is a common charac-
+teristic used to identify low complexity regions and in order to calculate the amount of information within a segment, the SEG
+algorithm implements Shannon’s entropy \citep{battistuzzi2016profiles, wootton1993statistics}. Shannon’s entropy \citep{shannon1948mathematical} has been commonly used as a measure of complexity of a string of characters \citep{battistuzzi2016profiles, coletta2010low, wootton1993statistics}. This study will use the SEG algorithm and therefore Shannon’s entropy to assess the complexity of protein sequences. The less complex a sequence is (low variety of residues), the lower the entropy/information content of the sequence. Although LCRs are defined by their low information content, these regions have also been found to be hyper-mutable, and it is thought that throughout evolutionary history, they frequently gained and lost repeats \citep{marcotte1999census, kruglyak1998equilibrium}. In studying the Drosophila melanogaster gene mastermind, which encodes a highly repetitive nuclear protein, \citet{newfeld1991interspecific} identified different patterns of evolutionary change between regions of high and low complexity. Repetitive regions were found to have a much higher rate of amino acid replacement, therefore the rate of evolution within these regions is higher than outside \citep{newfeld1991interspecific, huntley2000evolution}.
+
+LCRs all share an overall low diversity of residues but present in unique ways as periodic or aperiodic repeats, which
+take on the form of homopolymers and heteropolymers \citep{wootton1993statistics, battistuzzi2016profiles}. Homopoly-
+mers/homorepeats are consecutive iterations of a single amino acid residue, and heteropolymers (direpeats, tandem repeats)
+are consective iterations of more than one residue that can be found in a variety of different patterns based on periodicity
+\citep{battistuzzi2016profiles, mier2020disentangling}. Microsatellites, one of the best studied types of LCRs, commonly describe regions composed of tandem repeats that are typically made from anything between one to six nucleotides \citep{ellegren2004microsatellites}. Although microsatellites normally refer to DNA sequences, it has been found that LCRs in proteins are comparable to microsatellites \citep{depristo2006abundance}. The molecular mechanisms involved in the process of evolution including slippage and unequal recombination are important for microsatellites and therefore protein LCRs as well \citep{depristo2006abundance}. A class of proteins which are related to, but slightly differ from LCRs are intrinsically disordered proteins (IDPs). IDPs are unable to form stable three dimensional structures and are characterized by low sequence complexity, biased amino acid composition, and high proportions of charged and hydrophilic residues \citep{wright2015intrinsically}. IDPs are composed of intrinsically disordered regions which are not necessarily defined by a low information content as LCRs are \citep{haerty2010low, dunker2002intrinsic} (Haerty and Golding 2010b; Dunker et al. 2002). In this study, we propose a focus on low complexity regions.
+
+\subsection{Why care about LCRs?}
+Proteins continue to be a large area of research due to their involvement in vital cellular processes and many human
+diseases. In protein sequence databases such as Swiss-Prot, the increase in the number of sequences and organisms represented
+has subsequently led to a decrease in the proportion of proteins containing LCRs \citep{coletta2010low}. On top of this, there
+is a lack of representation of LCRs in the protein data bank \citep{huntley2002simple}. Despite this underrepresentation
+of LCRs, they are known to be associated with several human neurodegenerative diseases and are thought to serve important
+biological functions \citep{coletta2010low, huntley2006selection}. It has also been found that the proteins of Plasmodium
+falciparum (the human malaria parasite) contain a high incidence of LCRs which has further highlighted the importance of both
+the evolution and function of LCRs \citep{gardner2002genome, depristo2006abundance}. LCRs can appear as trinucleotide repeats which
+form repeated units of three nucleotides and are a well known form of deleterious mutation in humans \citep{ross1993genes}. These
+are found to be the cause of diseases including fragile X syndrome, myotonic dystrophy, spinal atrophy, muscular atrophy,
+and Huntington’s disease \citep{ross1993genes}. These diseases can be broadly classified into two distinct groups, translated
+polyglutamine triplet repeat diseases and untranslated triplet repeat diseases \citep{everett2004trinucleotide}. Polyglutamine triplet
+repeat diseases, such as Huntington’s disease, result in the formation of protein aggregates in the cell and occur due to expanded
+repeats being translated into expanded polyglutamine residues \citep{everett2004trinucleotide}. Untranslated triplet repeat diseases
+such as myotonic dystrophy and fragile X syndrome differ from polyglutamine repeat diseases as they contain trinucleotide
+repeats which are not translated into expansion within a mutant protein \citep{everett2004trinucleotide}.
+
+The persistence of LCRs within genomes provides good evidence of their beneficial functions \cite{verstrepen2005intragenic}.
+LCRs have been associated with important biological processes such as genetic recombination, antigen diversification, and
+protein-protein interactions \citep{karlin2002amino, verstrepen2005intragenic, kumari2015low}. The repetitve regions are thought
+to drive recombination events which alter genes and result in phenotypic variation \citep{verstrepen2005intragenic}. In the genomes of
+Haemophilus influenzae and Neisseria meningitidis, LCRs are abundant and cause phase variation which gives the bacteria the
+ability to change their adherance patterns to host cells \citep{bayliss2001simple}. This ultimately increases the fitness of the population and allows the bacteria to evade the host response \citep{bayliss2001simple}. It was previously believed, based on structural evidence,that these hypermutable LCRs did not form stable structures but instead existed as solvent-exposed disordered coils \citep{wootton1993statistics, huntley2002simple, depristo2006abundance}. Using proteins from a non-redundant Protein Data Bank (PDB) dataset, \citet{kumari2015low} analyzed secondary structure content and surface accessibility and discovered that LCRs
+can form secondary structures within proteins. More specifically, in a large majority of identified LCRs, the analysis revealed
+the presence of more than one secondary structure, indicating that LCRs are found in regions where structure transition occurs
+\citep{kumari2015low}. Although more work is necessary to further understand the functions of LCRs, their role in genetic
+recombination, protein structure and function, and antigen diversity, highlight the importance of LCR research.
+
+\subsection{How do LCRs Evolve?}
+Although research surrounding the evolution of LCRs is lacking, there are two proposed mechanisms of microsatellite
+evolution, which can be applied to many forms of LCRs. The first, polymerase slippage or slipped strand mispairing, involves
+loops being formed in either the coding or template strand, which causes a misalignment of strands and results in either
+the insertion or deletion of repetitive motifs \citep{levinson1987slipped, ellegren2004microsatellites}. It is believed that slipped strand mispairing is the predominant mode of mutation of LCRs, specifically in homopolymer sequences \citep{levinson1987slipped}. The second mechanism, unequal recombination, occurs when repetitive regions in homologous chromosomes do not
+align properly during meiosis, which results in the repetitive region being expanded in one chromosome and contracted in
+the other \citep{warren1997polyalanine, mirkin2007expandable}. In order to gain more insight into the evolutionary background of a variety of organisms, researchers have created models of events such as slippage in order to estimate mutation rate and other evolutionary parameters \citep{kruglyak2000distribution}. In a study of 10,844 parent/child allele transfers at nine short tandem repeat loci, \citet{brinkmann1998mutation} discovered 23 mutations, all of which were either gains or losses of repeats. Of the 23 mutations, 22 were due to single repeat mutations, which is why it has been common to use the stepwise mutation model of Ohta and Kimura (1973),that assumes repetitive regions expand or contract by 1 unit at a specific mutation rate \citep{kruglyak2000distribution, brinkmann1998mutation}. There are however, major drawbacks of the stepwise mutation model including that lengths can become negative, and the collection of repeat lengths in a sample will not have a stationary distribution \citep{kruglyak2000distribution}. It was thought that more complex models of LCR evolution were necessary to gain more accurate results, thus \citet{kruglyak1998equilibrium} proposed a model that incorporated length dependent slippage events. This differed from the stepwise mutation model in that the balance between slippage events and point mutations produced an equilibrium distribution of repeats \citep{kruglyak1998equilibrium}.
+
+Models of LCR formation including replication slippage support the historical belief that LCRs evolve neutrally. More
+recently, there has been increasing evidence suggesting that LCRs are also acted upon by selective pressure \citep{haerty2010low}. Kimura (1983) proposed the neutral theory of molecular evolution which suggests that selection does not play a role
+in the genetic diversity within and between species, rather genetic diversity is neutral \citep{nevo2001genetic}. Evidence for the neutral evolution of LCRs relies on a large number of factors including both their lack of stable structure and function \citep{dunker2002intrinsic, haerty2010low}, and ability to frequently gain or lose repeats through replication slippage \citep{marcotte1999census, kruglyak1998equilibrium, huntley2000evolution}. Support for a selective model of LCR evolution comes from the non-random patterns of changes within LCRs, the deleterious effect of their expansion in humans \citep{karlin2002amino}, and their
+enrichment in proteins involved in transcription, DNA, protein binding, reproduction, and development \citep{huntley2007evolutionary, haerty2010genome, battistuzzi2016profiles}. In a study of orthologous mouse and human genes, \citet{mularoni2007highly} found a significant negative correlation between repeat number and gene nonsynonomous substitution rate, indicating
+that proteins acted upon by strong selective pressure contain a large number of repeats conserved between the two species
+\citep{mularoni2007highly}. Interestingly, the study also reported a significant positive correlation between repeat size difference
+and protein nonsynonymous substitution rate, demonstrating that events such as slippage and substitutions occur in proteins
+which undergo neutral evolution \citep{mularoni2007highly}. It was later revealed in a study by \citet{battistuzzi2016profiles} in which 11 representative Apicomplexa genomes were analyzed, that neutral mechanisms were found to act on highly repetitive LCRs
+(homopolymers) whereas selective pressures were influenced by the heterogeneity and length of the LCR \citep{battistuzzi2016profiles}. This work only begins to unravel the complexities of the evolutionary patterns associated with LCRs.
+
+\subsection{What is an Approximate Bayesian Computation Markov chain Monte Carlo algorithm?}
+When studying molecular evolution, a common practice is to use model-based analyses of sets of DNA and amino acid
+sequences \citep{laurin2022jump}. This approach allows for the estimation of evolutionary genetic parameters such as
+mutation rates and insertion/deletion rates \citep{wu2015estimation}. Model-based statistical inference generally revolves around
+calculating the likelihood function, which represents the probability of the observed data under a chosen model \citep{sunnaaker2013approximate}. The likelihood function therefore quantifies how well the data supports both the parameter values as well as the model \citep{sunnaaker2013approximate}. However, due to an increase in the complexity and magnitude of available data, many current model-based analyses have become intractable by virtue of the likelihood function being difficult to calculate \citep{marjoram2013approximation}. Approximate Bayesian computation (ABC) methods are rooted in Bayesian statistics and have been gaining popularity in areas such as genetics, as they bypass the calculation of the likelihood function \citep{sunnaaker2013approximate}. The way in which they do this is by utilizing a simulation step in place of the calculation as a way to provide an estimate of the likelihood function \citep{marjoram2013approximation}. Since there are many ways to approach a simulation, there are many different forms of ABCs. The more popular forms include ABC rejection methods, ABC Markov chain Monte Carlo methods (ABC-MCMC), and Sequential Monte Carlo ABC methods (ABC-SMC) \citep{marjoram2013approximation}. This study proposes the use of an ABC-MCMC algorithm in order to estimate evolutionary parameters such as mutation and indel rates, and provide insight into the formation and evolution of protein LCRs.
+
+The reason for proposing an ABC-MCMC in this study stems from the lack of a pre-existing model which explains how
+insertions and deletions work. Insertions and deletions alter the landscape of a sequence, making the likelihood calculation
+extremely challenging. \citet{marjoram2003markov} originally proposed the algorithm for a MCMC method without the use of
+likelihoods. The algorithm first starts from a selected parameter value and proposes a move to a new parameter value based
+on a proposal distribution \citep{marjoram2003markov}. Using this new parameter value, a dataset is then simulated and summary
+statistics are calculated, which makes it possible to quantitatively compare differences between the simulated dataset and the
+observed dataset \citep{marjoram2003markov}. If the difference between summary statistics is small, the Hastings Ratio is calculated
+and the proposed parameter value can be accepted with a certain probability, then a new value is proposed and the process begins
+again \citep{marjoram2003markov}. On the other hand if the difference in summary statistics between the observed and simulated
+data is very large, we propose a new parameter value and begin the algorithm again \citep{marjoram2003markov, marjoram2013approximation}. The use of this algorithm has enabled the analysis of complex problems which tend to arise in the areas of population genetics, ecology, epidemiology, and systems biology \citep{sunnaaker2013approximate}. The group of \citet{liepe2010abc} have been leaders in the use of ABCs for inference of genetic networks. This is evident through the creation of a software package they created called ABC SysBio which can implement ABC algorithms in a straightforward manner \citep{marjoram2013approximation, liepe2010abc}. Prior to the year 2000, there were essentially no papers published on ABCs \citep{marjoram2013approximation}. As we enter into an era where larger and more complex data can be collected, the need for improved models is necessary, hence the large increase over the last decade in papers which mention ABC methods \citep{marjoram2013approximation}.
+
+\subsection{How will we use an ABC-MCMC}
+Using the algorithm mentioned above for an ABC-MCMC, this study aims to better understand the evolutionary back-
+ground/formation of protein LCRs. An ABC-MCMC will enable the prediction of two important evolutionary parameters,
+mutation rate and indel rate. There is possibilty for the estimation of other parameters which will be explored upon investi-
+gating the first two. We will utilize amino acid sequences in this study, one being the SRP40 protein found in Saccharomyces
+cerevisiae, which is extremely biased in composition. This protein sequence will act as our observed data and we will compare
+this observed data to our simulated data.
+
+In terms of a simulation, we will use C++ to first generate a random amino acid sequence of a certain length. This
+randomly generated sequence will then be mutated over a number of generations in a two-step process. The first process is
+to choose a random poisson deviate with a mean that is equal to the mutation rate multiplied by the total number of sites. A
+poisson distribution is used here because mutation is a rare event and rare events can be modelled using this distribution. The
+value of the poisson deviate yields the total number of sites in the simulated sequence which should be mutated at random.
+The second mutation process deals with amino acid expansion and in this case we iterate through each residue in the simulated
+protein sequence and scan for repeats. If a residue is part of a repeat, we take the total length of the repeat, multiply it by the
+mutation rate and use this value as the mean of a random exponential deviate. We use the exponential distribution as it models
+waiting times between events. Based on the random exponential deviates assigned, we select the lowest value which represents
+the residue that will change fastest, and we alter that residue to either delete or insert a repeat at that position.
+
+Once we simulate a protein sequence for a number of generations under certain parameter values, we need to obtain a
+set of summary statistics and compare the summary statistics of the observed and simulated data. We have proposed summary
+statistics based off notable characteristics such as protein length, number of LCRs, and the average entropy of the LCRs. There
+is the possibility for additional summary statistic characteristics upon exploration of the initially proposed characteristics. To
+quantitatively compare the differences between the observed and simulated data, we propose using a distance measure between
+the two vectors of summary statistics. This distance is just the norm of the vector observed-simulated. Along with this, we also
+propose the use of a threshold as a way to assess how close the two datasets are. If the distance between the two vectors of
+summary statistics is larger than this threshold, we can not accept the proposed parameter value and the algorithm begins again.
+On the other hand, if the distance is very small, we can move forward in the algorithm and potentially accept the new parameter
+value.
+
+We intend to run the simulation under the same parameters many times and take the average of the produced summary
+statistic vectors before calculating the distance between observed and simulated data. It is also worth noting that each time we
+begin the algorithm again, new parameter proposals will be selected using random normal deviates. We hope to see the distance
+between summary statistics being minimized upon every iteration of the algorithm as this means the simulated protein closely
+resembles the observed protein under specific parameters.
+
+\section{Introduction}
+
+\section{Materials and Methods} 
+\label{methods}
+%All custom scripts and commands used in this
+%analysis can be found on \texttt{GitHub} at
+%\url{https://github.com/JohannaEnright/LCREntropyProject/}.
+
+%\sloppy For a detailed protocol, see Supplementary files on \texttt{GitHub} at
+ %\url{https://github.com/JohannaEnright/LCREntropyProject/}.
+
+%\subsection{Sequence Data}
+
+%\subsection{LCR Simulation}
+
+%\subsection{Confidence Intervals for Correlation Coefficient}
+
+\section{Results}
+
+%\subsection{Entropy of LCRs in Protein and DNA correlate Poorly with
+%Corresponding Sequence Entropies}
+
+
+%\subsection{Entropy Correlation is Higher in Simulated Sequences}
+
+
+\section{Discussion}
+
+\clearpage\newpage
+\section{References}
+
+%%%FIGURES%%%%%
+
+%%%%PRINTING BIBLIOGRAPHY%%%%
+\nocite{*}
+\printbibliography[heading=none, sorting=nyt]
+\newpage
+
+\section{Appendix C++ simulation (so far)}
+\lstinputlisting[language=c++]{mutations_2.cpp}
+
+
+
+\end{document}
+
+
+

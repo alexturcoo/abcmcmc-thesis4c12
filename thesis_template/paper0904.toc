@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {}Abstract}{3}{section.1}%
+\contentsline {section}{\numberline {}Literature Review/Proposal}{4}{section.2}%
+\contentsline {subsection}{\numberline {}What are Low Complexity Regions?}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {}Characteristics and Types of LCRs}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {}Why care about LCRs?}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {}How do LCRs Evolve?}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {}What is an Approximate Bayesian Computation Markov chain Monte Carlo algorithm?}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {}How will we use an ABC-MCMC}{8}{subsection.2.6}%
+\contentsline {section}{\numberline {}Introduction}{9}{section.3}%
+\contentsline {section}{\numberline {}Materials and Methods}{9}{section.4}%
+\contentsline {section}{\numberline {}Results}{9}{section.5}%
+\contentsline {section}{\numberline {}Discussion}{9}{section.6}%
+\contentsline {section}{\numberline {}References}{10}{section.7}%
+\contentsline {section}{\numberline {}Appendix C++ simulation (so far)}{13}{section.8}%

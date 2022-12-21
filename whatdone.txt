@@ -429,3 +429,13 @@ November 30 2022 - GOOD DAY
 - I am proud I figured out gnuplot because pgplot (what I use to graph in datasci2G03) was not available on this computer so I switched to something new.
 - For today we NEED to finish the script for my presentation - USE EMAIL FROM ZACH TO ADDRESS ENTROPY/INFORMATION SLIDES
 - When we finsh this script and practice we can then play around with some of the ABC stuff more.
+
+Dec 1 - Dec 5 - PRACTICE FOR BEAP PRESENTATION
+- I think I did well on my beap presentation!!!
+- Spoke clearly, slides were good, just get more results!!!!
+- taking a break to work on other thesis
+
+Dec 20 2022 - NOTE TO XANDER
+- look in the mutation file for the mutation rate, it is not changing!! it needs to change in this file in order for new values to be generated.
+- Linux boot got messed up on laptop so I lost my latex files for my paper - I created a new document and copied the text from the corrections I made from brian
+- I am going to add this template on github now so this does not happen again.
