@@ -43,18 +43,18 @@ BASED ON BOTH MUTATION RATES AND INDEL RATES AND THEN OUT OF BOTH VECTORS
 WE WILL FIND THE LOWEST AND EITHER MUTATE IT OR DO AN INS/DEL DEPENDING
 ON WHICH VECTOR THE LOWEST DEVIATE CAME FROM*/
 
-std::string mutateSeqExp(std::string simulated_protein){
+std::string mutateSeqExp(std::string simulated_protein, float mutation_rate, float indel_rate){
 
     // Setting up the vectors
     std::vector<double> exp_deviates_vtr_ind;  // Creating a vector to hold the values of the deviates for indel rate
     std::vector<double> exp_deviates_vtr_mut; // Creating a vector to hold the values of the deviates for mutation rate
     std::vector<double> smallest_vtr; // Creating a vector to store the smallest element of each of the 2 vectors
                                       
-    //std::cout << "before mutateseqEXP:\t" << simulated_protein << "\n"; // Initially printing the non-mutated strin.
+    std::cout << "before mutateseqEXP:\t" << simulated_protein << "\n"; // Initially printing the non-mutated strin.
 
-    // Mutation and indel rate set here now
-    float mutation_rate = 0.14;
-    float indel_rate = 0.14;
+    // Mutation and indel rate set here now - dont need to set here
+    //float mutation_rate = 0.14;
+    //float indel_rate = 0.14;
 
     // First loop will assign deviates based on mutation rates
     for (int i = 0; i < simulated_protein.length(); i++) {
@@ -113,7 +113,7 @@ std::string mutateSeqExp(std::string simulated_protein){
     // Getting the index of the smallest of the small numbers
     int position = getIndex(smallest_vtr, smallest_num);
 
-    // If index = 0, mutation If index = 1, indel
+    // If index = 0 mutation, If index = 1, indel
     if (position == 0){
 
         for (int i = 0; i < 1; i++) {
@@ -127,6 +127,11 @@ std::string mutateSeqExp(std::string simulated_protein){
             //std::cout << position2 << "\n";
         }
 
+        // THIS IS JUST TO PRINT THE VECTOR OF DEVIATES FOR MUTATION
+            for (int x = 0; x < exp_deviates_vtr_mut.size(); x++) {
+                std::cout << exp_deviates_vtr_mut[x] << ' ';
+            }
+
     } else {
         
         int position3 = getIndex(exp_deviates_vtr_ind, min_ind);
@@ -139,22 +144,20 @@ std::string mutateSeqExp(std::string simulated_protein){
         } else {
         simulated_protein.insert(position3+1,1, aa_index);
         }
+
+        // THIS IS JUST TO PRINT THE VECTOR OF DEVIATES FOR INDELS
+        for (int x = 0; x < exp_deviates_vtr_ind.size(); x++) {
+            std::cout << "i:" << exp_deviates_vtr_ind[x] << ' ';
+        }
+
     }
 
     //printing out this stuff to check its working
     //std::cout << min_mut << "\n" << min_ind << "\n" << smallest_num << "\n" << position <<  "\n";
-
-    // THIS IS JUST TO PRINT THE VECTOR
-    //for (int x = 0; x < exp_deviates_vtr_ind.size(); x++) {
-    //    std::cout << exp_deviates_vtr_ind[x] << ' ';
-    //}
     
-    //std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
+    std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
     return simulated_protein;
 }
-
-
-
 
 double getNormalDev(double mu, double stdev) {
     Normaldev mynorm(mu, stdev, myran.int64());

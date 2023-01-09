@@ -446,3 +446,6 @@ Jan 9 2022 - BACK FROM BREAK
 - I have not messed with my code in a little because I have been occupied with submissions for my thesis and presentations but hopefully the next months I get RESULTS
 - in my mid-year report I can mention some of the things I have done up to this point (like the rough graph I produced, and things I plan on doing)
 - Ask Brian about how Materials and Methods should be done.
+- removed mutation and indel rate variables from mutation_2.cpp file, set it only in the abcmcmc file and used the two values as parameters in the mutation function.
+- added print statements for exponential deviates depending on whether a point mutation occured or an insertion/deletion
+- still struggling with the threshold value and the proposals based on the normal distribution are super weird, check this tomorrow with Brian.
