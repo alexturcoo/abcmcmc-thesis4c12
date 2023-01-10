@@ -27,7 +27,7 @@ int main() {
     double index[10];
 
     //First for loop is for the number of simulations
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 5; i++) {
     
     //setting this in the loop
     std::vector<vector<double>> vec_of_vecs;
@@ -41,13 +41,13 @@ int main() {
         // 1. We need to generate the random protein sequence
         // For loop here is to generate 10 vectors of summary
         // statistics for each parameter and get the average of all
-        for (int k = 0; k<2; k++){
-        std::string simulated_protein = createSeq(10);
+        for (int k = 0; k<10; k++){
+        std::string simulated_protein = createSeq(100);
         
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
             // this for loop is just to mutate the protein
-            for (int j = 0; j < 2; j++){
+            for (int j = 0; j < 1; j++){
                 std::string mutated_protein = mutateSeqExp(simulated_protein, mutation_rate, indel_rate);
                 simulated_protein = mutated_protein;
             }
@@ -66,7 +66,7 @@ int main() {
 
         std::vector<double> sim_prot_vtravg = vectors_average(vec_of_vecs);
 
-        // 4. Lets try importing the vector of summary statistic for observed protein
+        // 4. Lets try importing the vector of summary statistic for observed protein SRP40 (Saccharomyces)
         std::vector<double> obs_prot_vtr = og_protein();
 
         // ADDED STEP - LETS NORMALIZE BOTH THE SIMULATED AND
