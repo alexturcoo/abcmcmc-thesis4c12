@@ -56,9 +56,9 @@ std::vector<double> og_protein(){
     }
 
     // TO TEST THE OUTPUT/PRINT THE VECTOR
-    //for (int x = 0; x < obs_ss_vec.size(); x++) {
-    //    std::cout << obs_ss_vec[x] << ' ' << "\n";
-    //}
+    for (int x = 0; x < obs_ss_vec.size(); x++) {
+        std::cout << obs_ss_vec[x] << ' ' << "\n";
+    }
 
     return obs_ss_vec;
 }

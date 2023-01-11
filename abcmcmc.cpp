@@ -27,7 +27,7 @@ int main() {
     double index[10];
 
     //First for loop is for the number of simulations
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 1; i++) {
     
     //setting this in the loop
     std::vector<vector<double>> vec_of_vecs;
@@ -47,7 +47,7 @@ int main() {
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
             // this for loop is just to mutate the protein
-            for (int j = 0; j < 1; j++){
+            for (int j = 0; j < 2; j++){
                 std::string mutated_protein = mutateSeqExp(simulated_protein, mutation_rate, indel_rate);
                 simulated_protein = mutated_protein;
             }
