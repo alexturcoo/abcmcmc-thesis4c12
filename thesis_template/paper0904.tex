@@ -127,7 +127,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % generally hyperref needs to be loaded last
-\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=darkbrown]{hyperref}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 %\usepackage[hidelinks,colorlinks=false,citecolor=blue,urlcolor=darkbrown]{hyperref}
 \tikzexternalize
 
@@ -369,22 +369,30 @@ begin the algorithm again, new parameter proposals will be selected using random
 between summary statistics being minimized upon every iteration of the algorithm as this means the simulated protein closely
 resembles the observed protein under specific parameters.
 
-\section{Introduction}
+%\section{Introduction}
 
 \section{Materials and Methods} 
 \label{methods}
-%All custom scripts and commands used in this
-%analysis can be found on \texttt{GitHub} at
-%\url{https://github.com/JohannaEnright/LCREntropyProject/}.
+Custom scripts and commands utilized in this analysis can be found on \texttt{GitHub} at
+\url{https://github.com/opticrom/abcmcmc-thesis4c12}.
 
 %\sloppy For a detailed protocol, see Supplementary files on \texttt{GitHub} at
  %\url{https://github.com/JohannaEnright/LCREntropyProject/}.
 
-%\subsection{Sequence Data}
+\subsection{ABC-MCMC: The Algorithm}
+% Here we provide the basis of the algorithm from Marjoram et al.
+% Compare this to my algorithm right now
 
-%\subsection{LCR Simulation}
+\subsection{Parameters and Summary Statistics}
+% Here we talk about which parameters and summary statistics were working with
+% I am not sure if I talk about why were using them here, I think I need to though
 
-%\subsection{Confidence Intervals for Correlation Coefficient}
+\subsection{Simulation Step: Creation and Mutation of Protein Sequences}
+% Bulk of methods, talk about the simulation step which involves creating proteins
+% mutating proteins (indels and point mutations) and how we scan for repeats and assign deviates. the whole process, even generating deviates here
+
+\subsection{Euclidean Distance Calculation}
+% May be important to highlight this calculation because we use it to normalize the vectors of summary statistics before examining results.
 
 \section{Results}
 
