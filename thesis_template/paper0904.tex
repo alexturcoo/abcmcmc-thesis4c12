@@ -77,6 +77,7 @@
 \usepackage{multicol}
 \usepackage{multirow}
 % figs
+\captionsetup[figure]{labelfont={color=blue}, font={color=black}}
 %\usepackage{subfig}% http://ctan.org/pkg/subfig
 \usepackage{subcaption}
 %\newsubfloat{figure}% Allow sub-figures
@@ -383,7 +384,19 @@ Custom scripts and commands utilized in this analysis can be found on \texttt{Gi
 % Here we provide the basis of the algorithm from Marjoram et al.
 % Compare this to my algorithm right now
 
-This study utilized an algorithm for a Markov Chain Monte Carlo Method
+This study utilized the ABC Markov chain Monte Carlo algorithm which was originally proposed by \citet{marjoram2003markov} and later built upon in a subsequent paper \citep{marjoram2013approximation}. The algorithm begins from a randomly selected parameter value and follows the steps below.
+
+\begin{figure}[h]
+	\begin{enumerate}
+		\item If now at $\theta$, propose a move to $\theta'$ according to a proposal distribution $q(\theta, \theta')$.
+		\item Simulate a dataset, $D'$ using $\theta'$.
+		\item If $D' ~ D$ proceed to step 4; else, output $\theta$ and return to 1.
+		\item Calculate the Hastings Ratio.
+		\item Accept, and output, the new $\theta'$ with probability h. Else return to, and output, $\theta$, Go back to 1.
+	\end{enumerate}
+	\label{fig:algorithm1}
+	\caption{Hello}
+\end{figure}
 
 \subsection{Parameters and Summary Statistics}
 % Here we talk about which parameters and summary statistics were working with
