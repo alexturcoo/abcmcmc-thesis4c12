@@ -11,6 +11,7 @@
 \usepackage{caption}
 \usepackage{notoccite}
 \usepackage{pgfplotstable}
+\usepackage{soul} %For highlights using \hl
 %\usepackage[round]{natbib}
 %\setcitestyle{aysep={}} %removes the comma between the author and year in citations
 %\usepackage{underscore}
@@ -372,7 +373,7 @@ resembles the observed protein under specific parameters.
 
 %\section{Introduction}
 
-\section{Materials and Methods (mid-year stuff)} 
+\section{Materials and Methods (mid-year stuff Jan 20)} 
 \label{methods}
 Custom scripts and commands utilized in this analysis can be found on \texttt{GitHub} at
 \url{https://github.com/opticrom/abcmcmc-thesis4c12}.
@@ -384,9 +385,9 @@ Custom scripts and commands utilized in this analysis can be found on \texttt{Gi
 % Here we provide the basis of the algorithm from Marjoram et al.
 % Compare this to my algorithm right now
 
-This study utilized the ABC Markov chain Monte Carlo algorithm which was originally proposed by \citet{marjoram2003markov} and later built upon in a subsequent paper \citep{marjoram2013approximation}. The algorithm begins from a randomly selected parameter value and follows the steps below.
+This study utilized the ABC Markov chain Monte Carlo algorithm, originally proposed by \citet{marjoram2003markov}. The algorithm begins from a randomly selected parameter value and follows the steps below.
 
-\begin{figure}[h]
+%\begin{figure}[h]
 	\begin{enumerate}
 		\item If now at $\theta$, propose a move to $\theta'$ according to a proposal distribution $q(\theta, \theta')$.
 		\item Simulate a dataset, $D'$ using $\theta'$.
@@ -394,20 +395,41 @@ This study utilized the ABC Markov chain Monte Carlo algorithm which was origina
 		\item Calculate the Hastings Ratio.
 		\item Accept, and output, the new $\theta'$ with probability h. Else return to, and output, $\theta$, Go back to 1.
 	\end{enumerate}
-	\label{fig:algorithm1}
-	\caption{Hello}
-\end{figure}
+	%\label{fig:algorithm1}
+	%\caption{Hello}
+%\end{figure}
+
+A custom \texttt{C++} script was written to iterate through the algorithm for a desired number of simulations. The Normal distribution was used to control how new parameter values were proposed. We simulated a dataset under the newly proposed parameter value, which consisted of a randomly generated protein sequence. The simulated protein was compared to a protein of known low complexity called SRP40, which is found in the model organism \sclong. The protein sequence for SRP40 was downloaded from the NCBI database. To quantitatively compare similarities between simulated and observed protein sequences, vectors of summary statistics (characteristics that describe the sequences) were created for each sequence. The euclidean distance between the two vectors was calculated and compared to a threshold value to determine if the newly proposed parameter value could be accepted.
+
+\hl{NEED HELP:} In order to create a posterior distribution, parameter values need to be accepted with a certain probability. In the algorithm proposed by \citet{marjoram2003markov}, the Hastings Ratio is calculated to determine this acceptance probability. Currently having issues implementing the hastings algorithm and struggling to understand why I can not use it or figure it out. What are other alternatives in this case for calculating acceptance probabilities?
 
 \subsection{Parameters and Summary Statistics}
 % Here we talk about which parameters and summary statistics were working with
+% What is mutation rate, what is indel rate.
 % I am not sure if I talk about why were using them here, I think I need to though
+%My mutation rate is like point mutation rate, ask though to make sure
+
+Two parameters were estimated in this study, mutation rate and insertion/deletion (indel) rate. Mutation rate referred to the rate at which a single amino acid in a protein sequence changed into a different amino acid. Indel rate referred to the rate at which an amino acid was deleted or inserted from a protein sequence. For the purpose of this study, to determine if the length of a repetitive region played a role in insertions, any amino acid that was inserted into the simulated protein sequence was the same unit as the previous amino acid \hl{(Should I explain why here, not too sure, going to talk more about it in the next part).}
+
+Summary statistics were utilized to capture important information about simulated and observed protein sequences in order to assess how similar the sequences were. Three summary statistics were used which included, the length of the protein sequence, the number of LCRs in
 
 \subsection{Simulation Step: Creation and Mutation of Protein Sequences}
 % Bulk of methods, talk about the simulation step which involves creating proteins
 % mutating proteins (indels and point mutations) and how we scan for repeats and assign deviates. the whole process, even generating deviates here
 
+To determine
+
 \subsection{Euclidean Distance Calculation}
 % May be important to highlight this calculation because we use it to normalize the vectors of summary statistics before examining results.
+% Could make this a weighted Euclidean Distance?
+
+To determine the similarity between simulated and observed protein sequences, the distance between the vectors of summary statistics was calculated by employing a Euclidean distance measure \eqref{eq:1} .
+
+\begin{equation}
+	d(P1,P2) = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2 }
+	\label{eq:1}
+\end{equation}
+
 
 \section{Results}
 
