@@ -232,6 +232,8 @@
        
 \section{Abstract} 
 
+I want to finish the project in order to write the abstract, I want to be able to summarize everything concisely.
+
 \bigskip
                         
 %\textbf{Key Words: Low complexity, entropy, amino acid sequence,
@@ -409,9 +411,11 @@ A custom \texttt{C++} script was written to iterate through the algorithm for a 
 % I am not sure if I talk about why were using them here, I think I need to though
 %My mutation rate is like point mutation rate, ask though to make sure
 
-Two parameters were estimated in this study, mutation rate and insertion/deletion (indel) rate. Mutation rate referred to the rate at which a single amino acid in a protein sequence changed into a different amino acid. Indel rate referred to the rate at which an amino acid was deleted or inserted from a protein sequence. For the purpose of this study, to determine if the length of a repetitive region played a role in insertions, any amino acid that was inserted into the simulated protein sequence was the same unit as the previous amino acid \hl{(Should I explain why here, not too sure, going to talk more about it in the next part).}
+Two parameters were estimated in this study, mutation rate and insertion/deletion (indel) rate. Mutation rate referred to the rate at which a single amino acid in a protein sequence changed into a different amino acid. Indel rate referred to the rate at which an amino acid was deleted or inserted from a protein sequence. For the purpose of this study, to determine if the length of a repetitive region played a role in insertions, any amino acid that was inserted into the simulated protein sequence was the same unit as the previous amino acid in the sequence \hl{(Should I explain why here, not too sure, going to talk more about it in the next part).}
 
-Summary statistics were utilized to capture important information about simulated and observed protein sequences in order to assess how similar the sequences were. Three summary statistics were used which included, the length of the protein sequence, the number of LCRs in
+Summary statistics were utilized to capture important information about simulated and observed protein sequences in order to assess how similar the sequences were. Three summary statistics were used which included, the length of the protein sequence, the number of LCRs in the sequence, and the average entropy of the LCRs. To identify LCRs and their corresponding entropies, the \texttt{Seg} algorithm was implemented \citep{wootton1993statistics}. The following \texttt{Seg} parameters were utilized to search for LCRs in proteins; a window length of 15, a trigger segment complexity of 1.9, and an extension segment complexity of 2.2. We selected these due to previous research which demonstrated that these parameter values would better detect regions of low complexity in eukaryotes which are typically longer and contain more repetitive repeats \citep{huntley2000evolution, huntley2002simple}. \hl{In the 2002 paper, the 2000 paper is cited for this fact so I was not sure which to cite, put both for now.}
+
+Summary statistics were stored in vectors and normalized in order to prevent large values (like the length of the sequence) from dominating when calculating the Euclidean distance.
 
 \subsection{Simulation Step: Creation and Mutation of Protein Sequences}
 % Bulk of methods, talk about the simulation step which involves creating proteins
@@ -422,8 +426,9 @@ To determine
 \subsection{Euclidean Distance Calculation}
 % May be important to highlight this calculation because we use it to normalize the vectors of summary statistics before examining results.
 % Could make this a weighted Euclidean Distance?
+% Can I also put normalizing the vectors here?
 
-To determine the similarity between simulated and observed protein sequences, the distance between the vectors of summary statistics was calculated by employing a Euclidean distance measure \eqref{eq:1} .
+To determine the similarity between simulated and observed protein sequences, the distance between the vectors of summary statistics was calculated by employing a Euclidean distance measure \eqref{eq:1}.
 
 \begin{equation}
 	d(P1,P2) = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2 }
