@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  18 JAN 2023 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  19 JAN 2023 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1483,15 +1483,15 @@ be found on \T1/pcr/m/n/10 GitHub \T1/ptm/m/n/10 at [][]$\T1/pcr/m/n/10 https :
  / / github . com / opticrom /
  []
 
-[9] [10] [11]
+[9] [10] [11] [12]
 
 Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer
  supported.
 (biblatex)                Please use 'sorting' option to '\newrefcontext'.
 
-[12
+[13
 
-] [13] [14] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+] [14] [15] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1500,31 +1500,23 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
-(./mutations_2.cpp [15] [16] [17] [18])
+(./mutations_2.cpp [16] [17] [18] [19])
 
 Package caption Warning: Unused \captionsetup[figure] on input line 81.
 See the caption package documentation for explanation.
 
-[19] (./paper0904.aux)
-
-LaTeX Warning: There were undefined references.
-
+[20] (./paper0904.aux)
 Package rerunfilecheck Info: File `paper0904.out' has not changed.
-(rerunfilecheck)             Checksum: C63B1682B97CEE54EBD48026485D3797;3638.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                paper0904
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 489D4E0AA96DC7667545FB10E0011156;3734.
 Package logreq Info: Writing requests to 'paper0904.run.xml'.
 \openout1 = `paper0904.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46789 strings out of 478287
- 1054932 string characters out of 5849290
- 2217472 words of memory out of 5000000
- 64005 multiletter control sequences out of 15000+600000
+ 46798 strings out of 478287
+ 1055165 string characters out of 5849290
+ 2217644 words of memory out of 5000000
+ 64011 multiletter control sequences out of 15000+600000
  513371 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,12n,117p,1519b,2167s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1538,10 +1530,10 @@ msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper0904.pdf (19 pages, 173352 bytes).
+Output written on paper0904.pdf (20 pages, 181487 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 571 compressed objects within 6 object streams
- 255 named destinations out of 1000 (max. 500000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 578 compressed objects within 6 object streams
+ 258 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

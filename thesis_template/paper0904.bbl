@@ -57,7 +57,6 @@
       \field{title}{Effect of low-complexity regions on protein structure determination}
       \field{volume}{8}
       \field{year}{2007}
-      \true{nocite}
       \field{pages}{217\bibrangedash 226}
       \range{pages}{10}
     \endentry
@@ -114,7 +113,6 @@
       \field{title}{Profiles of low complexity regions in Apicomplexa}
       \field{volume}{16}
       \field{year}{2016}
-      \true{nocite}
       \field{pages}{1\bibrangedash 12}
       \range{pages}{12}
     \endentry
@@ -158,7 +156,6 @@
       \field{title}{The simple sequence contingency loci of Haemophilus influenzae and Neisseria meningitidis}
       \field{volume}{107}
       \field{year}{2001}
-      \true{nocite}
       \field{pages}{657\bibrangedash 666}
       \range{pages}{10}
     \endentry
@@ -210,7 +207,6 @@
       \field{title}{Mutation rate in human microsatellites: influence of the structure and length of the tandem repeat}
       \field{volume}{62}
       \field{year}{1998}
-      \true{nocite}
       \field{pages}{1408\bibrangedash 1415}
       \range{pages}{8}
     \endentry
@@ -267,7 +263,6 @@
       \field{title}{Low-complexity regions within protein sequences have position-dependent roles}
       \field{volume}{4}
       \field{year}{2010}
-      \true{nocite}
       \field{pages}{1\bibrangedash 13}
       \range{pages}{13}
     \endentry
@@ -308,7 +303,6 @@
       \field{title}{On the abundance, amino acid composition, and evolutionary dynamics of low-complexity regions in proteins}
       \field{volume}{378}
       \field{year}{2006}
-      \true{nocite}
       \field{pages}{19\bibrangedash 30}
       \range{pages}{12}
     \endentry
@@ -360,7 +354,6 @@
       \field{title}{Intrinsic disorder and protein function}
       \field{volume}{41}
       \field{year}{2002}
-      \true{nocite}
       \field{pages}{6573\bibrangedash 6582}
       \range{pages}{10}
     \endentry
@@ -392,7 +385,6 @@
       \field{title}{Microsatellites: simple sequences with complex evolution}
       \field{volume}{5}
       \field{year}{2004}
-      \true{nocite}
       \field{pages}{435\bibrangedash 445}
       \range{pages}{11}
     \endentry
@@ -429,7 +421,6 @@
       \field{title}{Trinucleotide repeats and neurodegenerative disease}
       \field{volume}{127}
       \field{year}{2004}
-      \true{nocite}
       \field{pages}{2385\bibrangedash 2405}
       \range{pages}{21}
     \endentry
@@ -508,7 +499,6 @@
       \field{title}{Genome sequence of the human malaria parasite Plasmodium falciparum}
       \field{volume}{419}
       \field{year}{2002}
-      \true{nocite}
       \field{pages}{498\bibrangedash 511}
       \range{pages}{14}
     \endentry
@@ -547,7 +537,6 @@
       \field{title}{Genome-wide evidence for selection acting on single amino acid repeats}
       \field{volume}{20}
       \field{year}{2010}
-      \true{nocite}
       \field{pages}{755\bibrangedash 760}
       \range{pages}{6}
     \endentry
@@ -583,9 +572,65 @@
       \field{title}{Low-complexity sequences and single amino acid repeats: not just “junk” peptide sequences}
       \field{volume}{53}
       \field{year}{2010}
-      \true{nocite}
       \field{pages}{753\bibrangedash 762}
       \range{pages}{10}
+    \endentry
+    \entry{hamilton2005bayesian}{article}{}
+      \name{author}{6}{}{%
+        {{hash=fb8b79f58aa70d292aa2ca67dc62179b}{%
+           family={Hamilton},
+           familyi={H\bibinitperiod},
+           given={Grant},
+           giveni={G\bibinitperiod}}}%
+        {{hash=28984fd1af6f8a4bee30f2e5a839a571}{%
+           family={Currat},
+           familyi={C\bibinitperiod},
+           given={Mathias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5324d36280c1674b0e9a2aaa97e91565}{%
+           family={Ray},
+           familyi={R\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=cfd8e661fdaeca885fa2b3aafeebcd45}{%
+           family={Heckel},
+           familyi={H\bibinitperiod},
+           given={Gerald},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7af1cc14752add62724b5788ea398004}{%
+           family={Beaumont},
+           familyi={B\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=11cd3a5a3d4fb8b072309208716345cc}{%
+           family={Excoffier},
+           familyi={E\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{36b3ed31dafb6807a14814634b6a701c}
+      \strng{fullhash}{7135463943bc7df006416b565723cb8e}
+      \strng{bibnamehash}{7135463943bc7df006416b565723cb8e}
+      \strng{authorbibnamehash}{7135463943bc7df006416b565723cb8e}
+      \strng{authornamehash}{36b3ed31dafb6807a14814634b6a701c}
+      \strng{authorfullhash}{7135463943bc7df006416b565723cb8e}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Genetics}
+      \field{number}{1}
+      \field{title}{Bayesian estimation of recent migration rates after a spatial expansion}
+      \field{volume}{170}
+      \field{year}{2005}
+      \true{nocite}
+      \field{pages}{409\bibrangedash 417}
+      \range{pages}{9}
     \endentry
     \entry{huntley2000evolution}{article}{}
       \name{author}{2}{}{%
@@ -621,7 +666,6 @@
       \field{title}{Evolution of simple sequence in proteins}
       \field{volume}{51}
       \field{year}{2000}
-      \true{nocite}
       \field{pages}{131\bibrangedash 140}
       \range{pages}{10}
     \endentry
@@ -658,7 +702,6 @@
       \field{title}{Evolutionary analysis of amino acid repeats across the genomes of 12 Drosophila species}
       \field{volume}{24}
       \field{year}{2007}
-      \true{nocite}
       \field{pages}{2598\bibrangedash 2609}
       \range{pages}{12}
     \endentry
@@ -696,7 +739,6 @@
       \field{title}{Simple sequences are rare in the Protein Data Bank}
       \field{volume}{48}
       \field{year}{2002}
-      \true{nocite}
       \field{pages}{134\bibrangedash 140}
       \range{pages}{7}
     \endentry
@@ -734,7 +776,6 @@
       \field{title}{Selection and slippage creating serine homopolymers}
       \field{volume}{23}
       \field{year}{2006}
-      \true{nocite}
       \field{pages}{2017\bibrangedash 2025}
       \range{pages}{9}
     \endentry
@@ -786,7 +827,6 @@
       \field{title}{Amino acid runs in eukaryotic proteomes and disease associations}
       \field{volume}{99}
       \field{year}{2002}
-      \true{nocite}
       \field{pages}{333\bibrangedash 338}
       \range{pages}{6}
     \endentry
@@ -861,7 +901,6 @@
       \field{title}{Distribution and abundance of microsatellites in the yeast genome can be explained by a balance between slippage events and point mutations}
       \field{volume}{17}
       \field{year}{2000}
-      \true{nocite}
       \field{pages}{1210\bibrangedash 1219}
       \range{pages}{10}
     \endentry
@@ -909,7 +948,6 @@
       \field{title}{Equilibrium distributions of microsatellite repeat length resulting from a balance between slippage events and point mutations}
       \field{volume}{95}
       \field{year}{1998}
-      \true{nocite}
       \field{pages}{10774\bibrangedash 10778}
       \range{pages}{5}
     \endentry
@@ -951,7 +989,6 @@
       \field{title}{Low complexity and disordered regions of proteins have different structural and amino acid preferences}
       \field{volume}{11}
       \field{year}{2015}
-      \true{nocite}
       \field{pages}{585\bibrangedash 594}
       \range{pages}{10}
     \endentry
@@ -991,7 +1028,6 @@
       \field{journaltitle}{Journal of Molecular Evolution}
       \field{title}{Jump-Chain Simulation of Markov Substitution Processes Over Phylogenies}
       \field{year}{2022}
-      \true{nocite}
       \field{pages}{1\bibrangedash 5}
       \range{pages}{5}
     \endentry
@@ -1025,7 +1061,6 @@
       \field{title}{Slipped-strand mispairing: a major mechanism for DNA sequence evolution.}
       \field{volume}{4}
       \field{year}{1987}
-      \true{nocite}
       \field{pages}{203\bibrangedash 221}
       \range{pages}{19}
     \endentry
@@ -1087,7 +1122,6 @@
       \field{title}{ABC-SysBio—approximate Bayesian computation in Python with GPU support}
       \field{volume}{26}
       \field{year}{2010}
-      \true{nocite}
       \field{pages}{1797\bibrangedash 1799}
       \range{pages}{3}
     \endentry
@@ -1134,7 +1168,6 @@
       \field{title}{A census of protein repeats}
       \field{volume}{293}
       \field{year}{1999}
-      \true{nocite}
       \field{pages}{151\bibrangedash 160}
       \range{pages}{10}
     \endentry
@@ -1166,7 +1199,6 @@
       \field{title}{Approximation bayesian computation}
       \field{volume}{1}
       \field{year}{2013}
-      \true{nocite}
       \field{pages}{853}
       \range{pages}{1}
     \endentry
@@ -1213,7 +1245,6 @@
       \field{title}{Markov chain Monte Carlo without likelihoods}
       \field{volume}{100}
       \field{year}{2003}
-      \true{nocite}
       \field{pages}{15324\bibrangedash 15328}
       \range{pages}{5}
     \endentry
@@ -1292,7 +1323,6 @@
       \field{title}{Disentangling the complexity of low complexity proteins}
       \field{volume}{21}
       \field{year}{2020}
-      \true{nocite}
       \field{pages}{458\bibrangedash 472}
       \range{pages}{15}
     \endentry
@@ -1324,7 +1354,6 @@
       \field{title}{Expandable DNA repeats and human disease}
       \field{volume}{447}
       \field{year}{2007}
-      \true{nocite}
       \field{pages}{932\bibrangedash 940}
       \range{pages}{9}
     \endentry
@@ -1366,7 +1395,6 @@
       \field{title}{Highly constrained proteins contain an unexpectedly large number of amino acid tandem repeats}
       \field{volume}{89}
       \field{year}{2007}
-      \true{nocite}
       \field{pages}{316\bibrangedash 325}
       \range{pages}{10}
     \endentry
@@ -1395,7 +1423,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Genetic diversity}
       \field{year}{2001}
-      \true{nocite}
     \endentry
     \entry{newfeld1991interspecific}{article}{}
       \name{author}{3}{}{%
@@ -1436,7 +1463,6 @@
       \field{title}{Interspecific comparison of the unusually repetitiveDrosophila locusmastermind}
       \field{volume}{32}
       \field{year}{1991}
-      \true{nocite}
       \field{pages}{415\bibrangedash 420}
       \range{pages}{6}
     \endentry
@@ -1563,7 +1589,6 @@
       \field{title}{Genes with triplet repeats: candidate mediators of neuropsychiatric disorders}
       \field{volume}{16}
       \field{year}{1993}
-      \true{nocite}
       \field{pages}{254\bibrangedash 260}
       \range{pages}{7}
     \endentry
@@ -1595,7 +1620,6 @@
       \field{title}{A mathematical theory of communication}
       \field{volume}{27}
       \field{year}{1948}
-      \true{nocite}
       \field{pages}{379\bibrangedash 423}
       \range{pages}{45}
     \endentry
@@ -1652,7 +1676,6 @@
       \field{title}{Approximate bayesian computation}
       \field{volume}{9}
       \field{year}{2013}
-      \true{nocite}
       \field{pages}{e1002803}
       \range{pages}{-1}
     \endentry
@@ -1699,7 +1722,6 @@
       \field{title}{Intragenic tandem repeats generate functional variability}
       \field{volume}{37}
       \field{year}{2005}
-      \true{nocite}
       \field{pages}{986\bibrangedash 990}
       \range{pages}{5}
     \endentry
@@ -1751,7 +1773,6 @@
       \field{title}{Polyalanine expansion in synpolydactyly might result from unequal crossing-over of HOXD13}
       \field{volume}{275}
       \field{year}{1997}
-      \true{nocite}
       \field{pages}{408\bibrangedash 409}
       \range{pages}{2}
     \endentry
@@ -1788,7 +1809,6 @@
       \field{title}{Statistics of local complexity in amino acid sequences and sequence databases}
       \field{volume}{17}
       \field{year}{1993}
-      \true{nocite}
       \field{pages}{149\bibrangedash 163}
       \range{pages}{15}
     \endentry
@@ -1825,7 +1845,6 @@
       \field{title}{Intrinsically disordered proteins in cellular signalling and regulation}
       \field{volume}{16}
       \field{year}{2015}
-      \true{nocite}
       \field{pages}{18\bibrangedash 29}
       \range{pages}{12}
     \endentry
@@ -1862,7 +1881,6 @@
       \field{title}{Estimation of evolutionary parameters using short, random and partial sequences from mixed samples of anonymous individuals}
       \field{volume}{16}
       \field{year}{2015}
-      \true{nocite}
       \field{pages}{1\bibrangedash 12}
       \range{pages}{12}
     \endentry
