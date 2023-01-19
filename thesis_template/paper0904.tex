@@ -401,9 +401,9 @@ This study utilized the ABC Markov chain Monte Carlo algorithm, originally propo
 	%\caption{Hello}
 %\end{figure}
 
-A custom \texttt{C++} script was written to iterate through the algorithm for a desired number of simulations. The Normal distribution was used to control how new parameter values were proposed \hl{SHOULD I MENTION THE MEAN AND STDEV OF THE NORMAL HERE? WHAT IF I WANT TO TEST MANY DIFFERENT KINDS}. We simulated a dataset under the newly proposed parameter value, which consisted of a randomly generated protein sequence. The simulated protein was compared to a protein of known low complexity called SRP40, which is found in the model organism \sclong. The protein sequence for SRP40 was downloaded from the NCBI database. To quantitatively compare similarities between simulated and observed protein sequences, vectors of summary statistics (characteristics that describe the sequences) were created for each sequence. The euclidean distance between the two vectors was calculated and compared to a threshold value to determine if the newly proposed parameter value could be accepted.
+A custom \texttt{C++} script was written to iterate through the algorithm for a desired number of simulations. The Normal distribution was used to control how new parameter values were proposed \hl{SHOULD I MENTION THE MEAN AND STDEV OF THE NORMAL HERE? WHAT IF I WANT TO TEST MANY DIFFERENT KINDS}. We simulated a dataset under the newly proposed parameter value, which consisted of a randomly generated protein sequence. The simulated protein was compared to a protein of known low complexity called SRP40, which is found in the model organism \sclong. The protein sequence for SRP40 was downloaded from the NCBI database. To quantitatively compare similarities between simulated and observed protein sequences, vectors of summary statistics (characteristics that describe the sequences) were created for each sequence. The Euclidean distance between the two vectors was calculated and compared to a threshold value to determine if the newly proposed parameter value could be accepted.
 
-\hl{NEED HELP:} In order to create a posterior distribution, parameter values need to be accepted with a certain probability. In the algorithm proposed by \citet{marjoram2003markov}, the Hastings Ratio is calculated to determine this acceptance probability. Currently having issues implementing the hastings algorithm and struggling to understand why I can not use it or figure it out. What are other alternatives in this case for calculating acceptance probabilities?
+\hl{NEED HELP:} In order to create a posterior distribution, parameter values need to be accepted with a certain probability. In the algorithm proposed by \citet{marjoram2003markov}, the Hastings Ratio is calculated to determine this acceptance probability. Currently having issues implementing the hastings algorithm and struggling to understand why I can not use it or figure it out. What are other alternatives in this case for calculating acceptance probabilities? Also having issues with the threshold value, how do I know what an appropriate value to set it at is? why are my distances not decreasing with every iteration of the simulation? why am I either accepting too many or not enough, this is something we NEED to talk about.
 
 \subsection{Parameters and Summary Statistics}
 % Here we talk about which parameters and summary statistics were working with
@@ -430,7 +430,9 @@ We iterated over the simulated protein sequence and assigned exponential deviate
 
 Exponential deviates were stored in two vectors, one for deviates generated using mutation rate, and the other for deviates generated using the indel rate. We then identified a single deviate with the lowest value (based on both vectors), which represented the residue that mutated quickest. Depending on which vector the lowest deviate came from, we either altered the corresponding amino acid or inserted/deleted a repetitive amino acid.
 
-We ran the simulation ten times for each newly proposed parameter value
+We ran the simulation ten times for each newly proposed parameter value and took the average of all ten vectors of summary statistics prior to calculating the distance. On each simulation, we mutated the protein sequence for 2000 generations before obtaining summary statistics \hl{If I want to test with a different number of iterations should I highlight that in here to? Or should I just mention alternate simulation parameters were used}.
+
+\hl{Need Help:} After running the simulations, I want to visualize the data. I want to see the posterior distribution but this is hard without acceptance probabilities. Currently, I utilized gnuplot to try and visualize the change in parameter values over the number of simulations and I am not sure how accurate it is. This goes back to the issue of the threshold value and acceptance probability.
 
 \subsection{Normalization and Euclidean Distance Calculation}
 % May be important to highlight this calculation because we use it to normalize the vectors of summary statistics before examining results.
@@ -452,8 +454,6 @@ To determine the similarity between simulated and observed protein sequences, th
 	d(P1,P2) = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2 }
 	\label{eq:2}
 \end{equation}
-
-\hl{Need Help:}
 
 \section{Results}
 
