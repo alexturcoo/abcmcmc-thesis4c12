@@ -441,7 +441,7 @@ Dec 20 2022 - NOTE TO XANDER
 - I am going to add this template on github now so this does not happen again.
 - Updated the simulation code in the latex file from the last time brian checked my paper so the code is newer than the one on the document brian commented on. Eberything should be the same writing wise, only thing that differs is the code in the latex file.
 
-Jan 9 2022 - BACK FROM BREAK
+Jan 9 2023 - BACK FROM BREAK
 - Mid-year thesis report due soon (Jan 13) so I am trying to write an abstract, get my materials and methods down, and write a little bit about the current state of my thesis.
 - I have not messed with my code in a little because I have been occupied with submissions for my thesis and presentations but hopefully the next months I get RESULTS
 - in my mid-year report I can mention some of the things I have done up to this point (like the rough graph I produced, and things I plan on doing)
@@ -449,3 +449,9 @@ Jan 9 2022 - BACK FROM BREAK
 - removed mutation and indel rate variables from mutation_2.cpp file, set it only in the abcmcmc file and used the two values as parameters in the mutation function.
 - added print statements for exponential deviates depending on whether a point mutation occured or an insertion/deletion
 - still struggling with the threshold value and the proposals based on the normal distribution are super weird, check this tomorrow with Brian.
+
+Feb 6 2023 - RECEIVED MID-YEAR REPORT BACK
+- Brian Provided comments on all my materials and methods, write his comments down and fix the ones you can
+- Sent Brian my code and he is currently working on it a little - changing mutations2.cpp file to basically just create one array of deviates and select the lowest one. Do this 50 times but dont create a new array on each iteration just use the same one and update it to change only if the site has been affected by a mutation or indel. Also we have to now check if its a mutation if it affects an indel (either inturrupts a repeat  region or adds to it)
+- Should be receiving this code back soon and then we need to figure out the normalization stuff - We talked about a range of amino acids (restraints on length of amino acid sequence) and using this, we can normalize length. Then we have to do this for each one somehow I need to understand this better so we will talk to Brian again about this.
+- Threshold value will be a probability value (also need to make sure of this) that will change with each iteration I believe, not sure yet (CHECK THIS TOO)
