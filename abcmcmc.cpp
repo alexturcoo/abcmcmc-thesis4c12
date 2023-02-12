@@ -1,4 +1,4 @@
-#include "mutations_2.cpp"
+#include "mutations_2_BG.cpp"
 #include "observed_protein.cpp"
 #include "simulated_protein.cpp"
 #include "distance2.cpp"
@@ -48,7 +48,7 @@ int main() {
             // Going to try and mutate over 2 gens
             // this for loop is just to mutate the protein
             for (int j = 0; j < 2; j++){
-                std::string mutated_protein = mutateSeqExp(simulated_protein, mutation_rate, indel_rate);
+                std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
                 simulated_protein = mutated_protein;
             }
         

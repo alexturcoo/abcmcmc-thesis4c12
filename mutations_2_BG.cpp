@@ -43,7 +43,7 @@ double getNormalDev(double mu, double stdev) {
 //}
 
 ////////// Changed here down - Brian - Feb 12 Xander made Changes, trying to understand the new stuff ////////////
-std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, float indel_rate, float iterates){
+std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, float indel_rate){ //took out iterates as a parameter
 
     struct element {
         char aa;
@@ -74,10 +74,10 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
         double deviate = myexp.dev(); // choose exp_deviate(mean of beta)
         protein[i].mut=deviate;
     }
-    // Traverse the string
+    // Traverse the string and generate deviates
     for (int i = 0; i < len; i++) {
         int counter = 1 ;
-        //Code to scan back and forth to find repeats
+        //Code to scan back and forth to find repeats - this i-1 will give -1 on the first iteration though - check this in while loop too for scanning backwards
         if (protein[i].aa != protein[i+1].aa && protein[i].aa != protein[i-1].aa) {
             float beta2 = indel_rate ; // the length if no repeats is 1
             Expondev myexp(beta2,myran.int64());
@@ -99,13 +99,14 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
                 counter += 1 ;
                 y++;
             }
-            float beta3 = indel_rate * counter ;
+            float beta3 = indel_rate * counter ; // trying to see if the # of repeats plays a role, multiply by counter
             Expondev myexp(beta3,myran.int64());
             double deviate = myexp.dev();
             protein[i].ind=deviate;
         }
     }
 
+    // Working with the vector of structs, why we doing 0.5*len
     for(int iter=0; iter<0.5*len; iter++) { // throw down 0.5 mut/site
         //selecting the lowest deviate from both vectors
         double minExpDev=protein[0].mut;
@@ -152,6 +153,9 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
         }
         // check what is around the change
         // need to look down one, the site and up one
+        // So here were checking if the point mutation, insertion,
+        // or deletion affected the landscape of the DNA sequence.
+        // Did it create a repeat, inturrupt a repeat, etc.
         for(int l=-1; l<2; l++) { // l=-1,0,1
             int i=minPosition+l;
             if (protein[i].aa == protein[i+1].aa || protein[i].aa == protein[i-1].aa) { // part of a repeat
