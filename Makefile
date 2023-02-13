@@ -45,3 +45,11 @@ getindex: getindex.o
 
 getindex.o: getindex.cpp
 	c++ -c getindex.cpp
+
+mutations_2_BG: mutations_2_BG.o
+	c++ -o mutations_2_BG mutations_2_BG.o -lm
+
+mutations_2_BG.o: mutations_2_BG.cpp
+	c++ -c mutations_2_BG.cpp
+
+

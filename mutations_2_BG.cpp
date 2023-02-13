@@ -106,6 +106,7 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
         }
     }
 
+    // I BELIEVE THIS PART IS CAUSING ERRORS RIGHT NOW - FEB 13
     // Working with the vector of structs, why we doing 0.5*len
     for(int iter=0; iter<0.5*len; iter++) { // throw down 0.5 mut/site
         //selecting the lowest deviate from both vectors
@@ -191,3 +192,13 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
     return simulated_protein;
 }
 
+///// TRYING TO DEBUG THIS FILE WITH THIS MAIN FUNCTION /////
+int main() {
+    for (int j = 0; j < 5; j++){
+        std::string simulated_protein = createSeq(200);
+        double mutation_rate = 0.14;
+        double indel_rate = 0.14;
+        std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
+        simulated_protein = mutated_protein;
+    }        
+}
