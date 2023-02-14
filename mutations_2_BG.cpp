@@ -74,7 +74,8 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
         double deviate = myexp.dev(); // choose exp_deviate(mean of beta)
         protein[i].mut=deviate;
     }
-    // Traverse the string and generate deviates
+    // Traverse the string and generate deviates - this seems to be
+    // working, counter is showing correct values for repeats
     for (int i = 0; i < len; i++) {
         int counter = 1 ;
         //Code to scan back and forth to find repeats - this i-1 will give -1 on the first iteration though - check this in while loop too for scanning backwards
@@ -102,11 +103,11 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
             float beta3 = indel_rate * counter ; // trying to see if the # of repeats plays a role, multiply by counter
             Expondev myexp(beta3,myran.int64());
             double deviate = myexp.dev();
-            protein[i].ind=deviate;
+            protein[i].ind=deviate; //Should I not also include the length? protein[i].length=counter
         }
+        std::cout << counter << "\n";
     }
 
-    // I BELIEVE THIS PART IS CAUSING ERRORS RIGHT NOW - FEB 13
     // Working with the vector of structs, why we doing 0.5*len
     for(int iter=0; iter<0.5*len; iter++) { // throw down 0.5 mut/site
         //selecting the lowest deviate from both vectors
@@ -124,6 +125,8 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
                 if(myran.int64() < 0.5) { minType=2; }
             }
         }
+
+        //This is where base changes, insertions, deletions occur
         if(minType==0) { // put in a base change
             protein[minPosition].aa=aminoAcids[myran.int64() % numAA];
             float beta1 = mutation_rate ; 
@@ -141,7 +144,7 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
                     float beta1 = mutation_rate ; 
                     Expondev myexp(beta1,myran.int64());
                     double deviate = myexp.dev();
-                    protein[minPosition].mut=deviate;
+                    protein[minPosition].mut=deviate; //Why a mutation deviate here if its an indel
                 }
             } else { // use deletion
                 if(len > 0.5*len) {
@@ -194,8 +197,8 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
 
 ///// TRYING TO DEBUG THIS FILE WITH THIS MAIN FUNCTION /////
 int main() {
-    for (int j = 0; j < 5; j++){
-        std::string simulated_protein = createSeq(200);
+    for (int j = 0; j < 2; j++){
+        std::string simulated_protein = createSeq(10);
         double mutation_rate = 0.14;
         double indel_rate = 0.14;
         std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
