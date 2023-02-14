@@ -197,7 +197,7 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
 
 ///// TRYING TO DEBUG THIS FILE WITH THIS MAIN FUNCTION /////
 int main() {
-    for (int j = 0; j < 2; j++){
+    for (int j = 0; j < 1; j++){
         std::string simulated_protein = createSeq(10);
         double mutation_rate = 0.14;
         double indel_rate = 0.14;
