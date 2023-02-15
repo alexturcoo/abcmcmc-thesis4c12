@@ -58,3 +58,9 @@ mutations_2_AT: mutations_2_AT.o
 mutations_2_AT.o: mutations_2_AT.cpp
 	c++ -c mutations_2_AT.cpp
 
+mutations_2_BG_vecs: mutations_2_BG_vecs.o
+	c++ -g -o mutations_2_BG_vecs mutations_2_BG_vecs.o -lm
+
+mutations_2_BG_vecs.o: mutations_2_BG_vecs.cpp
+	c++ -g -c mutations_2_BG_vecs.cpp
+
