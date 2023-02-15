@@ -166,8 +166,10 @@ double getNormalDev(double mu, double stdev) {
     return dev;
 }
 
-//int main() {
-//    std::string x = "MKNHCHKISAKHHHHAM";
-//    mutateSeqExp(x); 
-//}
+int main() {
+    std::string x = "MKNHCHKISAKHHHHAM";
+    float mut_rate = 0.14;
+    float ind_rate = 0.14;
+    mutateSeqExp(x, mut_rate, ind_rate); 
+}
 
