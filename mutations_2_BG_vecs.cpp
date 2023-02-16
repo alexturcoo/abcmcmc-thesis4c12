@@ -111,10 +111,10 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
                 if(myran.doub() < 0.5) { minType=2; }
             }
         }
-        std::cout << "minpos" << minPosition << "\n";
-        std::cout << "mindev" << minExpDev << "\n";
-        std::cout << "mintype" << minType << "\n";
-        std::cout << "iter" << iter << "\n";
+        //std::cout << "minpos" << minPosition << "\n";
+        //std::cout << "mindev" << minExpDev << "\n";
+        //std::cout << "mintype" << minType << "\n";
+        //std::cout << "iter" << iter << "\n";
 
         //This is where base changes, insertions, deletions occur
         if(minType==0) { // put in a base change
@@ -124,14 +124,14 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
             double deviate = myexp.dev();
             mut_dev[minPosition]=deviate;//swap deviate for base change
             //Printing to see mutated protein afer base change//
-            std::cout << "\n" << "after basechange:\t" << simulated_protein << "\n" << "\n" ;
+            //std::cout << "\n" << "after basechange:\t" << simulated_protein << "\n" << "\n" ;
             // THIS IS JUST TO PRINT THE VECTOR OF DEVIATES FOR MUTATION TO SEE IF IT CHANGED
-            for (int x = 0; x < mut_dev.size(); x++) {
+            /*for (int x = 0; x < mut_dev.size(); x++) {
                 std::cout << mut_dev[x] << ' ';
             }
             for (int x = 0; x < ind_dev.size(); x++) {
                 std::cout << ind_dev[x] << ' ';
-            }
+            }*/
         } else { // put in an indel
             if(minType==1) { // use insertion
                 if(len < 1.5*len) {
@@ -143,14 +143,14 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
                     mut_dev.insert(mut_dev.begin() + minPosition+1, deviate); //Adding a new deviate to mutation vector
                     ind_dev.insert(ind_dev.begin() + minPosition+1, deviate); //Adding new deviate to indel vector as placeholder
                     //Printing to see mutated protein after insertion//
-                    std::cout << "\n" << "after insertion:\t" << simulated_protein << "\n" << "\n" ;
+                    //std::cout << "\n" << "after insertion:\t" << simulated_protein << "\n" << "\n" ;
                     // THIS IS JUST TO PRINT THE VECTOR OF DEVIATES FOR MUTATION TO SEE IF IT CHANGED
-                    for (int x = 0; x < mut_dev.size(); x++) {
+                    /*for (int x = 0; x < mut_dev.size(); x++) {
                         std::cout << mut_dev[x] << ' ';
                     }
                     for (int x = 0; x < ind_dev.size(); x++) {
                         std::cout << ind_dev[x] << ' ';
-                    }
+                    }*/
                 }
             } else { // use deletion
                 if(len > 0.5*len) {
@@ -159,14 +159,14 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
                     mut_dev.erase(mut_dev.begin() + minPosition); //Deleting deviate in the mutation vector
                     ind_dev.erase(ind_dev.begin() + minPosition); //Deleting deviate in the indel vector
                     //Printing to see mutated protein after deletion//
-                    std::cout << "\n" << "after deletion:\t" << simulated_protein << "\n" << "\n" ;
+                    //std::cout << "\n" << "after deletion:\t" << simulated_protein << "\n" << "\n" ;
                     // THIS IS JUST TO PRINT THE VECTOR OF DEVIATES FOR MUTATION TO SEE IF IT CHANGED
-                    for (int x = 0; x < mut_dev.size(); x++) {
+                    /*for (int x = 0; x < mut_dev.size(); x++) {
                         std::cout << mut_dev[x] << ' ';
                     }
                     for (int x = 0; x < ind_dev.size(); x++) {
                         std::cout << ind_dev[x] << ' ';
-                    }
+                    }*/
                 }
             }
         }
@@ -186,14 +186,14 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
                 y++;
             }
             int start = minPosition - y; //Getting start position of repeats
-            std::cout << "start" << start+1 << "\n";
+            //std::cout << "start" << start+1 << "\n";
             //count forward
             while (simulated_protein[minPosition] == simulated_protein[minPosition + x]) { 
                 counter += 1; 
                 x++; 
             }
             int end = minPosition + x; //Getting end position of repeats
-            std::cout << "end" << end-1 << "\n";
+            //std::cout << "end" << end-1 << "\n";
             float beta3 = indel_rate * counter ;
             for(int j=start+1; j<=end-1; j++) {
                 Expondev myexp(beta3,myran.int64());
@@ -214,8 +214,8 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
 
 ///// TRYING TO DEBUG THIS FILE WITH THIS MAIN FUNCTION /////
 int main() {
-    for (int j = 0; j < 1; j++){
-        std::string simulated_protein = createSeq(10);
+    for (int j = 0; j < 10; j++){
+        std::string simulated_protein = createSeq(400);
         double mutation_rate = 0.14;
         double indel_rate = 0.14;
         std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);

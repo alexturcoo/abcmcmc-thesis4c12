@@ -1,4 +1,4 @@
-#include "mutations_2_BG.cpp"
+#include "mutations_2_BG_vecs.cpp"
 #include "observed_protein.cpp"
 #include "simulated_protein.cpp"
 #include "distance2.cpp"
