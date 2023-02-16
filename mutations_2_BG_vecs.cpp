@@ -176,7 +176,7 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
         // So here were checking if the insertion,
         // or deletion affected the landscape of the DNA sequence.
         // Did it create a repeat, inturrupt a repeat, etc.
-        if (simulated_protein[minPosition] == simulated_protein[minPosition+1] || simulated_protein[minPosition] == simulated_protein[minPosition-1]) { // part of a repeat
+        /*if (simulated_protein[minPosition] == simulated_protein[minPosition+1] || simulated_protein[minPosition] == simulated_protein[minPosition-1]) { // part of a repeat
             int counter = 1;
             int x = 1;
             int y = 1;
@@ -205,7 +205,7 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
             Expondev myexp(beta3,myran.int64());
             double deviate = myexp.dev();
             ind_dev[minPosition]=deviate;
-        }
+        }*/
     }
 
     std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
@@ -215,7 +215,7 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
 ///// TRYING TO DEBUG THIS FILE WITH THIS MAIN FUNCTION /////
 /*int main() {
     for (int j = 0; j < 2; j++){
-        std::string simulated_protein = createSeq(10);
+        std::string simulated_protein = createSeq(100);
         double mutation_rate = 0.14;
         double indel_rate = 0.14;
         std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
