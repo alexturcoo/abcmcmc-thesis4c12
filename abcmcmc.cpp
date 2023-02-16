@@ -22,9 +22,9 @@ int main() {
     double indel_rate = 0.14;
     double threshold = 0.005;
 
-    double mut_rate_arr[10];
-    double ind_rate_arr[10];
-    double index[10];
+    double mut_rate_arr[1000];
+    double ind_rate_arr[1000];
+    double index[1000];
 
     //First for loop is for the number of simulations
     for (int i = 0; i < 1; i++) {
@@ -42,7 +42,7 @@ int main() {
         // For loop here is to generate 10 vectors of summary
         // statistics for each parameter and get the average of all
         for (int k = 0; k<10; k++){
-        std::string simulated_protein = createSeq(100);
+        std::string simulated_protein = createSeq(10);
         
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
@@ -53,8 +53,8 @@ int main() {
             }
         
             // 3. Next we will get the average of 10 vectors of summary statistics
-            std::vector<double> sim_prot_vtr = sim_protein(simulated_protein);
-            vec_of_vecs.push_back(sim_prot_vtr);
+            //std::vector<double> sim_prot_vtr = sim_protein(simulated_protein);
+            //vec_of_vecs.push_back(sim_prot_vtr);
         }
 
         // TO TEST THE OUTPUT/PRINT THE VECTOR
@@ -64,7 +64,7 @@ int main() {
         //    }
         //}
 
-        std::vector<double> sim_prot_vtravg = vectors_average(vec_of_vecs);
+        /*std::vector<double> sim_prot_vtravg = vectors_average(vec_of_vecs);
 
         // 4. Lets try importing the vector of summary statistic for observed protein SRP40 (Saccharomyces)
         std::vector<double> obs_prot_vtr = og_protein();
@@ -93,14 +93,14 @@ int main() {
             ind_rate_arr[i] = indel_rate;
             index[i] = i;
             continue;
-        }
+        }*/
 
   }
 
-    std::ofstream myfile("parameters.txt"); //Create and open txt file
+    /*std::ofstream myfile("parameters.txt"); //Create and open txt file
     // Printing the arrays of parameter values
     for (int b = 0; b<10; b++) {
         myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\n';
-    }
+    }*/
 }
 
