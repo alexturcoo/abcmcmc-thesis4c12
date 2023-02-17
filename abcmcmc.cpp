@@ -27,7 +27,7 @@ int main() {
     double index[1000];
 
     //First for loop is for the number of simulations
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 2; i++) {
     
     //setting this in the loop
     std::vector<vector<double>> vec_of_vecs;
@@ -47,14 +47,15 @@ int main() {
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
             // this for loop is just to mutate the protein
+            // Only going thru 1 mutation process right now - Feb 17
             for (int j = 0; j < 1; j++){
                 std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
                 simulated_protein = mutated_protein;
             }
         
             // 3. Next we will get the average of 10 vectors of summary statistics
-            //std::vector<double> sim_prot_vtr = sim_protein(simulated_protein);
-            //vec_of_vecs.push_back(sim_prot_vtr);
+            std::vector<double> sim_prot_vtr = sim_protein(simulated_protein);
+            vec_of_vecs.push_back(sim_prot_vtr);
         }
 
         // TO TEST THE OUTPUT/PRINT THE VECTOR
@@ -64,7 +65,7 @@ int main() {
         //    }
         //}
 
-        /*std::vector<double> sim_prot_vtravg = vectors_average(vec_of_vecs);
+        std::vector<double> sim_prot_vtravg = vectors_average(vec_of_vecs);
 
         // 4. Lets try importing the vector of summary statistic for observed protein SRP40 (Saccharomyces)
         std::vector<double> obs_prot_vtr = og_protein();
@@ -93,14 +94,14 @@ int main() {
             ind_rate_arr[i] = indel_rate;
             index[i] = i;
             continue;
-        }*/
+        }
 
   }
 
-    /*std::ofstream myfile("parameters.txt"); //Create and open txt file
+    std::ofstream myfile("parameters.txt"); //Create and open txt file
     // Printing the arrays of parameter values
     for (int b = 0; b<10; b++) {
         myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\n';
-    }*/
+    }
 }
 
