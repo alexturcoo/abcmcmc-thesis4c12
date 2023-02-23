@@ -9,8 +9,8 @@
 \contentsline {section}{\numberline {}Materials and Methods (mid-year stuff Jan 20)}{9}{section.3}%
 \contentsline {subsection}{\numberline {}ABC-MCMC: The Algorithm}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {}Parameters and Summary Statistics}{10}{subsection.3.2}%
-\contentsline {subsection}{\numberline {}Simulation Step: Creation and Mutation of Protein Sequences}{11}{subsection.3.3}%
-\contentsline {subsection}{\numberline {}Normalization and Euclidean Distance Calculation}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {}Simulation Step: Creation and Mutation of Protein Sequences}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {}Normalization and Euclidean Distance Calculation}{11}{subsection.3.4}%
 \contentsline {section}{\numberline {}Results}{12}{section.4}%
 \contentsline {section}{\numberline {}Discussion}{12}{section.5}%
 \contentsline {section}{\numberline {}References}{13}{section.6}%
