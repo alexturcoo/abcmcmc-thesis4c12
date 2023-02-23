@@ -8,6 +8,7 @@
 #include <numeric>
 
 //this function I made to normalize vectors
+//FEB 23 - THIS IS NOT HOW IM GOING TO NORMALIZE
 std::vector<double> normalize_vector(std::vector<double> vec1) {
     std::vector<double> normalized_vec;
     double normalize_value = 0.00;
@@ -27,6 +28,9 @@ std::vector<double> normalize_vector(std::vector<double> vec1) {
 
     return normalized_vec;
 }
+
+//Feb 23 - New function for normalizing
+
 
 
 //this is my function I made to solve euclidean distance
