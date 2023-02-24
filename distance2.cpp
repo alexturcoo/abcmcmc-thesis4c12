@@ -30,22 +30,23 @@
 }*/
 
 //Feb 23 - New function for normalizing
-std::vector<double> normalize_observed(std::vector<double> vec1) {
+std::vector<double> normalize_vector(std::vector<double> vec1) {
     std::vector<double> normalized_vec;
+    int srp40_length = 406;
     int vecSize = vec1.size();
-    int length = vec1[0];
-    int num_lcrs = vec1[1];
+    float length = vec1[0];
+    float num_lcrs = vec1[1];
     double avg_entropy = vec1[2];
 
     //setting the max and mins
-    int max_length = length*1.5;
-    int min_length = length*0.5;
-    double max_lcrs = length/8; //8 is the hypothetical length of the shortest LCR, this will give you a maximal total number of LCRs
-    int min_lcrs = 0;
+    float max_length = srp40_length*1.5;
+    float min_length = srp40_length*0.5;
+
+    double max_lcrs = srp40_length/8; //8 is the hypothetical length of the shortest LCR, this will give you a maximal total number of LCRs
     double max_entropy = 4.3;
 
     //pushing back the normalized values
-    normalized_vec.push_back((length - (max_length-length) + min_length)/406);
+    normalized_vec.push_back((length - srp40_length + min_length)/srp40_length);
     normalized_vec.push_back(num_lcrs/max_lcrs);
     normalized_vec.push_back(avg_entropy/max_entropy);
 
@@ -70,8 +71,9 @@ double vectors_distance2(std::vector<double> a, std::vector<double> b) {
     return sqrt(dist);
 }
 
+//FOR TESTING THIS FILE
 int main() {
-    std::vector<double> v1 = {406,3,1.47667};
-    normalize_observed(v1);
+    std::vector<double> v1 = {416,4,1.47667};
+    normalize_vector(v1);
 }
 
