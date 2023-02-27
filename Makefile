@@ -64,3 +64,9 @@ mutations_2_BG_vecs: mutations_2_BG_vecs.o
 mutations_2_BG_vecs.o: mutations_2_BG_vecs.cpp
 	c++ -g -c mutations_2_BG_vecs.cpp
 
+ttest: ttest.o
+	c++ -o ttest ttest.o -lm
+
+ttest.o: ttest.cpp
+	c++ -c ttest.cpp
+
