@@ -72,8 +72,8 @@ double vectors_distance2(std::vector<double> a, std::vector<double> b) {
 }
 
 //FOR TESTING THIS FILE
-int main() {
-    std::vector<double> v1 = {416,4,1.47667};
+/*int main() {
+    std::vector<double> v1 = {500,6,2.678};
     normalize_vector(v1);
-}
+}*/
 

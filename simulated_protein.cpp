@@ -52,9 +52,9 @@ std::vector<double> sim_protein(std::string sim_prot){
     }
 
     // TO TEST THE OUTPUT/PRINT THE VECTOR
-    for (int x = 0; x < sim_ss_vec.size(); x++) {
+    /*for (int x = 0; x < sim_ss_vec.size(); x++) {
         std::cout << sim_ss_vec[x] << ' ' << "\n";
-    }
+    }*/
 
     return sim_ss_vec;
 }

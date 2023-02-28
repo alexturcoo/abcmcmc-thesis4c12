@@ -42,13 +42,13 @@ int main() {
         // For loop here is to generate 10 vectors of summary
         // statistics for each parameter and get the average of all
         for (int k = 0; k<10; k++){
-        std::string simulated_protein = createSeq(10);
+        std::string simulated_protein = createSeq(400);
         
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
             // this for loop is just to mutate the protein
             // Only going thru 1 mutation process right now - Feb 17
-            for (int j = 0; j < 1; j++){
+            for (int j = 0; j < 100; j++){
                 std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
                 simulated_protein = mutated_protein;
             }

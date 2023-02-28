@@ -455,3 +455,20 @@ Feb 6 2023 - RECEIVED MID-YEAR REPORT BACK
 - Sent Brian my code and he is currently working on it a little - changing mutations2.cpp file to basically just create one array of deviates and select the lowest one. Do this 50 times but dont create a new array on each iteration just use the same one and update it to change only if the site has been affected by a mutation or indel. Also we have to now check if its a mutation if it affects an indel (either inturrupts a repeat  region or adds to it)
 - Should be receiving this code back soon and then we need to figure out the normalization stuff - We talked about a range of amino acids (restraints on length of amino acid sequence) and using this, we can normalize length. Then we have to do this for each one somehow I need to understand this better so we will talk to Brian again about this.
 - Threshold value will be a probability value (also need to make sure of this) that will change with each iteration I believe, not sure yet (CHECK THIS TOO)
+
+Feb 28 2023 - MAJOR UPDATES
+- Have not recorded in this file for a bit because I have recorded notes in my notebooks but want to update this now
+- I have changed the normalization function. I am no longer normalizing the vector using the length (sqrt(element1*element1)^2+(element2*element2)^2...) and then subsequently using this length to normalize each of the elements. instead I am
+  normalizing each individual element of the vector to be between 0 and 1. This requires determining the maximum and minimum values for each element of the vector (example in Brians email)
+- On top of this normalization, I have fixed the mutation code that Brian sent back to me. The first issue was that I had no constraints on maximum and minimum values for the summary statistics. For example my protein sequence could grow to
+  be infinitely long. I have implemented constraints on this to not get a protein sequence that is of too long or too short a length
+- We are also not generating new vectors of deviates, but rather keeping the same vectors and adjusting them accordingly depending on the type of mutation that occurs
+- I also figured out a way to assess the landscape of the protein sequence post mutation. Whether a point mutation, insertion, or deletion, we scan the sequence and adjust the vectors of deviates according to the changes that the mutations
+  affected.
+- In terms of the actual algorithm, I am putting everything together right now. Brian has mentioned that WE ALWAYS ACCEPT A SMALLER DISTANCE, but in the case that the distance is larger, we accept it with a certain probability that is equal
+  to the probability that the 2 distances are equal. If far apart, probability is low and we seldom accept the new parameters, if close together, probability is high, often accept - the thing we need to now figure out is what is this
+acceptable probability?
+- In order to get this probability I have created a function to perform a one-sample t-test in c++ to assess the differences in the current distance, and the distance of the newly proposed parameter values. We just now need some threshold to
+  say, okay this probability is high enough, this means the 2 are similar to eachother and so lets accept this value.
+- Going to now combine these updated parts in the abcmcmc file and see if it gives me any errors lol.
+- THESE ARE IMPORTANT UPDATES 

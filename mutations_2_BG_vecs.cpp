@@ -50,7 +50,7 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
     char aminoAcids[20] = { 'G', 'A', 'L', 'M', 'F', 'W', 'K', 'Q', 'E',
         'S', 'P', 'V', 'I', 'C', 'Y', 'H', 'R', 'N', 'D', 'T' };
                                       
-    std::cout << "before mutateseqEXP:\t" << simulated_protein << "\n"; // Initially printing the non-mutated strin.
+    //std::cout << "before mutateseqEXP:\t" << simulated_protein << "\n"; // Initially printing the non-mutated strin.
     int len = simulated_protein.length();
 
     //ASSIGN DEVIATES FOR MUTATION
@@ -260,7 +260,7 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
             }
         }
     }
-    std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
+    //std::cout << "\n" << "after mutateSeqEXP:\t" << simulated_protein << "\n" << "\n" ;
     return simulated_protein; 
 }
 
