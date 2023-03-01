@@ -51,9 +51,9 @@ std::vector<double> normalize_vector(std::vector<double> vec1) {
     normalized_vec.push_back(avg_entropy/max_entropy);
 
     // TO TEST THE OUTPUT/PRINT THE VECTOR
-    for (int x = 0; x < normalized_vec.size(); x++) {
+    /*for (int x = 0; x < normalized_vec.size(); x++) {
         std::cout << normalized_vec[x] << ' ' << "\n";
-    }
+    }*/
 
     return normalized_vec;
 
@@ -67,7 +67,7 @@ double vectors_distance2(std::vector<double> a, std::vector<double> b) {
         dist += pow((a[i] - b[i]), 2);
     }
 
-    std::cout << sqrt(dist) << "\n";
+    //std::cout << sqrt(dist) << "\n";
     return sqrt(dist);
 }
 
