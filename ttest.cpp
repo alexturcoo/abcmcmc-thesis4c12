@@ -69,11 +69,11 @@ double tTest(std::vector<double> vec1, double prev_dist) {
 //Larger P value means not statically significant.
 
 //To test the functions
-int main() {
+/*int main() {
     std::vector<double> testvec1 = {10,20,30,40,50,60,70,80,90,100};
     double old_dist = 27.00;
 
     std::cout << tTest(testvec1, old_dist);
 
     return 0;
-}
+}*/

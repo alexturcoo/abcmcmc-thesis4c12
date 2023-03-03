@@ -3,6 +3,7 @@
 #include "simulated_protein.cpp"
 #include "distance2.cpp"
 #include "vecAvg.cpp"
+#include "ttest.cpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,7 +28,7 @@ int main() {
     double index[10000];
 
     //First for loop is for the number of simulations
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000; i++) {
     
     //setting this in the loop
     std::vector<vector<double>> vec_of_vecs; //for the current state
@@ -39,8 +40,8 @@ int main() {
     obs_prot_vtr = normalize_vector(obs_prot_vtr);
 
         // 0. Proposing new parameter values
-        double new_mut_rate = getNormalDev2(0.0, 1.0) + mutation_rate;
-        double new_indel_rate = getNormalDev2(0.0, 1.0) + indel_rate;
+        double new_mut_rate = abs(getNormalDev2(mutation_rate, 1.0)); //+ mutation_rate;
+        double new_indel_rate = abs(getNormalDev2(indel_rate, 1.0)); //+ indel_rate;
         std::cout << "Mutation rate: " << new_mut_rate << "\n";
         std::cout << "Indel Rate: " << new_indel_rate << "\n";
 
@@ -117,19 +118,29 @@ int main() {
             ind_rate_arr[i] = indel_rate;
             index[i] = i;
             std::cout << "ACCPETED" << "\n" << "\n";
-        } else {
-            std::cout << "NOT ACCEPTED" << "\n" << "\n";
-            mut_rate_arr[i] = mutation_rate;
-            ind_rate_arr[i] = indel_rate;
-            index[i] = i;
-            continue;
+        } else {//Do a ttest
+            double p_value = tTest(distances, distance_current);
+            double random_number = myran.doub(); //Random number 0-1
+            if (random_number < p_value) {
+                std::cout << "ACCEPTED pval" << "\n" << "\n";
+                mutation_rate = new_mut_rate;
+                indel_rate = new_indel_rate;
+                mut_rate_arr[i] = mutation_rate;
+                ind_rate_arr[i] = indel_rate;
+                index[i] = i;
+            } else {
+                std::cout << "NOT ACCEPTED pval" << "\n" << "\n";
+                mut_rate_arr[i] = mutation_rate;
+                ind_rate_arr[i] = indel_rate;
+                index[i] = i;
+                continue;
+            }
         }
-
   }
 
     std::ofstream myfile("parameters.txt"); //Create and open txt file
     // Printing the arrays of parameter values
-    for (int b = 0; b<10; b++) {
+    for (int b = 0; b<1000; b++) {
         myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\n';
     }
 }
