@@ -26,6 +26,7 @@ int main() {
     double mut_rate_arr[10000];
     double ind_rate_arr[10000];
     double index[10000];
+    double distance_array[10000];
 
     //First for loop is for the number of simulations
     for (int i = 0; i < 1000; i++) {
@@ -116,6 +117,7 @@ int main() {
             indel_rate = new_indel_rate;
             mut_rate_arr[i] = mutation_rate;
             ind_rate_arr[i] = indel_rate;
+            distance_array[i] = distance_new;
             index[i] = i;
             std::cout << "ACCPETED" << "\n" << "\n";
         } else {//Do a ttest
@@ -127,11 +129,13 @@ int main() {
                 indel_rate = new_indel_rate;
                 mut_rate_arr[i] = mutation_rate;
                 ind_rate_arr[i] = indel_rate;
+                distance_array[i] = distance_new;
                 index[i] = i;
             } else {
                 std::cout << "NOT ACCEPTED pval" << "\n" << "\n";
                 mut_rate_arr[i] = mutation_rate;
                 ind_rate_arr[i] = indel_rate;
+                distance_array[i] = distance_current;
                 index[i] = i;
                 continue;
             }
@@ -141,7 +145,7 @@ int main() {
     std::ofstream myfile("parameters.txt"); //Create and open txt file
     // Printing the arrays of parameter values
     for (int b = 0; b<1000; b++) {
-        myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\n';
+        myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\t' << distance_array[b] << '\n';
     }
 }
 
