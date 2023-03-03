@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <random>
 #include <ctime>
 #include <algorithm> //this is to get min element stuff, cool library
 #define numAA 20
@@ -36,6 +37,16 @@ double getNormalDev(double mu, double stdev) {
     double dev = mynorm.dev();
     //std::cout << dev << "\n";
     return dev;
+}
+
+/////Trying different function to generate random deviates
+double getNormalDev2(double mu, double stdev) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::normal_distribution<double> dist(mu, stdev);
+
+    double random_num = dist(gen);
+    return random_num;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -39,8 +39,8 @@ int main() {
     obs_prot_vtr = normalize_vector(obs_prot_vtr);
 
         // 0. Proposing new parameter values
-        double new_mut_rate = getNormalDev(0.0, 1.0) + mutation_rate;
-        double new_indel_rate = getNormalDev(0.0, 1.0) + indel_rate;
+        double new_mut_rate = getNormalDev2(0.0, 1.0) + mutation_rate;
+        double new_indel_rate = getNormalDev2(0.0, 1.0) + indel_rate;
         std::cout << "Mutation rate: " << new_mut_rate << "\n";
         std::cout << "Indel Rate: " << new_indel_rate << "\n";
 
@@ -48,8 +48,8 @@ int main() {
         // For loop here is to generate 10 vectors of summary
         // statistics for each parameter and get the average of all
         for (int k = 0; k<10; k++){
-        std::string simulated_protein = createSeq(400);
-        std::string simulated_protein2 = createSeq(400);
+        std::string simulated_protein = createSeq(400); //For the current state
+        std::string simulated_protein2 = createSeq(400); //For the proposed state
         
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
