@@ -3,4 +3,4 @@ set xlabel "index"
 set ylabel "Parameter Value"
 set grid
 
-plot "parameters.txt" u 1:4 w l
+plot "accepted_parameters.txt" u 1:4 w l

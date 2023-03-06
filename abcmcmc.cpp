@@ -19,14 +19,33 @@
 int main() {
 
     // Setting initial parameters
-    double mutation_rate = 0.14;
-    double indel_rate = 0.14;
-    double threshold = 0.005;
+    double mutation_rate = 4.00;
+    double indel_rate = 4.00;
 
-    double mut_rate_arr[10000];
-    double ind_rate_arr[10000];
-    double index[10000];
-    double distance_array[10000];
+    double mut_rate_arr[10000]; //for accepted mutation rates
+    double ind_rate_arr[10000]; //for accepted indel rates
+    double index[10000]; // simulation iterations
+    double distance_array[10000]; //for accepted distances
+    
+    double current_mut_rate_arr[10000]; //for current mutation rates
+    double proposed_mut_rate_arr[10000]; //for proposed mutation rates
+    double current_ind_rate_arr[10000]; //for current indel rates
+    double proposed_ind_rate_arr[10000]; //for proposed indel rates
+    double current_distances_arr[10000]; //for current distances avg of 10
+    double proposed_distances_arr[10000]; //for proposed distances avg of 10
+    double distances_ttest[10000]; //for each of the 10 distances for proposed parameters
+
+    double mut_acc_rej_rate[10000]; //acceptance-rejection rate for mutation
+    double ind_acc_rej_rate[10000]; //acceptance-rejection rate for indel
+    
+    double mean_ttest_arr[10000]; //storing means from ttest of 10 vectors
+    double sttdev_ttest_arr[10000]; //storing stdev from 10 vectors
+    double tstat_array[10000]; //storing test statistics
+    double probability_ttest[10000]; //storing pvalues for ttest
+    double accepted_rejected[10000]; //1 for accepted, 0 for rejected
+    
+    double new_mut_rate = 0;
+    double new_ind_rate = 0;
 
     //First for loop is for the number of simulations
     for (int i = 0; i < 1000; i++) {
@@ -35,16 +54,34 @@ int main() {
     std::vector<vector<double>> vec_of_vecs; //for the current state
     std::vector<vector<double>> vec_of_vecs2; //for proposed state
     std::vector<double> distances;
+
+    current_mut_rate_arr[i] = mutation_rate; // adding current mut rate to array
+    current_ind_rate_arr[i] = indel_rate; // adding current ind rate to array
+
     //importing the vector of summary statistic for observed protein SRP40 (Saccharomyces)
     //AND NORMALIZING IT, IT DOES NOT CHANGE
     std::vector<double> obs_prot_vtr = og_protein();
     obs_prot_vtr = normalize_vector(obs_prot_vtr);
 
-        // 0. Proposing new parameter values
-        double new_mut_rate = abs(getNormalDev2(mutation_rate, 1.0)); //+ mutation_rate;
-        double new_indel_rate = abs(getNormalDev2(indel_rate, 1.0)); //+ indel_rate;
-        std::cout << "Mutation rate: " << new_mut_rate << "\n";
-        std::cout << "Indel Rate: " << new_indel_rate << "\n";
+        // 0. Proposing new parameter values - this if statement is
+        // to hold one of the parameters constant on every other
+        // iteration... in other words, holding one parameter
+        // constant and changing the other on every other iteration.
+        if (i % 2 == 0) { 
+            new_mut_rate = getNormalDev2(0.0, 1.0) + mutation_rate; //+ mutation_rate;
+            new_ind_rate = indel_rate;
+            proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
+            proposed_ind_rate_arr[i] = new_ind_rate; //adding new ind rate to array
+            std::cout << "Mutation rate: " << new_mut_rate << "\n";
+            std::cout << "Indel Rate: " << new_ind_rate << "\n";
+        } else {
+            new_ind_rate = getNormalDev2(0.0, 1.0) + indel_rate; //+ indel_rate;i
+            new_mut_rate = mutation_rate;
+            proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
+            proposed_mut_rate_arr[i] = new_mut_rate; //adding mut rate to array
+            std::cout << "Mutation Rate: " << new_mut_rate << "\n"; 
+            std::cout << "Indel Rate: " << new_ind_rate << "\n";
+        }
 
         // 1. We need to generate the random protein sequence
         // For loop here is to generate 10 vectors of summary
@@ -59,14 +96,14 @@ int main() {
             // Only going thru 1 mutation process right now - Feb 17
             // Might need to stick with a lower number of mutations,
             // around 200, 1000 giving me errors and idk why...
-            for (int j = 0; j < 2; j++){
+            for (int j = 0; j < 50; j++){
                 std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
                 simulated_protein = mutated_protein;
             }
             // Also mutating a protein under the newly proposed
             // parameter values with this loop
-            for (int k = 0; k < 2; k++) {
-                std::string mutated_protein2 = mutateSeqExpBG(simulated_protein2, new_mut_rate, new_indel_rate);
+            for (int k = 0; k < 50; k++) {
+                std::string mutated_protein2 = mutateSeqExpBG(simulated_protein2, new_mut_rate, new_ind_rate);
                 simulated_protein2 = mutated_protein2;
             }
         
@@ -83,6 +120,7 @@ int main() {
             std::vector<double> vec_normal = normalize_vector(sim_prot_vtr_2);
             double dist = vectors_distance2(vec_normal, obs_prot_vtr);
             distances.push_back(dist);
+            distances_ttest[k] = dist; //storing each of the 10 distances
         }
 
         // TO TEST THE OUTPUT/PRINT THE VECTOR
@@ -106,46 +144,69 @@ int main() {
         double distance_current = vectors_distance2(sim_prot_vtravg, obs_prot_vtr);
         double distance_new = vectors_distance2(sim_prot_vtravg2, obs_prot_vtr);
 
+        current_distances_arr[i] = distance_current; //storing current distances
+        proposed_distances_arr[i] = distance_new; //storing proposed new distances
+
         // 6. Does the distance satisfy the conditions?
         // If it does, add new parameter to corresponding list
         // otherwise stay at same value
         // Updated the code now to calculate the current state of
         // the model and the proposed state of the model to compare
         // those distances.
-        if (distance_new < distance_current) {
+        if (distance_new < distance_current && new_mut_rate > 0 && new_ind_rate > 0) {
             mutation_rate = new_mut_rate;
-            indel_rate = new_indel_rate;
+            indel_rate = new_ind_rate;
             mut_rate_arr[i] = mutation_rate;
             ind_rate_arr[i] = indel_rate;
             distance_array[i] = distance_new;
             index[i] = i;
+            accepted_rejected[i] = 1;
             std::cout << "ACCPETED" << "\n" << "\n";
         } else {//Do a ttest
+            double standard_dev = stdDev(distances);
+            double mean = Mean(distances);
+            double tstat = abs((mean - distance_current) / (standard_dev / sqrt(distances.size())));
             double p_value = tTest(distances, distance_current);
+
+            //Adding ttest values to output
+            mean_ttest_arr[i] = mean; //storing means from ttest of 10 vectors
+            sttdev_ttest_arr[i] = standard_dev; //storing stdev from 10 vectors
+            tstat_array[i] = tstat; //storing test statistics
+            probability_ttest[i] = p_value; //storing pvalues for ttest
+
             double random_number = myran.doub(); //Random number 0-1
-            if (random_number < p_value) {
+            if (random_number < p_value && new_mut_rate > 0 && new_ind_rate > 0) {
                 std::cout << "ACCEPTED pval" << "\n" << "\n";
                 mutation_rate = new_mut_rate;
-                indel_rate = new_indel_rate;
+                indel_rate = new_ind_rate;
                 mut_rate_arr[i] = mutation_rate;
                 ind_rate_arr[i] = indel_rate;
                 distance_array[i] = distance_new;
                 index[i] = i;
+                accepted_rejected[i] = 1;
             } else {
                 std::cout << "NOT ACCEPTED pval" << "\n" << "\n";
                 mut_rate_arr[i] = mutation_rate;
                 ind_rate_arr[i] = indel_rate;
                 distance_array[i] = distance_current;
                 index[i] = i;
+                accepted_rejected[i] = 0;
                 continue;
             }
         }
   }
 
-    std::ofstream myfile("parameters.txt"); //Create and open txt file
+    std::ofstream myfile("accepted_parameters.txt"); //Create and open txt file
     // Printing the arrays of parameter values
     for (int b = 0; b<1000; b++) {
-        myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\t' << distance_array[b] << '\n';
+        myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\t' << distance_array[b] << '\t' << '\t' <<  current_mut_rate_arr[b] << '\t' << current_ind_rate_arr[b] << '\t' << 
+            proposed_mut_rate_arr[b] << '\t' << proposed_ind_rate_arr[b] << '\t' << '\t' << mean_ttest_arr[b] << '\t' <<  sttdev_ttest_arr[b] << '\t' << probability_ttest[b] << '\t' << accepted_rejected[b] << '\n';
     }
+
 }
+double mean_ttest_arr[10000]; //storing means from ttest of 10 vectors
+    double sttdev_ttest_arr[10000]; //storing stdev from 10 vectors
+    double tstat_array[10000]; //storing test statistics
+    double probability_ttest[10000]; //storing pvalues for ttest
+    double accepted_rejected[10000]; //1 for accepted, 0 for rejected
 
