@@ -204,9 +204,3 @@ int main() {
     }
 
 }
-double mean_ttest_arr[10000]; //storing means from ttest of 10 vectors
-    double sttdev_ttest_arr[10000]; //storing stdev from 10 vectors
-    double tstat_array[10000]; //storing test statistics
-    double probability_ttest[10000]; //storing pvalues for ttest
-    double accepted_rejected[10000]; //1 for accepted, 0 for rejected
-
