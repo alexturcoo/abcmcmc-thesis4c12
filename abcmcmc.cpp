@@ -19,8 +19,8 @@
 int main() {
 
     // Setting initial parameters
-    double mutation_rate = 4.00;
-    double indel_rate = 4.00;
+    double mutation_rate = 3.00;
+    double indel_rate = 3.00;
 
     double mut_rate_arr[10000]; //for accepted mutation rates
     double ind_rate_arr[10000]; //for accepted indel rates
@@ -83,14 +83,14 @@ int main() {
         // iteration... in other words, holding one parameter
         // constant and changing the other on every other iteration.
         if (i % 2 == 0) { 
-            new_mut_rate = getNormalDev2(0.0, 0.5) + mutation_rate; //+ mutation_rate;
+            new_mut_rate = getNormalDev2(0.0, 1.0) + mutation_rate; //+ mutation_rate;
             new_ind_rate = indel_rate;
             proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
             proposed_ind_rate_arr[i] = new_ind_rate; //adding new ind rate to array
             std::cout << "Mutation rate: " << new_mut_rate << "\n";
             std::cout << "Indel Rate: " << new_ind_rate << "\n";
         } else {
-            new_ind_rate = getNormalDev2(0.0, 0.5) + indel_rate; //+ indel_rate;i
+            new_ind_rate = getNormalDev2(0.0, 1.0) + indel_rate; //+ indel_rate;i
             new_mut_rate = mutation_rate;
             proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
             proposed_mut_rate_arr[i] = new_mut_rate; //adding mut rate to array
@@ -112,7 +112,7 @@ int main() {
             // around 200, 1000 giving me errors and idk why...
             // Also mutating a protein under the newly proposed
             // parameter values with this loop
-            for (int k = 0; k < 50; k++) {
+            for (int k = 0; k < 100; k++) {
                 std::string mutated_protein2 = mutateSeqExpBG(simulated_protein2, new_mut_rate, new_ind_rate);
                 simulated_protein2 = mutated_protein2;
             }
@@ -178,7 +178,7 @@ int main() {
             tstat_array[i] = tstat; //storing test statistics
             probability_ttest[i] = p_value; //storing pvalues for ttest
 
-            double random_number = myran.doub(); //Random number 0-1
+            double random_number = myran.doub(); //random_num_zero_half(); //Random number 0-0.5
             if (random_number < p_value && new_mut_rate > 0 && new_ind_rate > 0) {
                 std::cout << "ACCEPTED pval" << "\n" << "\n";
                 mutation_rate = new_mut_rate;
@@ -190,6 +190,7 @@ int main() {
                 accepted_rejected[i] = 1;
                 distance_current = distance_new;
             } else {
+                std::cout << p_value << "\n" << random_number << "\n";
                 std::cout << "NOT ACCEPTED pval" << "\n" << "\n";
                 mut_rate_arr[i] = mutation_rate;
                 ind_rate_arr[i] = indel_rate;

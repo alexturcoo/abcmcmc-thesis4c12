@@ -25,9 +25,9 @@ std::vector<double> vectors_average(std::vector<vector<double>> a) {
         }
     }
 
-    length = length/10;
-    num_lcrs = num_lcrs/10;
-    avg_entropy = avg_entropy/10;
+    length = length/vecSize;
+    num_lcrs = num_lcrs/vecSize;
+    avg_entropy = avg_entropy/vecSize;
 
     new_ss_vtr.push_back(length);
     new_ss_vtr.push_back(num_lcrs);

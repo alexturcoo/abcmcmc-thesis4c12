@@ -49,6 +49,18 @@ double getNormalDev2(double mu, double stdev) {
     return random_num;
 }
 
+/////using uniform real distribution to generate numbers between
+//0.0005 and 0.5 for the ttest pvalue
+
+double random_num_zero_half() {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<double> dist(0.0,0.5);
+
+    double ran_num = dist(gen);
+    return ran_num;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Changed here down - Brian - Feb 12 Xander made Changes, trying to understand the new stuff ////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
