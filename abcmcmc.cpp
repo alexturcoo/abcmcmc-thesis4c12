@@ -47,21 +47,36 @@ int main() {
     double new_mut_rate = 0;
     double new_ind_rate = 0;
 
-    //First for loop is for the number of simulations
-    for (int i = 0; i < 1000; i++) {
-    
-    //setting this in the loop
-    std::vector<vector<double>> vec_of_vecs; //for the current state
-    std::vector<vector<double>> vec_of_vecs2; //for proposed state
-    std::vector<double> distances;
-
-    current_mut_rate_arr[i] = mutation_rate; // adding current mut rate to array
-    current_ind_rate_arr[i] = indel_rate; // adding current ind rate to array
-
     //importing the vector of summary statistic for observed protein SRP40 (Saccharomyces)
     //AND NORMALIZING IT, IT DOES NOT CHANGE
     std::vector<double> obs_prot_vtr = og_protein();
     obs_prot_vtr = normalize_vector(obs_prot_vtr);
+
+    //Generating current state protein sequence outside loop for
+    //first time
+    std::string simulated_protein = createSeq(400); //For the current state
+
+    // GETTING THE FIRST CURRENT DISTANCE OUTSIDE THE MAIN LOOP
+    for (int j = 0; j < 50; j++){
+        std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
+        simulated_protein = mutated_protein;
+    }
+
+    std::vector<double> sim_prot_vtr = sim_protein(simulated_protein);
+    sim_prot_vtr = normalize_vector(sim_prot_vtr);
+    double distance_current = vectors_distance2(sim_prot_vtr, obs_prot_vtr);
+    std::cout << distance_current << '\n';
+
+    //First for loop is for the number of simulations
+    for (int i = 0; i < 1000; i++) {
+    
+        //setting this in the loop
+        std::vector<vector<double>> vec_of_vecs; //for the current state
+        std::vector<vector<double>> vec_of_vecs2; //for proposed state
+        std::vector<double> distances;
+
+        current_mut_rate_arr[i] = mutation_rate; // adding current mut rate to array
+        current_ind_rate_arr[i] = indel_rate; // adding current ind rate to array
 
         // 0. Proposing new parameter values - this if statement is
         // to hold one of the parameters constant on every other
@@ -87,8 +102,7 @@ int main() {
         // For loop here is to generate 10 vectors of summary
         // statistics for each parameter and get the average of all
         for (int k = 0; k<10; k++){
-        std::string simulated_protein = createSeq(400); //For the current state
-        std::string simulated_protein2 = createSeq(400); //For the proposed state
+            std::string simulated_protein2 = createSeq(400); //For the proposed state
         
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
@@ -96,10 +110,6 @@ int main() {
             // Only going thru 1 mutation process right now - Feb 17
             // Might need to stick with a lower number of mutations,
             // around 200, 1000 giving me errors and idk why...
-            for (int j = 0; j < 50; j++){
-                std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
-                simulated_protein = mutated_protein;
-            }
             // Also mutating a protein under the newly proposed
             // parameter values with this loop
             for (int k = 0; k < 50; k++) {
@@ -108,10 +118,7 @@ int main() {
             }
         
             // 3. Next we will get the average of 10 vectors of summary statistics
-            // For both original parameters and newly proposed
-            // parameters
-            std::vector<double> sim_prot_vtr = sim_protein(simulated_protein);
-            vec_of_vecs.push_back(sim_prot_vtr);
+            // For newly proposed parameter values
 
             std::vector<double> sim_prot_vtr_2 = sim_protein(simulated_protein2);
             vec_of_vecs2.push_back(sim_prot_vtr_2);
@@ -131,17 +138,13 @@ int main() {
         //}
 
         // Getting the average vector of the 10 simulated vectors
-        // for both original paramters and newly proposed parameters
-        std::vector<double> sim_prot_vtravg = vectors_average(vec_of_vecs);
+        // for newly proposed parameters
         std::vector<double> sim_prot_vtravg2 = vectors_average(vec_of_vecs2);
 
-        // ADDED STEP - LETS NORMALIZE BOTH THE SIMULATED AND
-        // OBSERVED VECTORS
-        sim_prot_vtravg = normalize_vector(sim_prot_vtravg);
+        // ADDED STEP - LETS NORMALIZE THE VECTOR
         sim_prot_vtravg2 = normalize_vector(sim_prot_vtravg2);
 
         // 5. Lets try finding the distance between the vectors
-        double distance_current = vectors_distance2(sim_prot_vtravg, obs_prot_vtr);
         double distance_new = vectors_distance2(sim_prot_vtravg2, obs_prot_vtr);
 
         current_distances_arr[i] = distance_current; //storing current distances
@@ -161,6 +164,7 @@ int main() {
             distance_array[i] = distance_new;
             index[i] = i;
             accepted_rejected[i] = 1;
+            distance_current = distance_new; //setting the new current distance to the new distance so we can compare a new distance to this accepted one
             std::cout << "ACCPETED" << "\n" << "\n";
         } else {//Do a ttest
             double standard_dev = stdDev(distances);
@@ -184,6 +188,7 @@ int main() {
                 distance_array[i] = distance_new;
                 index[i] = i;
                 accepted_rejected[i] = 1;
+                distance_current = distance_new;
             } else {
                 std::cout << "NOT ACCEPTED pval" << "\n" << "\n";
                 mut_rate_arr[i] = mutation_rate;
