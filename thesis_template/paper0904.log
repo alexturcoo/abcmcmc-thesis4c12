@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  23 FEB 2023 10:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  6 MAR 2023 20:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1500,50 +1500,51 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
-(../mutations_2_BG_vecs.cpp
-Overfull \hbox (51.71547pt too wide) in paragraph at lines 41--42
+(../mutations_2_BG_vecs.cpp [16]
+Overfull \hbox (51.71547pt too wide) in paragraph at lines 52--53
 [][][][] 
  []
 
-[16]
-Overfull \hbox (51.71547pt too wide) in paragraph at lines 43--44
+
+Overfull \hbox (51.71547pt too wide) in paragraph at lines 54--55
 [][][][] 
  []
 
-[17] [18] [19] [20] [21])
+[17] [18] [19] [20] [21] [22])
 
 Package caption Warning: Unused \captionsetup[figure] on input line 81.
 See the caption package documentation for explanation.
 
-[22] (./paper0904.aux)
+[23] (./paper0904.aux)
 Package rerunfilecheck Info: File `paper0904.out' has not changed.
-(rerunfilecheck)             Checksum: 489D4E0AA96DC7667545FB10E0011156;3734.
+(rerunfilecheck)             Checksum: 66EA16CDCBDE6D1401C106773143D147;4045.
 Package logreq Info: Writing requests to 'paper0904.run.xml'.
 \openout1 = `paper0904.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46897 strings out of 478287
- 1056682 string characters out of 5849290
- 2429587 words of memory out of 5000000
- 64000 multiletter control sequences out of 15000+600000
+ 46933 strings out of 478287
+ 1057175 string characters out of 5849290
+ 2422811 words of memory out of 5000000
+ 64020 multiletter control sequences out of 15000+600000
  513371 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,12n,117p,1519b,2116s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 114i,12n,117p,1519b,2167s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
-r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper0904.pdf (22 pages, 188287 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper0904.pdf (23 pages, 201027 bytes).
 PDF statistics:
- 762 PDF objects out of 1000 (max. 8388607)
- 710 compressed objects within 8 object streams
- 367 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 794 PDF objects out of 1000 (max. 8388607)
+ 739 compressed objects within 8 object streams
+ 383 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

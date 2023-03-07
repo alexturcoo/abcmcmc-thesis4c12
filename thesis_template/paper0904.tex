@@ -401,7 +401,9 @@ This study utilized the ABC Markov chain Monte Carlo algorithm, originally propo
 	%\caption{Hello}
 %\end{figure}
 
-A custom \texttt{C++} script was written to iterate through the algorithm for a desired number of simulations. The Normal distribution was used to control how new parameter values were proposed. We simulated a dataset under the newly proposed parameter value, which consisted of a randomly generated protein sequence. The simulated protein was compared to a protein of known low complexity called SRP40, which is found in the model organism \sclong. The protein sequence for SRP40 was obtained from the NCBI database. To quantitatively compare similarities between simulated and observed protein sequences, vectors of summary statistics (characteristics that describe the sequences) were created for each sequence. \hl{The Euclidean distance between the two vectors was calculated and compared to a threshold value to determine if the newly proposed parameter value could be accepted.}
+A custom \texttt{C++} script was written to iterate through the algorithm for a desired number of simulations. The Normal distribution was used to control how new parameter values were proposed. We simulated a dataset under the newly proposed parameter value, which consisted of a randomly generated protein sequence. The simulated protein was compared to a protein of known low complexity called SRP40, which is found in the model organism \sclong. The protein sequence for SRP40 was obtained from the NCBI database. To quantitatively compare similarities between simulated and observed protein sequences, vectors of summary statistics (characteristics that describe the sequences) were created for each sequence. 
+
+The Euclidean distance between the observed and simulated protein vectors was calculated in order to determine if the newly proposed parameter value could be accepted. If the Euclidean distance between the SRP40 vector and the vector produced using the newly proposed parameter values was smaller than the distance between the SRP40 vector and the current parameter values, the newly proposed parameter values were accepted. If this distance was larger, a one sample t-test was employed to determine the probability of accepting the newly proposed parameter values.
 
 \subsection{Parameters and Summary Statistics}
 % Here we talk about which parameters and summary statistics were working with
@@ -411,42 +413,58 @@ A custom \texttt{C++} script was written to iterate through the algorithm for a 
 
 Two parameters were estimated in this study, mutation rate and insertion/deletion (indel) rate. Mutation rate referred to the rate at which a single amino acid in a protein sequence changed into a different amino acid. Indel rate referred to the rate at which an amino acid was deleted or inserted from a protein sequence. For the purpose of this study, to determine if the length of a repetitive region played a role in insertions, any amino acid that was inserted into the simulated protein sequence was the same unit as the previous amino acid in the sequence.
 
-Summary statistics were utilized to capture important information about simulated and observed protein sequences in order to assess how similar the sequences were. Three summary statistics were used which included, the length of the protein sequence, the number of LCRs in the sequence, and the average entropy of the LCRs. To identify LCRs and their corresponding entropies, the \texttt{Seg} algorithm was implemented \citep{wootton1993statistics}. The following \texttt{Seg} parameters were utilized to search for LCRs in proteins; a window length of 15, a trigger segment complexity of 1.9, and an extension segment complexity of 2.2. We selected these due to previous research which demonstrated that these parameter values would better detect regions of low complexity in eukaryotes which are typically longer and contain more repetitive repeats \citep{huntley2000evolution}.
-
-Summary statistics were stored in vectors and normalized in order to prevent large values (like the length of the sequence) from dominating when calculating the Euclidean distance.
+Summary statistics were utilized to capture important information about simulated and observed protein sequences in order to assess how similar the sequences were. Three summary statistics were used which included, the length of the protein sequence, the number of LCRs in the sequence, and the average entropy of the LCRs. To identify LCRs and their corresponding entropies, the \texttt{Seg} algorithm was implemented \citep{wootton1993statistics}. The following \texttt{Seg} parameters were utilized to search for LCRs in proteins; a window length of 15, a trigger segment complexity of 1.9, and an extension segment complexity of 2.2. We selected these due to previous research which demonstrated that these parameter values would better detect regions of low complexity in eukaryotes which are typically longer and contain more repetitive repeats \citep{huntley2000evolution}. Summary statistics were stored in vectors and normalized in order to prevent large values (for example the length of the protein sequence) from dominating when calculating the Euclidean distance.
 
 \subsection{Simulation Step: Creation and Mutation of Protein Sequences}
 % Bulk of methods, talk about the simulation step which involves creating proteins
 % mutating proteins (indels and point mutations) and how we scan for repeats and assign deviates. the whole process, even generating deviates here
 %Scale parameter is beta for exponential distribution
 
-To bypass calculation of the likelihood function, a custom \texttt{C++} script was written to simulate the generation and mutation of protein sequences over numerous generations. A random protein of desired length was generated first. We generated a protein sequence 400 amino acids in length, similar to the length of the SRP40 protein in \scshrt. This simulated protein sequence was then  mutated in the following ways.
+To bypass calculation of the likelihood function, a custom \texttt{C++} script was written to simulate the generation and mutation of protein sequences over numerous generations. Two random proteins of desired length were generated first, one that would be mutated based on the current simulation parameters, and one mutated based on the proposed simulation parameters. We generated two protein sequences 400 amino acids in length, similar to the length of the SRP40 protein in \scshrt. This simulated protein sequence was then  mutated in the following ways.
 
 We iterated over the simulated protein sequence and assigned exponential deviates to each amino acid. We utilized the exponential distribution because it is commonly used to model waiting times between events. Mutation and indel rates served to act as the scale parameter ($\beta$), or mean of the distribution, indicative of the mean time until mutation occurs. In the case of mutation rate, the same rate was utilized across all sites, with the assumption made that repeats do not play a role in point mutation. In the case of the indel rate, we scanned for repeats, and if found, we multiplied the length of the repetitive segment by the indel rate, and utilized this new value as the scale parameter ($\beta$) for the exponential distribution. \hl{THINK ABOUT WHAT THIS MEANS IN TERMS OF THE EXPONENTIAL DISTRIBUTION, THE LONGER THE LENGTH OF REPEAT, HOW DOES THIS AFFECT THE EXPONENTIAL DISTRIBUTION, DOES IT MAKE SENSE?}.
 
 Exponential deviates were stored in two vectors, one for deviates generated using mutation rate, and the other for deviates generated using the indel rate. We then identified a single deviate with the lowest value (based on both vectors), which represented the residue that mutated quickest. Depending on which vector the lowest deviate came from, we either altered the corresponding amino acid or inserted/deleted a repetitive amino acid. Upon mutating, deleting, or inserting an amino acid, we scanned the sequence to see if the mutation altered the landscape (inturrupted a repeat, created a repeat), and subsequently generated new deviates for the amino acids that were affected.
 
-We ran the simulation ten times for each newly proposed parameter value and took the average of all ten vectors of summary statistics prior to calculating the distance. On each simulation, we mutated the protein sequence for 2000 generations before obtaining summary statistics. We plan on testing the program in the future with various numbers of iterations.
+We ran the simulation ten times for each newly proposed parameter value and took the average of all ten vectors of summary statistics prior to calculating the distance. On each simulation, we mutated the protein sequence for 50 generations before obtaining summary statistics. We plan on testing the program in the future with various numbers of iterations.
 
 \subsection{Normalization and Euclidean Distance Calculation}
 % May be important to highlight this calculation because we use it to normalize the vectors of summary statistics before examining results.
 % Could make this a weighted Euclidean Distance?
 % Can I also put normalizing the vectors here?
 
-To determine the similarity between simulated and observed protein sequences, the distance between the vectors of summary statistics was calculated by employing a Euclidean distance measure \eqref{eq:2}. Before calculating this distance, vectors of summary statistics were normalized \eqref{eq:1} to prevent large values (such as length) from dominating the distance measure.
+To determine the similarity between simulated and observed protein sequences, the distance between the vectors of summary statistics was calculated by employing a Euclidean distance measure \eqref{eq:4}. Before calculating this distance, vectors of summary statistics were normalized to prevent large values (such as protein length) from dominating the distance measure.
+
+In order to normalize all elements of the vector to be between 0 and 1, maximum and minimum values for each summary statistic were required. For the length of the simulated protein, an upper limit of 1.5x the length of the SRP40 protein, and a lower limit of 0.5x the length of the SRP40 protein were set. Due to the length of the SRP40 protein being 406 amino acids long, the upper limit was equal to 609 amino acids, and the lower limit was equal to 203 amino acids \eqref{eq:1}. In terms of the number of LCRs, the minimum value was set to 0 (no LCRs) and the maximum value was chosen based off the shortest LCR length. We selected 5 amino acids to be the length of the shortest LCR, resulting in the maximum number of LCRs being 81.2 (406/5) \eqref{eq:2}. Finally, for the average entropy of the LCRs, the minimum value was set to 0, and the maximum value was set to 4.3 (maximum entropy for amino acids). Normalization calculations are shown below.
+
 
 \begin{equation}
-	length = \sqrt{(x*x) + (y*y) + (z*z)} \\
+	normalized\_length = \frac{(simulated\_protein\_length - SRP40\_length + min\_length)}{SRP40\_length}
 	\label{eq:1}
 \end{equation}
 
-\begin{center}
-	$normalized = [x/length, y/length, z/length]$
-\end{center}
+\begin{equation}
+	normalized\_number\_LCRs = \frac{number\_LCRs}{max\_number\_LCRs}
+	\label{eq:2}
+\end{equation}
+
+\begin{equation}
+	normalized\_average\_entropy = \frac{average\_entropy}{max\_entropy}
+	\label{eq:3}
+\end{equation}
 
 \begin{equation}
 	d(P1,P2) = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2 }
-	\label{eq:2}
+	\label{eq:4}
+\end{equation}
+
+\subsection{One Sample T-Test for Probability of Acceptance}
+
+A one sample t-test was employed in order to assess the probability of accepting newly proposed parameter values in cases where the Euclidean distance between vectors produced using the newly proposed parameters was larger than the distance between vectors produced using the current parameter values. For each set of newly proposed parameter values, 10 vectors of summary statistics were produced. From these 10 vectors, 10 distances were found, and the mean and standard deviation were calculated and subsequently used in the calculation of the t-statistic \eqref{eq:5}. Vectors of t-statistics and associated probabilities were stored, and the calculated t-statistic was used to estimate a p-value by linear interpolation.
+
+\begin{equation}
+	t = \frac{\bar{x}-\mu}{\frac{S}{\sqrt{n}}}
+	\label{eq:5}
 \end{equation}
 
 \section{Results}
