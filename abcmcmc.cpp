@@ -83,14 +83,14 @@ int main() {
         // iteration... in other words, holding one parameter
         // constant and changing the other on every other iteration.
         if (i % 2 == 0) { 
-            new_mut_rate = getNormalDev2(0.0, 1.0) + mutation_rate; //+ mutation_rate;
+            new_mut_rate = getNormalDev2(0.0, 0.5) + mutation_rate; //+ mutation_rate;
             new_ind_rate = indel_rate;
             proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
             proposed_ind_rate_arr[i] = new_ind_rate; //adding new ind rate to array
             std::cout << "Mutation rate: " << new_mut_rate << "\n";
             std::cout << "Indel Rate: " << new_ind_rate << "\n";
         } else {
-            new_ind_rate = getNormalDev2(0.0, 1.0) + indel_rate; //+ indel_rate;i
+            new_ind_rate = getNormalDev2(0.0, 0.5) + indel_rate; //+ indel_rate;i
             new_mut_rate = mutation_rate;
             proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
             proposed_mut_rate_arr[i] = new_mut_rate; //adding mut rate to array
