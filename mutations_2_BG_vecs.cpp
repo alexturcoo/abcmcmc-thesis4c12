@@ -1,5 +1,6 @@
 #include "functions.cpp"
 #include "getindex.cpp"
+//#include "simulated_protein.cpp"
 #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
@@ -64,7 +65,7 @@ double random_num_zero_half() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////// Changed here down - Brian - Feb 12 Xander made Changes, trying to understand the new stuff ////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, float indel_rate){ //took out iterates as a parameter
+std::string mutateSeqExpBG(std::string simulated_protein, double mutation_rate, double indel_rate){ //took out iterates as a parameter
 
     //Setting up the vectors
     std::vector<double> mut_dev;
@@ -289,11 +290,12 @@ std::string mutateSeqExpBG(std::string simulated_protein, float mutation_rate, f
 
 ///// TRYING TO DEBUG THIS FILE WITH THIS MAIN FUNCTION /////
 /*int main() {
-    for (int j = 0; j < 2; j++){
-        std::string simulated_protein = createSeq(100);
+    for (int j = 0; j < 1; j++){
+        std::string simulated_protein = createSeq(400);
         double mutation_rate = 0.14;
         double indel_rate = 0.14;
         std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
         simulated_protein = mutated_protein;
+        sim_protein(simulated_protein);
     }
 }*/

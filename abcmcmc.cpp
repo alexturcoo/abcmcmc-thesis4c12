@@ -35,8 +35,7 @@ int main() {
     double proposed_distances_arr[10000]; //for proposed distances avg of 10
     double distances_ttest[10000]; //for each of the 10 distances for proposed parameters
 
-    double mut_acc_rej_rate[10000]; //acceptance-rejection rate for mutation
-    double ind_acc_rej_rate[10000]; //acceptance-rejection rate for indel
+    double acc_rej_rate[10000]; //acceptance-rejection rate for mutation
     
     double mean_ttest_arr[10000]; //storing means from ttest of 10 vectors
     double sttdev_ttest_arr[10000]; //storing stdev from 10 vectors
@@ -46,6 +45,7 @@ int main() {
     
     double new_mut_rate = 0;
     double new_ind_rate = 0;
+    double acceptance_counter = 0;
 
     //importing the vector of summary statistic for observed protein SRP40 (Saccharomyces)
     //AND NORMALIZING IT, IT DOES NOT CHANGE
@@ -57,7 +57,9 @@ int main() {
     std::string simulated_protein = createSeq(400); //For the current state
 
     // GETTING THE FIRST CURRENT DISTANCE OUTSIDE THE MAIN LOOP
-    for (int j = 0; j < 50; j++){
+    // TRYING TO GET MUTATED SEQUENCE HERE SO WE CAN KEEP MUTATING
+    // THE SAME SEQUENCE IN THE ALGORITHM
+    for (int j = 0; j < 1; j++){
         std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
         simulated_protein = mutated_protein;
     }
@@ -81,22 +83,15 @@ int main() {
         // 0. Proposing new parameter values - this if statement is
         // to hold one of the parameters constant on every other
         // iteration... in other words, holding one parameter
-        // constant and changing the other on every other iteration.
-        if (i % 2 == 0) { 
-            new_mut_rate = getNormalDev2(0.0, 1.0) + mutation_rate; //+ mutation_rate;
-            new_ind_rate = indel_rate;
-            proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
-            proposed_ind_rate_arr[i] = new_ind_rate; //adding new ind rate to array
-            std::cout << "Mutation rate: " << new_mut_rate << "\n";
-            std::cout << "Indel Rate: " << new_ind_rate << "\n";
-        } else {
-            new_ind_rate = getNormalDev2(0.0, 1.0) + indel_rate; //+ indel_rate;i
-            new_mut_rate = mutation_rate;
-            proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
-            proposed_mut_rate_arr[i] = new_mut_rate; //adding mut rate to array
-            std::cout << "Mutation Rate: " << new_mut_rate << "\n"; 
-            std::cout << "Indel Rate: " << new_ind_rate << "\n";
-        }
+        // constant and changing the other on every other
+        // iteration. - I changed this back to just generating new
+        // ones each time.
+        new_mut_rate = getNormalDev2(0.0, 1.00) + mutation_rate; //+ mutation_rate;
+        proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
+        std::cout << "Mutation rate: " << new_mut_rate << "\n";
+        new_ind_rate = getNormalDev2(0.0, 1.00) + indel_rate; //+ indel_rate;i
+        proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
+        std::cout << "Indel Rate: " << new_ind_rate << "\n";
 
         // 1. We need to generate the random protein sequence
         // For loop here is to generate 10 vectors of summary
@@ -112,7 +107,7 @@ int main() {
             // around 200, 1000 giving me errors and idk why...
             // Also mutating a protein under the newly proposed
             // parameter values with this loop
-            for (int k = 0; k < 100; k++) {
+            for (int k = 0; k < 1; k++) {
                 std::string mutated_protein2 = mutateSeqExpBG(simulated_protein2, new_mut_rate, new_ind_rate);
                 simulated_protein2 = mutated_protein2;
             }
@@ -156,6 +151,7 @@ int main() {
         // Updated the code now to calculate the current state of
         // the model and the proposed state of the model to compare
         // those distances.
+
         if (distance_new < distance_current && new_mut_rate > 0 && new_ind_rate > 0) {
             mutation_rate = new_mut_rate;
             indel_rate = new_ind_rate;
@@ -164,6 +160,8 @@ int main() {
             distance_array[i] = distance_new;
             index[i] = i;
             accepted_rejected[i] = 1;
+            acceptance_counter = acceptance_counter + 1;
+            acc_rej_rate[i] = acceptance_counter/i;
             distance_current = distance_new; //setting the new current distance to the new distance so we can compare a new distance to this accepted one
             std::cout << "ACCPETED" << "\n" << "\n";
         } else {//Do a ttest
@@ -178,7 +176,7 @@ int main() {
             tstat_array[i] = tstat; //storing test statistics
             probability_ttest[i] = p_value; //storing pvalues for ttest
 
-            double random_number = myran.doub(); //random_num_zero_half(); //Random number 0-0.5
+            double random_number = random_num_zero_half(); //Random number 0-0.5
             if (random_number < p_value && new_mut_rate > 0 && new_ind_rate > 0) {
                 std::cout << "ACCEPTED pval" << "\n" << "\n";
                 mutation_rate = new_mut_rate;
@@ -188,15 +186,19 @@ int main() {
                 distance_array[i] = distance_new;
                 index[i] = i;
                 accepted_rejected[i] = 1;
+                acceptance_counter = acceptance_counter + 1;
+                acc_rej_rate[i] = acceptance_counter/i;
                 distance_current = distance_new;
             } else {
                 std::cout << p_value << "\n" << random_number << "\n";
                 std::cout << "NOT ACCEPTED pval" << "\n" << "\n";
+                std::cout << i << "\n";
                 mut_rate_arr[i] = mutation_rate;
                 ind_rate_arr[i] = indel_rate;
                 distance_array[i] = distance_current;
                 index[i] = i;
                 accepted_rejected[i] = 0;
+                acc_rej_rate[i] = acceptance_counter/i;
                 continue;
             }
         }
@@ -206,7 +208,8 @@ int main() {
     // Printing the arrays of parameter values
     for (int b = 0; b<1000; b++) {
         myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\t' << distance_array[b] << '\t' << '\t' <<  current_mut_rate_arr[b] << '\t' << current_ind_rate_arr[b] << '\t' << 
-            proposed_mut_rate_arr[b] << '\t' << proposed_ind_rate_arr[b] << '\t' << '\t' << mean_ttest_arr[b] << '\t' <<  sttdev_ttest_arr[b] << '\t' << probability_ttest[b] << '\t' << accepted_rejected[b] << '\n';
+            proposed_mut_rate_arr[b] << '\t' << proposed_ind_rate_arr[b] << '\t' << '\t' << mean_ttest_arr[b] << '\t' <<  sttdev_ttest_arr[b] << '\t' <<  tstat_array[b] << '\t' << probability_ttest[b] << '\t'  
+            << accepted_rejected[b] << '\t' << '\t' << acc_rej_rate[b] << '\n';
     }
 
 }
