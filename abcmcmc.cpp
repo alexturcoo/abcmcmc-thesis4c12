@@ -59,7 +59,7 @@ int main() {
     // GETTING THE FIRST CURRENT DISTANCE OUTSIDE THE MAIN LOOP
     // TRYING TO GET MUTATED SEQUENCE HERE SO WE CAN KEEP MUTATING
     // THE SAME SEQUENCE IN THE ALGORITHM
-    for (int j = 0; j < 1; j++){
+    for (int j = 0; j < 10; j++){
         std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
         simulated_protein = mutated_protein;
     }
@@ -107,7 +107,7 @@ int main() {
             // around 200, 1000 giving me errors and idk why...
             // Also mutating a protein under the newly proposed
             // parameter values with this loop
-            for (int k = 0; k < 1; k++) {
+            for (int k = 0; k < 10; k++) {
                 std::string mutated_protein2 = mutateSeqExpBG(simulated_protein2, new_mut_rate, new_ind_rate);
                 simulated_protein2 = mutated_protein2;
             }
