@@ -21,6 +21,10 @@ int main() {
     // Setting initial parameters
     double mutation_rate = 3.00;
     double indel_rate = 3.00;
+    int num_simulations = 1000;
+    int num_mutations = 1;
+    double mean_proposal = 0.0;
+    double stddev_proposal = 1.0;
 
     double mut_rate_arr[10000]; //for accepted mutation rates
     double ind_rate_arr[10000]; //for accepted indel rates
@@ -59,7 +63,7 @@ int main() {
     // GETTING THE FIRST CURRENT DISTANCE OUTSIDE THE MAIN LOOP
     // TRYING TO GET MUTATED SEQUENCE HERE SO WE CAN KEEP MUTATING
     // THE SAME SEQUENCE IN THE ALGORITHM
-    for (int j = 0; j < 10; j++){
+    for (int j = 0; j < num_mutations; j++){
         std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
         simulated_protein = mutated_protein;
     }
@@ -70,7 +74,7 @@ int main() {
     std::cout << distance_current << '\n';
 
     //First for loop is for the number of simulations
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < num_simulations; i++) {
     
         //setting this in the loop
         std::vector<vector<double>> vec_of_vecs; //for the current state
@@ -86,10 +90,10 @@ int main() {
         // constant and changing the other on every other
         // iteration. - I changed this back to just generating new
         // ones each time.
-        new_mut_rate = getNormalDev2(0.0, 1.00) + mutation_rate; //+ mutation_rate;
+        new_mut_rate = getNormalDev2(mean_proposal, stddev_proposal) + mutation_rate; //+ mutation_rate;
         proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
         std::cout << "Mutation rate: " << new_mut_rate << "\n";
-        new_ind_rate = getNormalDev2(0.0, 1.00) + indel_rate; //+ indel_rate;i
+        new_ind_rate = getNormalDev2(mean_proposal, stddev_proposal) + indel_rate; //+ indel_rate;i
         proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
         std::cout << "Indel Rate: " << new_ind_rate << "\n";
 
@@ -107,7 +111,7 @@ int main() {
             // around 200, 1000 giving me errors and idk why...
             // Also mutating a protein under the newly proposed
             // parameter values with this loop
-            for (int k = 0; k < 10; k++) {
+            for (int k = 0; k < num_mutations; k++) {
                 std::string mutated_protein2 = mutateSeqExpBG(simulated_protein2, new_mut_rate, new_ind_rate);
                 simulated_protein2 = mutated_protein2;
             }
@@ -176,7 +180,7 @@ int main() {
             tstat_array[i] = tstat; //storing test statistics
             probability_ttest[i] = p_value; //storing pvalues for ttest
 
-            double random_number = random_num_zero_half(); //Random number 0-0.5
+            double random_number = myran.doub(); //Random number 0-1
             if (random_number < p_value && new_mut_rate > 0 && new_ind_rate > 0) {
                 std::cout << "ACCEPTED pval" << "\n" << "\n";
                 mutation_rate = new_mut_rate;
@@ -206,7 +210,7 @@ int main() {
 
     std::ofstream myfile("accepted_parameters.txt"); //Create and open txt file
     // Printing the arrays of parameter values
-    for (int b = 0; b<1000; b++) {
+    for (int b = 0; b<num_simulations; b++) {
         myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\t' << distance_array[b] << '\t' << '\t' <<  current_mut_rate_arr[b] << '\t' << current_ind_rate_arr[b] << '\t' << 
             proposed_mut_rate_arr[b] << '\t' << proposed_ind_rate_arr[b] << '\t' << '\t' << mean_ttest_arr[b] << '\t' <<  sttdev_ttest_arr[b] << '\t' <<  tstat_array[b] << '\t' << probability_ttest[b] << '\t'  
             << accepted_rejected[b] << '\t' << '\t' << acc_rej_rate[b] << '\n';
