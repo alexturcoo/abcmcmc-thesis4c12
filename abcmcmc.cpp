@@ -22,7 +22,7 @@ int main() {
     double mutation_rate = 3.00;
     double indel_rate = 3.00;
     int num_simulations = 1000;
-    int num_mutations = 1;
+    int num_mutations = 5;
     double mean_proposal = 0.0;
     double stddev_proposal = 1.0;
 
