@@ -22,9 +22,9 @@ int main() {
     double mutation_rate = 3.00;
     double indel_rate = 3.00;
     int num_simulations = 1000;
-    int num_mutations = 5;
+    int num_mutations = 10;
     double mean_proposal = 0.0;
-    double stddev_proposal = 1.0;
+    double stddev_proposal = 0.1;
 
     double mut_rate_arr[10000]; //for accepted mutation rates
     double ind_rate_arr[10000]; //for accepted indel rates
