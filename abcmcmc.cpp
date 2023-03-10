@@ -46,7 +46,8 @@ int main() {
     double tstat_array[10000]; //storing test statistics
     double probability_ttest[10000]; //storing pvalues for ttest
     double accepted_rejected[10000]; //1 for accepted, 0 for rejected
-    
+    std::vector<vector<double>> vec_of_vecs3; //for getting vectors of 10 distances
+
     double new_mut_rate = 0;
     double new_ind_rate = 0;
     double acceptance_counter = 0;
@@ -130,7 +131,7 @@ int main() {
             
         }
 
-        
+        vec_of_vecs3.push_back(distances);
 
         // TO TEST THE OUTPUT/PRINT THE VECTOR
         //for (int x = 0; x < vec_of_vecs.size(); x++) {
@@ -216,6 +217,13 @@ int main() {
     for (int b = 0; b<num_simulations; b++) {
         myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\t' << distance_array[b] << '\t' << '\t' <<  current_mut_rate_arr[b] << '\t' << current_ind_rate_arr[b] << '\t' << 
             proposed_mut_rate_arr[b] << '\t' << proposed_ind_rate_arr[b] << '\t' << '\t' << mean_ttest_arr[b] << '\t' <<  sttdev_ttest_arr[b] << '\t' <<  tstat_array[b] << '\t' << probability_ttest[b] << '\t'  
-            << accepted_rejected[b] << '\t' << '\t' << acc_rej_rate[b]  << '\n';
+            << accepted_rejected[b] << '\t' << '\t' << acc_rej_rate[b] << '\n';
+    }
+
+    std::ofstream myfile2("10_distances.txt");
+    for (int x = 0; x<vec_of_vecs3.size(); x++) {
+        for (int y = 0; y<vec_of_vecs3[x].size(); y++) {
+            myfile2 << index[x] << '\t' << '\t' << proposed_mut_rate_arr[x] << '\t' << proposed_ind_rate_arr[x] << '\t' << vec_of_vecs3[x][y] << '\n';
+        }
     }
 }
