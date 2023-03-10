@@ -22,9 +22,9 @@ int main() {
     double mutation_rate = 3.00;
     double indel_rate = 3.00;
     int num_simulations = 1000;
-    int num_mutations = 10;
+    int num_mutations = 1;
     double mean_proposal = 0.0;
-    double stddev_proposal = 0.1;
+    double stddev_proposal = 1.0;
 
     double mut_rate_arr[10000]; //for accepted mutation rates
     double ind_rate_arr[10000]; //for accepted indel rates
@@ -79,7 +79,7 @@ int main() {
         //setting this in the loop
         std::vector<vector<double>> vec_of_vecs; //for the current state
         std::vector<vector<double>> vec_of_vecs2; //for proposed state
-        std::vector<double> distances;
+        std::vector<double> distances; //holding vector of 10 distances per simulation iteration
 
         current_mut_rate_arr[i] = mutation_rate; // adding current mut rate to array
         current_ind_rate_arr[i] = indel_rate; // adding current ind rate to array
@@ -111,7 +111,7 @@ int main() {
             // around 200, 1000 giving me errors and idk why...
             // Also mutating a protein under the newly proposed
             // parameter values with this loop
-            for (int k = 0; k < num_mutations; k++) {
+            for (int h = 0; h < num_mutations; h++) {
                 std::string mutated_protein2 = mutateSeqExpBG(simulated_protein2, new_mut_rate, new_ind_rate);
                 simulated_protein2 = mutated_protein2;
             }
@@ -125,9 +125,12 @@ int main() {
             // Getting the 10 distances in case we need t-test
             std::vector<double> vec_normal = normalize_vector(sim_prot_vtr_2);
             double dist = vectors_distance2(vec_normal, obs_prot_vtr);
-            distances.push_back(dist);
-            distances_ttest[k] = dist; //storing each of the 10 distances
+            distances.push_back(dist); //storing the 10 distances to get mean and stdev
+            distances_ttest[k] = dist; //storing each of the 10 distances for output
+            
         }
+
+        
 
         // TO TEST THE OUTPUT/PRINT THE VECTOR
         //for (int x = 0; x < vec_of_vecs.size(); x++) {
@@ -213,7 +216,6 @@ int main() {
     for (int b = 0; b<num_simulations; b++) {
         myfile << index[b] << '\t' << mut_rate_arr[b] << '\t' << ind_rate_arr[b] << '\t' << distance_array[b] << '\t' << '\t' <<  current_mut_rate_arr[b] << '\t' << current_ind_rate_arr[b] << '\t' << 
             proposed_mut_rate_arr[b] << '\t' << proposed_ind_rate_arr[b] << '\t' << '\t' << mean_ttest_arr[b] << '\t' <<  sttdev_ttest_arr[b] << '\t' <<  tstat_array[b] << '\t' << probability_ttest[b] << '\t'  
-            << accepted_rejected[b] << '\t' << '\t' << acc_rej_rate[b] << '\n';
+            << accepted_rejected[b] << '\t' << '\t' << acc_rej_rate[b]  << '\n';
     }
-
 }
