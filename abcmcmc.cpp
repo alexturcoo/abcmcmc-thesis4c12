@@ -19,10 +19,10 @@
 int main() {
 
     // Setting initial parameters
-    double mutation_rate = 1.00;
-    double indel_rate = 1.00;
+    double mutation_rate = 0.00;
+    double indel_rate = 0.00;
     int num_simulations = 1000;
-    int num_mutations = 5;
+    int num_mutations = 1;
     double mean_proposal = 0.0;
     double stddev_proposal = 1.0;
 
