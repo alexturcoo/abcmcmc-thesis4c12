@@ -19,10 +19,10 @@
 int main() {
 
     // Setting initial parameters
-    double mutation_rate = 3.00;
-    double indel_rate = 3.00;
+    double mutation_rate = 1.00;
+    double indel_rate = 1.00;
     int num_simulations = 1000;
-    int num_mutations = 1;
+    int num_mutations = 5;
     double mean_proposal = 0.0;
     double stddev_proposal = 1.0;
 
@@ -47,6 +47,11 @@ int main() {
     double probability_ttest[10000]; //storing pvalues for ttest
     double accepted_rejected[10000]; //1 for accepted, 0 for rejected
     std::vector<vector<double>> vec_of_vecs3; //for getting vectors of 10 distances
+    std::vector<vector<double>> vec_of_vecs4; //summary statistics for each of 10
+
+    std::vector<vector<double>> vec_of_vecs_length;
+    std::vector<vector<double>> vec_of_vecs_avgnum;
+    std::vector<vector<double>> vec_of_vecs_entropy;
 
     double new_mut_rate = 0;
     double new_ind_rate = 0;
@@ -81,6 +86,9 @@ int main() {
         std::vector<vector<double>> vec_of_vecs; //for the current state
         std::vector<vector<double>> vec_of_vecs2; //for proposed state
         std::vector<double> distances; //holding vector of 10 distances per simulation iteration
+        std::vector<double> length_vec; //holding length summary statistic
+        std::vector<double> num_lcrs_vec; //holding number of LCRs summary statistic
+        std::vector<double> avg_entropy_vec; //holding average entropy summary statistic
 
         current_mut_rate_arr[i] = mutation_rate; // adding current mut rate to array
         current_ind_rate_arr[i] = indel_rate; // adding current ind rate to array
@@ -92,11 +100,17 @@ int main() {
         // iteration. - I changed this back to just generating new
         // ones each time.
         new_mut_rate = getNormalDev2(mean_proposal, stddev_proposal) + mutation_rate; //+ mutation_rate;
-        proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
         std::cout << "Mutation rate: " << new_mut_rate << "\n";
         new_ind_rate = getNormalDev2(mean_proposal, stddev_proposal) + indel_rate; //+ indel_rate;i
-        proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
         std::cout << "Indel Rate: " << new_ind_rate << "\n";
+
+        if (i == 0) {
+            new_mut_rate = mutation_rate;
+            new_ind_rate = indel_rate;
+        }
+
+        proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
+        proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
 
         // 1. We need to generate the random protein sequence
         // For loop here is to generate 10 vectors of summary
@@ -125,13 +139,22 @@ int main() {
 
             // Getting the 10 distances in case we need t-test
             std::vector<double> vec_normal = normalize_vector(sim_prot_vtr_2);
+            double length = sim_prot_vtr_2[0];
+            double numlcr = sim_prot_vtr_2[1];
+            double avgent = sim_prot_vtr_2[2];
+            length_vec.push_back(length);
+            num_lcrs_vec.push_back(numlcr);
+            avg_entropy_vec.push_back(avgent);
             double dist = vectors_distance2(vec_normal, obs_prot_vtr);
             distances.push_back(dist); //storing the 10 distances to get mean and stdev
             distances_ttest[k] = dist; //storing each of the 10 distances for output
             
         }
 
-        vec_of_vecs3.push_back(distances);
+        vec_of_vecs3.push_back(distances); //pushing back all 10 distances
+        vec_of_vecs_length.push_back(length_vec); //pushing back lengths
+        vec_of_vecs_avgnum.push_back(num_lcrs_vec);
+        vec_of_vecs_entropy.push_back(avg_entropy_vec);
 
         // TO TEST THE OUTPUT/PRINT THE VECTOR
         //for (int x = 0; x < vec_of_vecs.size(); x++) {
@@ -223,7 +246,8 @@ int main() {
     std::ofstream myfile2("10_distances.txt");
     for (int x = 0; x<vec_of_vecs3.size(); x++) {
         for (int y = 0; y<vec_of_vecs3[x].size(); y++) {
-            myfile2 << index[x] << '\t' << '\t' << proposed_mut_rate_arr[x] << '\t' << proposed_ind_rate_arr[x] << '\t' << vec_of_vecs3[x][y] << '\n';
+            myfile2 << index[x] << '\t' << '\t' << proposed_mut_rate_arr[x] << '\t' << proposed_ind_rate_arr[x] << '\t' << vec_of_vecs3[x][y] << '\t' << vec_of_vecs_length[x][y]
+                << '\t' << vec_of_vecs_avgnum[x][y] << '\t' << vec_of_vecs_entropy[x][y] << '\n';
         }
     }
 }
