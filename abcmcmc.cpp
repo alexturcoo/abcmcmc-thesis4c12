@@ -20,7 +20,7 @@ int main() {
 
     // Setting initial parameters
     double mutation_rate = 0.00;
-    double indel_rate = 0.00;
+    double indel_rate = 1.00;
     int num_simulations = 1000;
     int num_mutations = 1;
     double mean_proposal = 0.0;
@@ -112,12 +112,12 @@ int main() {
         proposed_mut_rate_arr[i] = new_mut_rate; // adding the proposed mut rate to array
         proposed_ind_rate_arr[i] = new_ind_rate; // adding the proposed ind rate to array
 
+        std::string simulated_protein2 = createSeq(400); //for proposed state - going to use the same sequence and keep mutating it for all 10 iterates below
+
         // 1. We need to generate the random protein sequence
         // For loop here is to generate 10 vectors of summary
         // statistics for each parameter and get the average of all
-        for (int k = 0; k<10; k++){
-            std::string simulated_protein2 = createSeq(400); //For the proposed state
-        
+        for (int k = 0; k<10; k++){     
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
             // this for loop is just to mutate the protein
