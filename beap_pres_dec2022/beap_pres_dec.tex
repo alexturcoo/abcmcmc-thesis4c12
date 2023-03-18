@@ -121,7 +121,7 @@
 	
 		\begin{center}
 			\includegraphics[width=5cm, height=1cm]{poyglut.png}
-		\end{center} \pause
+		\end{center}
 	
 		\begin{alertblock}{Direpeats}
 			Consecutive iterations of two ordered, different residues
@@ -129,15 +129,14 @@
 	
 		\begin{center}
 			\includegraphics[width=5cm, height=1cm]{direpeat.png}
-		\end{center} \pause
+		\end{center}
 
-		\begin{alertblock}{Tandem Repeats}
-			Sequence of residues which are repeated a number of times
+		\begin{alertblock}{Imperfect Repeats}
+			Regions in which the repeat units are not the same
 		\end{alertblock}
 	
 		\begin{center}
-			\includegraphics[width=5cm, height=1cm]{tandem.png}
-			\includegraphics[width=5cm, height=1cm]{tandem.png}
+			\includegraphics[width=6cm, height=1.2cm]{imperfect.png}
 		\end{center}
 	
 	\end{frame}
@@ -204,7 +203,7 @@
 	\end{frame}
 	
 	%SLIDE 8 - Why Care About LCR Evolution?
-	\begin{frame}{Why Care about LCRs and their Evolution? }
+	\begin{frame}{Why Care about LCRs and their Evolution?}
 	
 	\begin{center}	
 		\begin{tikzpicture}[node distance=2cm]
@@ -252,11 +251,13 @@
 	%SLIDE 9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Research Questions/Exploration}
 	
-	\begin{frame}{What will this Study Explore?}
+	\begin{frame}{What Did we Do in this Study?}
 		\begin{itemize}
-			\item Estimation of evolutionary parameters (mutation rate, indel rates) \newline
-			\item Various models of insertions and deletions \newline
-			\item Summary statistics which best explain data
+			\item Programmed an ABC-MCMC using \texttt{C++} which consisted of a simulation step where amino acid sequences were altered by point mutations and insertions/deletions \newline
+			\item Utilized the exponential distribution with ($\beta$ = length*indel\_rate) to see if the length of a repeat plays a role in its mutation \newline
+			\item Attempted to estimate evolutionary parameters such as mutation rates and insertion/deletion rates \newline
+			\item Explored summary statistics that could quantitatively explain characteristics of LCRs
+			
 		\end{itemize}
 		
 	\end{frame}
@@ -318,6 +319,7 @@
 	\end{frame}
 
 	%Slide 12 - Here put the ABC-MCMC algorithm described by Marjoram (one Brian used in his MCMC slides)
+	%%% SO HERE WE NEED TO RE-EVALUATE THE SLIDES - March 18 2023
 	\begin{frame}{MCMC for ABC}
 		
 		\begin{enumerate}
