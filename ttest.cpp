@@ -45,7 +45,8 @@ double tTest(std::vector<double> vec1, double prev_dist) {
 
     std::vector<double> areas = {0.5, 0.25, 0.2, 0.15, 0.10, 0.05, 0.025, 0.01, 0.005, 0.001, 0.0005}; //this is like y
     //std::vector<double> crit_t_values = {0.000, 0.703, 0.883, 1.100, 1.383, 1.833, 2.262, 2.821, 3.250, 4.297, 4.781}; //critical t values 9 degrees of freedom - this is like x
-    std::vector<double> crit_t_values = {0.000, 0.677, 0.845, 1.042, 1.290, 1.660, 1.984, 2.364, 2.626, 3.174, 3.390}; //critical t values 99 degrees of freedom
+    //std::vector<double> crit_t_values = {0.000, 0.677, 0.845, 1.042, 1.290, 1.660, 1.984, 2.364, 2.626, 3.174, 3.390}; //critical t values 99 degrees of freedom
+    std::vector<double>crit_t_values = {0.000, 0.675, 0.842, 1.037, 1.282, 1.646, 1.962, 2.330, 2.581, 3.098, 3.300}; //critial t values 1000 degrees of freedom
 
     int minPosition=0;
     for (int i = 0; i < areas.size(); i++) {

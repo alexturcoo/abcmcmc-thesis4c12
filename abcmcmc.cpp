@@ -21,7 +21,7 @@ int main() {
     // Setting initial parameters
     double mutation_rate = 1.00;
     double indel_rate = 1.00;
-    int num_simulations = 1000;
+    int num_simulations = 1;
     int num_mutations = 1;
     double mean_proposal = 0.0;
     double stddev_proposal = 1.0;
@@ -117,7 +117,7 @@ int main() {
         // 1. We need to generate the random protein sequence
         // For loop here is to generate 10 vectors of summary
         // statistics for each parameter and get the average of all
-        for (int k = 0; k<100; k++){     
+        for (int k = 0; k<1000; k++){     
             // 2. Next we need to mutate the simulated protein
             // Going to try and mutate over 2 gens
             // this for loop is just to mutate the protein
