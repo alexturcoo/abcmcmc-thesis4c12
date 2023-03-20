@@ -20,7 +20,7 @@ int main() {
 
     // Setting initial parameters
     double mutation_rate = 1.00;
-    double indel_rate = 1.00;
+    double indel_rate = 10.00;
     int num_simulations = 1;
     int num_mutations = 1;
     double mean_proposal = 0.0;
@@ -87,6 +87,7 @@ int main() {
         std::vector<vector<double>> vec_of_vecs2; //for proposed state
         std::vector<double> distances; //holding vector of 10 distances per simulation iteration
         std::vector<double> length_vec; //holding length summary statistic
+        std::vector<double> length_vec2; //holding unnormalized length
         std::vector<double> num_lcrs_vec; //holding number of LCRs summary statistic
         std::vector<double> avg_entropy_vec; //holding average entropy summary statistic
 
@@ -139,9 +140,11 @@ int main() {
 
             // Getting the 10 distances in case we need t-test
             std::vector<double> vec_normal = normalize_vector(sim_prot_vtr_2);
-            double length = sim_prot_vtr_2[0];
-            double numlcr = sim_prot_vtr_2[1];
-            double avgent = sim_prot_vtr_2[2];
+            double length = vec_normal[0];
+            double numlcr = vec_normal[1];
+            double avgent = vec_normal[2];
+            double length2 = sim_prot_vtr_2[0];
+            length_vec2.push_back(length2);
             length_vec.push_back(length);
             num_lcrs_vec.push_back(numlcr);
             avg_entropy_vec.push_back(avgent);
@@ -151,6 +154,8 @@ int main() {
             
         }
 
+        double expected_mutations = Mean(length_vec2)*mutation_rate; //getting the # of expected mutations
+        std::cout << expected_mutations << "\n";
         vec_of_vecs3.push_back(distances); //pushing back all 10 distances
         vec_of_vecs_length.push_back(length_vec); //pushing back lengths
         vec_of_vecs_avgnum.push_back(num_lcrs_vec);
