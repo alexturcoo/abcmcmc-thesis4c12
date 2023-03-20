@@ -2,5 +2,6 @@
 \beamer@sectionintoc {2}{Background}{3}{0}{2}
 \beamer@sectionintoc {3}{Research Questions/Exploration}{9}{0}{3}
 \beamer@sectionintoc {4}{Experimental Approach}{10}{0}{4}
-\beamer@sectionintoc {5}{Future Work}{21}{0}{5}
-\beamer@sectionintoc {6}{Acknowledgements}{22}{0}{6}
+\beamer@sectionintoc {5}{Results}{20}{0}{5}
+\beamer@sectionintoc {6}{Future Work}{21}{0}{6}
+\beamer@sectionintoc {7}{Acknowledgements}{22}{0}{7}
