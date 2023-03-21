@@ -20,7 +20,7 @@ int main() {
 
     // Setting initial parameters
     double mutation_rate = 1.00;
-    double indel_rate = 10.00;
+    double indel_rate = 10;
     int num_simulations = 1;
     int num_mutations = 1;
     double mean_proposal = 0.0;
@@ -46,12 +46,14 @@ int main() {
     double tstat_array[10000]; //storing test statistics
     double probability_ttest[10000]; //storing pvalues for ttest
     double accepted_rejected[10000]; //1 for accepted, 0 for rejected
+    double entropy_vec[10000];
     std::vector<vector<double>> vec_of_vecs3; //for getting vectors of 10 distances
     std::vector<vector<double>> vec_of_vecs4; //summary statistics for each of 10
 
     std::vector<vector<double>> vec_of_vecs_length;
     std::vector<vector<double>> vec_of_vecs_avgnum;
     std::vector<vector<double>> vec_of_vecs_entropy;
+    std::vector<double> distance_current_vec;
 
     double new_mut_rate = 0;
     double new_ind_rate = 0;
@@ -64,20 +66,29 @@ int main() {
 
     //Generating current state protein sequence outside loop for
     //first time
-    std::string simulated_protein = createSeq(400); //For the current state
+    std::string simulated_protein = createSeq(1000); //For the current state
 
     // GETTING THE FIRST CURRENT DISTANCE OUTSIDE THE MAIN LOOP
     // TRYING TO GET MUTATED SEQUENCE HERE SO WE CAN KEEP MUTATING
     // THE SAME SEQUENCE IN THE ALGORITHM
-    for (int j = 0; j < num_mutations; j++){
-        std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
-        simulated_protein = mutated_protein;
+
+    for (int a = 0; a < 1000; a++) {
+        for (int j = 0; j < num_mutations; j++){
+            std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
+            simulated_protein = mutated_protein;
+        }
+
+        std::vector<double> sim_prot_vtr = sim_protein(simulated_protein);
+        sim_prot_vtr = normalize_vector(sim_prot_vtr);
+        double distance_current = vectors_distance2(sim_prot_vtr, obs_prot_vtr);
+        distance_current_vec.push_back(distance_current);
     }
 
-    std::vector<double> sim_prot_vtr = sim_protein(simulated_protein);
-    sim_prot_vtr = normalize_vector(sim_prot_vtr);
-    double distance_current = vectors_distance2(sim_prot_vtr, obs_prot_vtr);
+    double distance_current = Mean(distance_current_vec);
+
     std::cout << distance_current << '\n';
+
+    //std::string simulated_protein2 = createSeq(400); //for proposed state - going to use the same sequence and keep mutating it for all 10 iterates below - keep mutatung same sequence the whole simulation
 
     //First for loop is for the number of simulations
     for (int i = 0; i < num_simulations; i++) {
@@ -131,7 +142,10 @@ int main() {
                 std::string mutated_protein2 = mutateSeqExpBG(simulated_protein2, new_mut_rate, new_ind_rate);
                 simulated_protein2 = mutated_protein2;
             }
-        
+
+            //Adding entropy of sequence to vector for plotting
+            double entropy = calc_entropy(simulated_protein2);
+            entropy_vec[k] = entropy; 
             // 3. Next we will get the average of 10 vectors of summary statistics
             // For newly proposed parameter values
 
@@ -252,7 +266,7 @@ int main() {
     for (int x = 0; x<vec_of_vecs3.size(); x++) {
         for (int y = 0; y<vec_of_vecs3[x].size(); y++) {
             myfile2 << index[x] << '\t' << '\t' << proposed_mut_rate_arr[x] << '\t' << proposed_ind_rate_arr[x] << '\t' << vec_of_vecs3[x][y] << '\t' << vec_of_vecs_length[x][y]
-                << '\t' << vec_of_vecs_avgnum[x][y] << '\t' << vec_of_vecs_entropy[x][y] << '\n';
+                << '\t' << vec_of_vecs_avgnum[x][y] << '\t' << vec_of_vecs_entropy[x][y] << '\t' << entropy_vec[y] << '\n';
         }
     }
 }

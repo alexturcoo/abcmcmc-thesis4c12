@@ -7,6 +7,8 @@
 #include <string>
 #include <random>
 #include <ctime>
+#include <cmath>
+#include <map>
 #include <algorithm> //this is to get min element stuff, cool library
 #define numAA 20
 using namespace std;
@@ -60,6 +62,21 @@ double random_num_zero_half() {
 
     double ran_num = dist(gen);
     return ran_num;
+}
+
+/////FUNCTION TO CALUCLATE ENTROPY OF PROTEIN SEQUENCE
+double calc_entropy(string protein_seq) {
+    map<char, int> freq_map;
+    for (char c : protein_seq) {
+        freq_map[c]++;
+    }
+    double entropy = 0.0;
+    int seq_len = protein_seq.length();
+    for (auto const& pair : freq_map) {
+        double prob = (double) pair.second / seq_len;
+        entropy -= prob * log2(prob);
+    }
+    return entropy;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -290,10 +307,12 @@ std::string mutateSeqExpBG(std::string simulated_protein, double mutation_rate, 
 
 ///// TRYING TO DEBUG THIS FILE WITH THIS MAIN FUNCTION /////
 /*int main() {
-    for (int j = 0; j < 1; j++){
-        std::string simulated_protein = createSeq(400);
+    std::string simulated_protein = createSeq(10);
+    for (int j = 0; j < 5; j++){
+       // std::string simulated_protein = createSeq(10);
         double mutation_rate = 0.14;
         double indel_rate = 0.14;
+        std::cout << calc_entropy(simulated_protein) << "\n";
         std::string mutated_protein = mutateSeqExpBG(simulated_protein, mutation_rate, indel_rate);
         simulated_protein = mutated_protein;
         sim_protein(simulated_protein);
