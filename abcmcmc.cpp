@@ -154,9 +154,9 @@ int main() {
 
             // Getting the 10 distances in case we need t-test
             std::vector<double> vec_normal = normalize_vector(sim_prot_vtr_2);
-            double length = vec_normal[0];
-            double numlcr = vec_normal[1];
-            double avgent = vec_normal[2];
+            double length = sim_prot_vtr_2[0];
+            double numlcr = sim_prot_vtr_2[1];
+            double avgent = sim_prot_vtr_2[2];
             double length2 = sim_prot_vtr_2[0];
             length_vec2.push_back(length2);
             length_vec.push_back(length);
