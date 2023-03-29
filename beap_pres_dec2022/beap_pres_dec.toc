@@ -2,5 +2,6 @@
 \beamer@sectionintoc {2}{Background}{3}{0}{2}
 \beamer@sectionintoc {3}{Simulating LCR Evolution}{10}{0}{3}
 \beamer@sectionintoc {4}{Applications to ABC-MCMC}{18}{0}{4}
-\beamer@sectionintoc {5}{Future Work}{24}{0}{5}
-\beamer@sectionintoc {6}{Acknowledgements}{25}{0}{6}
+\beamer@sectionintoc {5}{Conclusion}{25}{0}{5}
+\beamer@sectionintoc {6}{Future Work}{26}{0}{6}
+\beamer@sectionintoc {7}{Acknowledgements}{27}{0}{7}
