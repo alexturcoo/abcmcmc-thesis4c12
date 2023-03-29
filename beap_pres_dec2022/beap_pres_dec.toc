@@ -1,7 +1,6 @@
 \beamer@sectionintoc {1}{Introduction}{1}{0}{1}
 \beamer@sectionintoc {2}{Background}{3}{0}{2}
-\beamer@sectionintoc {3}{Research Questions/Exploration}{9}{0}{3}
-\beamer@sectionintoc {4}{Experimental Approach}{10}{0}{4}
-\beamer@sectionintoc {5}{Results}{20}{0}{5}
-\beamer@sectionintoc {6}{Future Work}{21}{0}{6}
-\beamer@sectionintoc {7}{Acknowledgements}{22}{0}{7}
+\beamer@sectionintoc {3}{Simulating LCR Evolution}{10}{0}{3}
+\beamer@sectionintoc {4}{Applications to ABC-MCMC}{18}{0}{4}
+\beamer@sectionintoc {5}{Future Work}{24}{0}{5}
+\beamer@sectionintoc {6}{Acknowledgements}{25}{0}{6}
