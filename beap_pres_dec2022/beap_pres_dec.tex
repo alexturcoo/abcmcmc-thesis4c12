@@ -250,7 +250,9 @@
 
 	\begin{frame}{What we Did in this Study}
 		\begin{itemize}
-			\item 
+			\item Utilized \texttt{C++} to build an evolution simulator which altered protein sequences via point mutations, insertions, and deletions \newline
+			\item Tested the simulator with various insertion/deletion rates and mutation rates \newline
+			\item Attempted to program an ABC-MCMC in \texttt{C++} using the evolution simulator as an important step in the algorithm, in order to estimate parameters like mutation and indel rates.
 		\end{itemize}
 	\end{frame}
 
@@ -261,10 +263,10 @@
 	\begin{frame}{LCR Simulator Overall Process}
 		\begin{center}
 			\begin{enumerate}
-				\item Random Protein Sequence \newline	
-				GGAGGGAQ \newline		
-				mutation rate = 0.14
-				indel rate = 0.14  \newline\pause
+			\item mutation rate = 0.14
+				indel rate = 0.14 \newline
+				Random Protein Sequence \newline	
+				GGAGGGAQ \newline\pause	
 				
 				\item Assign Exponential Deviates \newline
 				mutation deviates = (0.83, 1.82, 2.35, 0.54, 0.98, 0.76, 1.53, 2.34) \newline
@@ -282,19 +284,19 @@
 	\end{frame}
 
 	\begin{frame}{LCR Simulator Results}
-		
+		\includegraphics[height=6cm, width=\textwidth]{im0.01-0.1-0.5.jpeg}
 	\end{frame}
 
 	\begin{frame}{LCR Simulator Results 2}
-		
+		\includegraphics[height=7cm, width=\textwidth]{im1-2-10.jpeg}
 	\end{frame}
 
 	\begin{frame}{LCR Simulator Results 3}
-		
+		\includegraphics[height=7cm, width=\textwidth]{m0.01-0.1-0.5.jpeg}
 	\end{frame}
 
 	\begin{frame}{LCR Simulator Results 4}
-		
+		\includegraphics[height=7cm, width=\textwidth]{m1-2-10.jpeg}
 	\end{frame}
 	
 	%Say something like, before we get into how this simulation can be used in an approximate bayesian computation, were just going to go through a very simple overview of bayesian statistics
@@ -384,7 +386,7 @@
 	\end{frame}
 
 	\begin{frame}{ABC MCMC Preliminary Results}
-		
+		\includegraphics[height=6cm, width=\textwidth]{distances.jpeg}
 	\end{frame}
 
 	\section{Conclusion}
