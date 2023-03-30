@@ -33,7 +33,7 @@
 
 
 % Title page details: 
-\title[BEAP Dec 2022]{Estimating Evolutionary Parameters for Protein Low Complexity Regions using an Approximate Bayesian Computation} 
+\title[BEAP Dec 2022]{Creating an Evolution Simulator for Protein Low Complexity Regions and Attempting to Utilize it for an Approximate Bayesian Computation} 
 \author{Alexander Turco}
 \date{December 5, 2022}
 \logo{\includegraphics[height=1cm, width=1cm]{logo.png}}
@@ -69,8 +69,9 @@
 		\begin{minipage}{6cm}
 				
 		  		\begin{block}{} \hyperlink{link1}{Background Information} \end{block}
-		  		\begin{block}{} Research Questions/Explorations \end{block}
-		  		\begin{block}{} Experimental Approach \end{block}
+		  		\begin{block}{} Simulating LCR Evolution \end{block}
+		  		\begin{block}{} Applications to ABC-MCMC \end{block}
+		  		\begin{block}{} Conclusions \end{block}
 		  		\begin{block}{} Future Work \end{block}
 
 		\end{minipage}
@@ -247,25 +248,58 @@
 	
 	\end{frame}
 
+	\begin{frame}{What we Did in this Study}
+		\begin{itemize}
+			\item 
+		\end{itemize}
+	\end{frame}
+
 	%For my Research questions/Exploration slides, I will talk about things such as
 	%SLIDE 9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{Research Questions/Exploration}
+	\section{Simulating LCR Evolution}
 	
-	\begin{frame}{What Did we Do in this Study?}
-		\begin{itemize}
-			\item Programmed an ABC-MCMC using \texttt{C++} which consisted of a simulation step where amino acid sequences were altered by point mutations and insertions/deletions \newline
-			\item Utilized the exponential distribution with ($\beta$ = length*indel\_rate) to examine if the length of a repeat plays a role in its mutation \newline
-			\item Attempted to estimate evolutionary parameters such as mutation rates and insertion/deletion rates \newline
-			\item Explored summary statistics that could quantitatively explain characteristics of LCRs
-			
-		\end{itemize}
+	\begin{frame}{LCR Simulator Overall Process}
+		\begin{center}
+			\begin{enumerate}
+				\item Random Protein Sequence \newline	
+				GGAGGGAQ \newline		
+				mutation rate = 0.14
+				indel rate = 0.14  \newline\pause
+				
+				\item Assign Exponential Deviates \newline
+				mutation deviates = (0.83, 1.82, 2.35, 0.54, 0.98, 0.76, 1.53, 2.34) \newline
+				indel deviates = (0.21, 1.21, 1.49, 0.86, 0.97, 1.13, 0.53, 0.35) \newline
+				\qquad exp($\beta$), where $\beta$ = mutation rate\newline 
+				\qquad exp($\beta$), where $\beta$ = length of repeat * indel rate \newline \pause
+				
+				\item Point Mutation, Insertion, or Deletion \newline
+				Lowest value deviate = Residue that mutates fastest \newline \pause
+				
+				\item Upon point mutation, insertion, or deletion, scan the sequence again to see if the landscape of the sequence was affected, assign new deviates to affected amino acids only.
+				
+			\end{enumerate}
+		\end{center}	
+	\end{frame}
+
+	\begin{frame}{LCR Simulator Results}
 		
 	\end{frame}
 
-	%For my Experimental approach slides, I will talk about things such as 
-	%SLIDE 10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{Experimental Approach}
-	\begin{frame}{What Approach will be Taken?}
+	\begin{frame}{LCR Simulator Results 2}
+		
+	\end{frame}
+
+	\begin{frame}{LCR Simulator Results 3}
+		
+	\end{frame}
+
+	\begin{frame}{LCR Simulator Results 4}
+		
+	\end{frame}
+	
+	%Say something like, before we get into how this simulation can be used in an approximate bayesian computation, were just going to go through a very simple overview of bayesian statistics
+	\section{Applications to ABC-MCMC}
+	\begin{frame}{Bayesian Statistics Overview}
 	
 	\textbf{Bayesian Statistics: Model-based statistical inference}
 	
@@ -349,41 +383,15 @@
 	
 	\end{frame}
 
-	%Slide 14 - Maybe to this slide - Maybe throw in extra slides for reference
-	\begin{frame}{Simulation Step}
-		\begin{center}
-			\begin{enumerate}
-			\item Random Protein Sequence \newline	
-			GGAGGGAQ \newline		
-			mutation rate = 0.14
-			\qquad exp($\beta$), where $\beta$ = mutation rate\newline 
-			indel rate = 0.14 \qquad exp($\beta$), where $\beta$ = length of repeat * indel rate \newline \pause
-			
-			\item Assign Exponential Deviates \newline
-			mutation deviates = (0.83, 1.82, 2.35, 0.54, 0.98, 0.76, 1.53, 2.34) \newline
-			indel deviates = (0.21, 1.21, 1.49, 0.86, 0.97, 1.13, 0.53, 0.35) \newline \pause
-			
-			\item Point Mutation, Insertion, or Deletion \newline
-			Lowest value deviate = Residue that mutates fastest \newline \pause
-			
-			\item Upon point mutation, insertion, or deletion, scan the sequence again to see if the landscape of the sequence was affected, assign new deviates to affected amino acids only.
-			
-			\end{enumerate}
-		\end{center}
-		
-	
-	\end{frame}
-
-	%For my Results slides, I will talk about things such as the results I have, But i don't have any right now
-	%SLIDE 15%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{Results}
-	\begin{frame}{Results}
-		
+	\begin{frame}{ABC MCMC Preliminary Results}
 		
 	\end{frame}
 
-	%For my Concluding slides, I will talk about things such as 
-	%SLIDE 16%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Conclusion}
+	\begin{frame}{Conclusions}
+		
+	\end{frame}
+
 	\section{Future Work}
 	\begin{frame}{Future Work}
 		
