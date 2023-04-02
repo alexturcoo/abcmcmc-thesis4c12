@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  30 MAR 2023 15:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  1 APR 2023 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1181,7 +1181,7 @@ Package biblatex Info: ... file 'beap_pres_dec.bbl' found.
 Package biblatex Info: Reference section=0 on input line 53.
 Package biblatex Info: Reference segment=0 on input line 53.
  (./beap_pres_dec.nav)
-<logo.png, id=53, 305.14pt x 326.21875pt>
+<logo.png, id=49, 305.14pt x 326.21875pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 60.
@@ -1205,17 +1205,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [3
 
 ]
-<poyglut.png, id=160, 467.7475pt x 96.36pt>
+<poyglut.png, id=156, 467.7475pt x 96.36pt>
 File: poyglut.png Graphic file (type png)
 <use poyglut.png>
 Package pdftex.def Info: poyglut.png  used on input line 143.
 (pdftex.def)             Requested size: 142.26665pt x 28.45241pt.
-<direpeat.png, id=174, 455.7025pt x 93.34875pt>
+<direpeat.png, id=170, 455.7025pt x 93.34875pt>
 File: direpeat.png Graphic file (type png)
 <use direpeat.png>
 Package pdftex.def Info: direpeat.png  used on input line 143.
 (pdftex.def)             Requested size: 142.26761pt x 28.45209pt.
-<imperfect.png, id=184, 470.75874pt x 97.36375pt>
+<imperfect.png, id=180, 470.75874pt x 97.36375pt>
 File: imperfect.png Graphic file (type png)
 <use imperfect.png>
 Package pdftex.def Info: imperfect.png  used on input line 143.
@@ -1227,7 +1227,7 @@ Overfull \vbox (16.10657pt too high) detected at line 143
 [4
 
  <./poyglut.png> <./direpeat.png> <./imperfect.png>]
-<drosophila.png, id=194, 450.68375pt x 182.6825pt>
+<drosophila.png, id=190, 450.68375pt x 182.6825pt>
 File: drosophila.png Graphic file (type png)
 <use drosophila.png>
 Package pdftex.def Info: drosophila.png  used on input line 168.
@@ -1235,12 +1235,12 @@ Package pdftex.def Info: drosophila.png  used on input line 168.
  [5
 
  <./drosophila.png>]
-<slippage2n.png, id=206, 413.545pt x 207.77625pt>
+<slippage2n.png, id=201, 413.545pt x 207.77625pt>
 File: slippage2n.png Graphic file (type png)
 <use slippage2n.png>
 Package pdftex.def Info: slippage2n.png  used on input line 193.
 (pdftex.def)             Requested size: 171.15102pt x 71.13123pt.
-<slippage1n.png, id=207, 446.66875pt x 208.78pt>
+<slippage1n.png, id=202, 446.66875pt x 208.78pt>
 File: slippage1n.png Graphic file (type png)
 <use slippage1n.png>
 Package pdftex.def Info: slippage1n.png  used on input line 193.
@@ -1249,7 +1249,7 @@ Package pdftex.def Info: slippage1n.png  used on input line 193.
 [6
 
  <./Slippage2n.png> <./slippage1n.png>]
-<unequal.png, id=220, 454.69875pt x 123.46124pt>
+<unequal.png, id=216, 454.69875pt x 123.46124pt>
 File: unequal.png Graphic file (type png)
 <use unequal.png>
 Package pdftex.def Info: unequal.png  used on input line 204.
@@ -1257,17 +1257,17 @@ Package pdftex.def Info: unequal.png  used on input line 204.
  [7
 
  <./unequal.png>]
-<huntington.jpg, id=231, 1927.2pt x 1084.05pt>
+<huntington.jpg, id=227, 1927.2pt x 1084.05pt>
 File: huntington.jpg Graphic file (type jpg)
 <use huntington.jpg>
 Package pdftex.def Info: huntington.jpg  used on input line 249.
 (pdftex.def)             Requested size: 112.951pt x 71.12737pt.
-<chrom.png, id=232, 172.645pt x 207.77625pt>
+<chrom.png, id=228, 172.645pt x 207.77625pt>
 File: chrom.png Graphic file (type png)
 <use chrom.png>
 Package pdftex.def Info: chrom.png  used on input line 249.
 (pdftex.def)             Requested size: 71.13263pt x 71.13123pt.
-<menin.jpg, id=233, 702.625pt x 466.74374pt>
+<menin.jpg, id=229, 702.625pt x 466.74374pt>
 File: menin.jpg Graphic file (type jpg)
 <use menin.jpg>
 Package pdftex.def Info: menin.jpg  used on input line 249.
@@ -1301,7 +1301,7 @@ Overfull \vbox (8.05865pt too high) detected at line 284
 [13
 
 ]
-<im0.01-0.1-0.5.jpeg, id=276, 3613.5pt x 1806.75pt>
+<im0.01-0.1-0.5.jpeg, id=272, 3613.5pt x 1806.75pt>
 File: im0.01-0.1-0.5.jpeg Graphic file (type jpg)
 <use im0.01-0.1-0.5.jpeg>
 Package pdftex.def Info: im0.01-0.1-0.5.jpeg  used on input line 288.
@@ -1309,7 +1309,7 @@ Package pdftex.def Info: im0.01-0.1-0.5.jpeg  used on input line 288.
  [14
 
  <./im0.01-0.1-0.5.jpeg>]
-<im1-2-10.jpeg, id=283, 3613.5pt x 1806.75pt>
+<im1-2-10.jpeg, id=279, 3613.5pt x 1806.75pt>
 File: im1-2-10.jpeg Graphic file (type jpg)
 <use im1-2-10.jpeg>
 Package pdftex.def Info: im1-2-10.jpeg  used on input line 292.
@@ -1317,7 +1317,7 @@ Package pdftex.def Info: im1-2-10.jpeg  used on input line 292.
  [15
 
  <./im1-2-10.jpeg>]
-<m0.01-0.1-0.5.jpeg, id=290, 3613.5pt x 1806.75pt>
+<m0.01-0.1-0.5.jpeg, id=286, 3613.5pt x 1806.75pt>
 File: m0.01-0.1-0.5.jpeg Graphic file (type jpg)
 <use m0.01-0.1-0.5.jpeg>
 Package pdftex.def Info: m0.01-0.1-0.5.jpeg  used on input line 296.
@@ -1325,7 +1325,7 @@ Package pdftex.def Info: m0.01-0.1-0.5.jpeg  used on input line 296.
  [16
 
  <./m0.01-0.1-0.5.jpeg>]
-<m1-2-10.jpeg, id=297, 3613.5pt x 1806.75pt>
+<m1-2-10.jpeg, id=293, 3613.5pt x 1806.75pt>
 File: m1-2-10.jpeg Graphic file (type jpg)
 <use m1-2-10.jpeg>
 Package pdftex.def Info: m1-2-10.jpeg  used on input line 300.
@@ -1337,7 +1337,7 @@ Package pdftex.def Info: m1-2-10.jpeg  used on input line 300.
 ] [19
 
 ]
-<no.png, id=319, 963.6pt x 963.6pt>
+<no.png, id=315, 963.6pt x 963.6pt>
 File: no.png Graphic file (type png)
 <use no.png>
 Package pdftex.def Info: no.png  used on input line 355.
@@ -1356,7 +1356,7 @@ Package pdftex.def Info: no.png  used on input line 355.
 ] [23
 
 ]
-<distances.jpeg, id=351, 3613.5pt x 1806.75pt>
+<distances.jpeg, id=347, 3613.5pt x 1806.75pt>
 File: distances.jpeg Graphic file (type jpg)
 <use distances.jpeg>
 Package pdftex.def Info: distances.jpeg  used on input line 390.
@@ -1365,15 +1365,7 @@ Package pdftex.def Info: distances.jpeg  used on input line 390.
 
  <./distances.jpeg>] [25
 
-]
-<graph.png, id=366, 797.98125pt x 581.17125pt>
-File: graph.png Graphic file (type png)
-<use graph.png>
-Package pdftex.def Info: graph.png  used on input line 409.
-(pdftex.def)             Requested size: 199.16606pt x 142.25961pt.
- [26
-
- <./graph.png>] [27
+] [26
 
 ]
 \tf@nav=\write7
@@ -1387,16 +1379,16 @@ Package pdftex.def Info: graph.png  used on input line 409.
 
  (./beap_pres_dec.aux)
 Package rerunfilecheck Info: File `beap_pres_dec.out' has not changed.
-(rerunfilecheck)             Checksum: A54B3B9539212DBCADDCEAF881A8E0AE;851.
+(rerunfilecheck)             Checksum: 15E9B503F63939956A3B06E147859E10;750.
 Package logreq Info: Writing requests to 'beap_pres_dec.run.xml'.
 \openout1 = `beap_pres_dec.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33668 strings out of 478287
- 683004 string characters out of 5849290
+ 33653 strings out of 478287
+ 682834 string characters out of 5849290
  1339856 words of memory out of 5000000
- 51187 multiletter control sequences out of 15000+600000
+ 51175 multiletter control sequences out of 15000+600000
  479688 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,746b,1297s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1428,10 +1420,10 @@ ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on beap_pres_dec.pdf (27 pages, 3813388 bytes).
+Output written on beap_pres_dec.pdf (26 pages, 3791374 bytes).
 PDF statistics:
- 457 PDF objects out of 1000 (max. 8388607)
- 302 compressed objects within 4 object streams
- 68 named destinations out of 1000 (max. 500000)
- 543 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 443 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 530 words of extra memory for PDF output out of 10000 (max. 10000000)
 

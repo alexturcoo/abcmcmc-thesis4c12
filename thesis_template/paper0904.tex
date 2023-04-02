@@ -135,7 +135,7 @@
 
 \lhead{ABC-MCMC} %This needs to change
 \rhead{Alexander Turco and GB Golding}
-\title{\sc Estimating Evolutionary Parameters for Low Complexity Regions using an Approximate Bayesian Computation}
+\title{\sc Creation of a Low Complexity Region Evolution Simulator for use in an Approximate Bayesian Computation}
 \author{\sc Alexander Turco}
 
 \providecommand{\figref}[1]{(Figure \ref{#1})}  %what?
@@ -469,14 +469,61 @@ A one sample t-test was employed in order to assess the probability of accepting
 
 \section{Results}
 
-%\subsection{Entropy of LCRs in Protein and DNA correlate Poorly with
-%Corresponding Sequence Entropies}
+\subsection{Assessing the Evolution Simulator}
+
+To be able to utilize the evolution simulator within an approximate bayesian computation, tests had to be done to ensure it was working properly. The first step in this study involved running simulations of LCR evolution for various mutation and indel rates. Simulations were run for 1000 iterations each, and on each iteration, the simulator would return the average entropy of the LCRs in the sequence, the total number of LCRs in the sequence, and the overall sequence entropy. To test the effects of each individual rate parameter, only 1 rate was adjusted while the other remained a fixed constant. \figref{fig:1} and \figref{fig:2} are the result of holding the mutation rate constant at 1, and only changing the insertion/deletion rate. It is expected that a low indel rate will lead to the formation of less LCRs and hence a higher sequence entropy. The results in \figref{fig:1} match this expectation, showing the formation of only one to two low complexity regions that are quickly removed by mutations, and a relatively unaffected maximal protein sequence entropy. 
+
+\begin{figure}[H]
+	\includegraphics[width=18cm, height=10cm]{im0.01-0.1-0.5.jpeg}
+	\caption{Entropy and number of LCR comparisons in a randomly generated protein sequence that has undergone simulated evolution. (Left) An indel rate of 0.1 was utilized. (RIGHT) An indel rate of 0.5 was utilized. A mutation rate of 1 was utilized for both.}
+	\label{fig:1}
+\end{figure}
+
+As the indel rate is increased, it is expected that there should be more low complexity regions and hence, a lower average sequence entropy. Results in \figref{fig:2} show the formation of many more LCRs that remain in the protein sequence, possibly because mutations don't have as much of a chance swamp out the formation of low complexity regions. These results also show much more of a fluctuation in average sequence entropy compared to \figref{fig:1}, with decreases in entropy occuring where new LCRs are being formed.
+
+\begin{figure}[H]
+	\includegraphics[width=18cm, height=10cm]{im1-2-10.jpeg}
+	\caption{Entropy and number of LCR comparisons in a randomly generated protein sequence that has undergone simulated evolution. (TOP LEFT) An indel rate of 1 was utilized. (TOP RIGHT) An indel rate of 2 was utilized. (BOTTOM) An indel rate of 10 was utilized. A mutation rate of 1 was used for all.}
+	\label{fig:2}
+\end{figure}
+
+To explore the effects of mutation on LCR formation, \figref{fig:3} and \figref{fig:4} show the average sequence entropy, the entropy of the LCRs in the sequence, and the total number of LCRs found in a randomly generated protein sequence that has undergone simulated mutation for 1000 generations. It is expected that under higher rates of mutation, indels will be difficult to form as the large number of mutations destroy repetitive segments. \figref{fig:3} utilized mutation rates of 0.01, 0.1 and 0.5, all of which are less than the fixed indel rate of 1. In all three cases, the average sequence entropy fluctuates as the number of LCRs remains fairly large. In \figref{fig:4}, mutation rates are increased to 1, 2, and 10, much larger than the fixed indel rate. The average sequence entropy fluctuates much less in these cases and the number of LCRs in the sequence decreases in comparison to \figref{fig:3}. These results match the expectation that a larger mutation rate will have major effects of insertions and deletions. In the case where we set the mutation rate to be 10x the indel rate, only three LCRs are formed in total and are quickly removed due to mutation. In this case the entropy is also relatively unaffected, meaning that repetitve regions are not being formed.
+
+It should also be noted that the average entropy of the low complexity regions being formed is significantly less than the average entropy of the entire sequence, and this is expected. 
+
+\begin{figure}[H]
+	\includegraphics[width=18cm, height=10cm]{m0.01-0.1-0.5.jpeg}
+	\caption{Entropy and number of LCR comparisons in a randomly generated protein sequence that has undergone simulated evolution. (TOP LEFT) A mutation rate of 0.01 was utilized. (TOP RIGHT) A mutation rate of 0.1 was utilized. (BOTTOM) A mutation rate of 0.5 was utilized. An indel rate of 1 was used for all.}
+	\label{fig:3}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=18cm, height=10cm]{m1-2-10.jpeg}
+	\caption{Entropy and number of LCR comparisons in a randomly generated protein sequence that has undergone simulated evolution. (TOP LEFT) A mutation rate of 1 was utilized. (TOP RIGHT) A mutation rate of 2 was utilized. (BOTTOM) A mutation rate of 0.5 was utilized. An indel rate of 1 was used for all.}
+	\label{fig:4}
+\end{figure}
 
 
-%\subsection{Entropy Correlation is Higher in Simulated Sequences}
+\subsection{Applying the Simulator to an ABC-MCMC}
 
+The second part of this study attempted to create an ABC-MCMC, using the LCR evolution simulator as a step in the algorithm. Time constraints in programming the ABC did not allow for the visualization of posterior distributions. We did however establish that the evolution simulator must be run for a minimum 1000 iterates for each newly proposed parameter value, in order to reach an almost "equilibrium" state. \figref{fig:5} shows the euclidean distance plotted over each iteration of the simulation. The euclidean distance was calculated using vectors of summary statistics for both the simulated protein sequence and the observed protein sequence (SRP40 \scshrt). Essentially the larger the distance, the more differences there are between the simulated protein sequence and the SRP40 protein sequence. In the plot on the left, mutation rate is set to 0 and indel rate is set to 1. In this case, we see the distance between the mutated protein and SRP40 increasing quite rapidly as more LCRs are being formed, and then start to reach a more steady state around 0.5. In the plot on the left, mutation and indel rates are both set to 1. In this case, since mutations are involved as well now, we the distance rapidly increase and start to decrease more steadily at around 0.85.
+
+For each newly proposed parameter value in the ABC-MCMC, we run through the evolution simulator 1000 times and take the average of all 1000 vectors produced. This is why we need to reach some sort of equilibrium in distance to ensure that we reach a level status of both parameters being proposed.
+
+\begin{figure}[H]
+	\includegraphics[width=18cm, height=9cm]{distances.jpeg}
+	\caption{Calculated euclidean distances between mutated protein and SRP40 protein over 1000 evolution simulator iterates. (LEFT) mutation rate 0, indel rate 1. (RIGHT) mutation rate 1, indel rate 1.}
+	\label{fig:5}
+\end{figure}
+\newpage
 
 \section{Discussion}
+
+
+
+\subsection{1}
+
+\subsection{2}
 
 \clearpage\newpage
 \section{References}
@@ -488,8 +535,15 @@ A one sample t-test was employed in order to assess the probability of accepting
 \printbibliography[heading=none, sorting=nyt]
 \newpage
 
-\section{Appendix C++ simulation (so far)}
+\section{Appendix 1: Low Complexity Region Evolution Simulator}
 \lstinputlisting[language=c++]{../mutations_2_BG_vecs.cpp}
+\newpage
+
+\section{Appendix 2: ABC-MCMC in C++}
+\lstinputlisting[language=c++]{../abcmcmc.cpp}
+\newpage
+
+\section{Appendix 3: }
 
 \end{document}
 

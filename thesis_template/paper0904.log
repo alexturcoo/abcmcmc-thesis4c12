@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  27 MAR 2023 12:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  2 APR 2023 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1466,11 +1466,11 @@ LaTeX Info: Redefining \nameref on input line 212.
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./paper0904.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./paper0904.toc [2])
 \tf@toc=\write6
 \openout6 = `paper0904.toc'.
 
- [2] [3] [4] [5] [6] [7] [8]
+ [3] [4] [5] [6] [7] [8] [9]
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 38
 0.
 
@@ -1483,15 +1483,69 @@ be found on \T1/pcr/m/n/10 GitHub \T1/ptm/m/n/10 at [][]$\T1/pcr/m/n/10 https :
  / / github . com / opticrom /
  []
 
-[9] [10] [11] [12]
+[10] [11] [12] [13]
+<im0.01-0.1-0.5.jpeg, id=361, 3613.5pt x 1806.75pt>
+File: im0.01-0.1-0.5.jpeg Graphic file (type jpg)
+<use im0.01-0.1-0.5.jpeg>
+Package pdftex.def Info: im0.01-0.1-0.5.jpeg  used on input line 477.
+(pdftex.def)             Requested size: 512.1171pt x 284.50949pt.
+
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 477--478
+[][] 
+ []
+
+<im1-2-10.jpeg, id=364, 3613.5pt x 1806.75pt>
+File: im1-2-10.jpeg Graphic file (type jpg)
+<use im1-2-10.jpeg>
+Package pdftex.def Info: im1-2-10.jpeg  used on input line 485.
+(pdftex.def)             Requested size: 512.1171pt x 284.50949pt.
+
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 485--486
+[][] 
+ []
+
+[14 <./im0.01-0.1-0.5.jpeg>]
+<m0.01-0.1-0.5.jpeg, id=376, 3613.5pt x 1806.75pt>
+File: m0.01-0.1-0.5.jpeg Graphic file (type jpg)
+<use m0.01-0.1-0.5.jpeg>
+Package pdftex.def Info: m0.01-0.1-0.5.jpeg  used on input line 495.
+(pdftex.def)             Requested size: 512.1171pt x 284.50949pt.
+
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 495--496
+[][] 
+ []
+
+[15 <./im1-2-10.jpeg>]
+<m1-2-10.jpeg, id=383, 3613.5pt x 1806.75pt>
+File: m1-2-10.jpeg Graphic file (type jpg)
+<use m1-2-10.jpeg>
+Package pdftex.def Info: m1-2-10.jpeg  used on input line 501.
+(pdftex.def)             Requested size: 512.1171pt x 284.50949pt.
+
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 501--502
+[][] 
+ []
+
+[16 <./m0.01-0.1-0.5.jpeg> <./m1-2-10.jpeg>]
+<distances.jpeg, id=389, 3613.5pt x 1806.75pt>
+File: distances.jpeg Graphic file (type jpg)
+<use distances.jpeg>
+Package pdftex.def Info: distances.jpeg  used on input line 514.
+(pdftex.def)             Requested size: 512.1171pt x 256.05855pt.
+
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 514--515
+[][] 
+ []
+
+[17 <./distances.jpeg>] [18]
 
 Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer
  supported.
 (biblatex)                Please use 'sorting' option to '\newrefcontext'.
 
-[13
+[19
 
-] [14] [15] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+] [20] [21] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1500,33 +1554,29 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
-(../mutations_2_BG_vecs.cpp [16]
-Overfull \hbox (51.71547pt too wide) in paragraph at lines 65--66
+(../mutations_2_BG_vecs.cpp [22]
+Overfull \hbox (51.71547pt too wide) in paragraph at lines 82--83
 [][][][] 
  []
 
-
-Overfull \hbox (51.71547pt too wide) in paragraph at lines 67--68
+[23]
+Overfull \hbox (51.71547pt too wide) in paragraph at lines 84--85
 [][][][] 
  []
 
-[17] [18] [19] [20] [21] [22])
-
-Package caption Warning: Unused \captionsetup[figure] on input line 81.
-See the caption package documentation for explanation.
-
-[23] (./paper0904.aux)
+[24] [25] [26] [27] [28]) [29] (../abcmcmc.cpp [30] [31] [32] [33] [34]
+[35]) [36] [37] (./paper0904.aux)
 Package rerunfilecheck Info: File `paper0904.out' has not changed.
-(rerunfilecheck)             Checksum: 66EA16CDCBDE6D1401C106773143D147;4045.
+(rerunfilecheck)             Checksum: 4507A6B494F455B8EAF5A02E8086661A;5067.
 Package logreq Info: Writing requests to 'paper0904.run.xml'.
 \openout1 = `paper0904.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46953 strings out of 478287
- 1057533 string characters out of 5849290
- 2461811 words of memory out of 5000000
- 64026 multiletter control sequences out of 15000+600000
+ 47513 strings out of 478287
+ 1066261 string characters out of 5849290
+ 2438290 words of memory out of 5000000
+ 64260 multiletter control sequences out of 15000+600000
  513371 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,12n,117p,1519b,2116s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1541,10 +1591,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper0904.pdf (23 pages, 202569 bytes).
+Output written on paper0904.pdf (37 pages, 3202238 bytes).
 PDF statistics:
- 812 PDF objects out of 1000 (max. 8388607)
- 757 compressed objects within 8 object streams
- 397 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1283 PDF objects out of 1440 (max. 8388607)
+ 1204 compressed objects within 13 object streams
+ 714 named destinations out of 1000 (max. 500000)
+ 230 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -55,16 +55,11 @@
 \headcommand {\beamer@framepages {25}{25}}
 \headcommand {\beamer@sectionpages {25}{25}}
 \headcommand {\beamer@subsectionpages {25}{25}}
-\headcommand {\sectionentry {6}{Future Work}{26}{Future Work}{0}}
+\headcommand {\sectionentry {6}{Acknowledgements}{26}{Acknowledgements}{0}}
 \headcommand {\slideentry {6}{0}{1}{26/26}{}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\beamer@sectionpages {26}{26}}
+\headcommand {\beamer@partpages {1}{26}}
 \headcommand {\beamer@subsectionpages {26}{26}}
-\headcommand {\sectionentry {7}{Acknowledgements}{27}{Acknowledgements}{0}}
-\headcommand {\slideentry {7}{0}{1}{27/27}{}{0}}
-\headcommand {\beamer@framepages {27}{27}}
-\headcommand {\beamer@partpages {1}{27}}
-\headcommand {\beamer@subsectionpages {27}{27}}
-\headcommand {\beamer@sectionpages {27}{27}}
-\headcommand {\beamer@documentpages {27}}
-\headcommand {\gdef \inserttotalframenumber {22}}
+\headcommand {\beamer@sectionpages {26}{26}}
+\headcommand {\beamer@documentpages {26}}
+\headcommand {\gdef \inserttotalframenumber {21}}

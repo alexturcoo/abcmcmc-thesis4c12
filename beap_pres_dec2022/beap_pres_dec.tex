@@ -72,7 +72,7 @@
 		  		\begin{block}{} Simulating LCR Evolution \end{block}
 		  		\begin{block}{} Applications to ABC-MCMC \end{block}
 		  		\begin{block}{} Conclusions \end{block}
-		  		\begin{block}{} Future Work \end{block}
+		  		\begin{block}{} Acknowledgements \end{block}
 
 		\end{minipage}
 		\end{center}
@@ -391,22 +391,26 @@
 
 	\section{Conclusion}
 	\begin{frame}{Conclusions}
-		
+		\begin{itemize}
+			\item Created and tested a program to simulate the evolution of low complexity regions based off of two evolutionary parameters, mutation and indel rates \newline
+			\item The simulation program is compatible in a program written for an ABC-MCMC \newline
+			\item Struggling with creating posterior distribution, potentially due to selection of poor summary statistics or a lack of weight placed on each statistic
+		\end{itemize}
 	\end{frame}
 
-	\section{Future Work}
-	\begin{frame}{Future Work}
+	%\section{Future Work}
+	%\begin{frame}{Future Work}
 		
-		\begin{itemize}
-			\item Graphical representations of simulation iteration versus parameter values 
-			\item Implementation of weighted summary statistics in distance calculation
-			\item Adjustment of values such as mean and standard deviation of the proposal distribution
+		%\begin{itemize}
+			%\item Graphical representations of simulation iteration versus parameter values 
+		%	\item Implementation of weighted summary statistics in distance calculation
+		%	\item Adjustment of values such as mean and standard deviation of the proposal distribution
 			
-			\centering\includegraphics[width=7cm, height=5cm]{graph.png}
+		%	\centering\includegraphics[width=7cm, height=5cm]{graph.png}
 			
-		\end{itemize}
+	%	\end{itemize}
 		
-	\end{frame}
+	%\end{frame}
 
 	\section{Acknowledgements}
 	\begin{frame}{Acknowledgements}

@@ -1,18 +1,24 @@
-\contentsline {section}{\numberline {}Abstract}{3}{section.1}%
-\contentsline {section}{\numberline {}Literature Review/Proposal}{4}{section.2}%
-\contentsline {subsection}{\numberline {}What are Low Complexity Regions?}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {}Characteristics and Types of LCRs}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {}Why care about LCRs?}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {}How do LCRs Evolve?}{6}{subsection.2.4}%
-\contentsline {subsection}{\numberline {}What is an Approximate Bayesian Computation Markov chain Monte Carlo algorithm?}{7}{subsection.2.5}%
-\contentsline {subsection}{\numberline {}How will we use an ABC-MCMC - Oct 28 First draft}{8}{subsection.2.6}%
-\contentsline {section}{\numberline {}Materials and Methods (mid-year stuff Jan 20)}{9}{section.3}%
-\contentsline {subsection}{\numberline {}ABC-MCMC: The Algorithm}{9}{subsection.3.1}%
-\contentsline {subsection}{\numberline {}Parameters and Summary Statistics}{10}{subsection.3.2}%
-\contentsline {subsection}{\numberline {}Simulation Step: Creation and Mutation of Protein Sequences}{11}{subsection.3.3}%
-\contentsline {subsection}{\numberline {}Normalization and Euclidean Distance Calculation}{11}{subsection.3.4}%
-\contentsline {subsection}{\numberline {}One Sample T-Test for Probability of Acceptance}{12}{subsection.3.5}%
-\contentsline {section}{\numberline {}Results}{12}{section.4}%
-\contentsline {section}{\numberline {}Discussion}{12}{section.5}%
-\contentsline {section}{\numberline {}References}{13}{section.6}%
-\contentsline {section}{\numberline {}Appendix C++ simulation (so far)}{16}{section.7}%
+\contentsline {section}{\numberline {}Abstract}{4}{section.1}%
+\contentsline {section}{\numberline {}Literature Review/Proposal}{5}{section.2}%
+\contentsline {subsection}{\numberline {}What are Low Complexity Regions?}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {}Characteristics and Types of LCRs}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {}Why care about LCRs?}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {}How do LCRs Evolve?}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {}What is an Approximate Bayesian Computation Markov chain Monte Carlo algorithm?}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {}How will we use an ABC-MCMC - Oct 28 First draft}{9}{subsection.2.6}%
+\contentsline {section}{\numberline {}Materials and Methods (mid-year stuff Jan 20)}{10}{section.3}%
+\contentsline {subsection}{\numberline {}ABC-MCMC: The Algorithm}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {}Parameters and Summary Statistics}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {}Simulation Step: Creation and Mutation of Protein Sequences}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {}Normalization and Euclidean Distance Calculation}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {}One Sample T-Test for Probability of Acceptance}{13}{subsection.3.5}%
+\contentsline {section}{\numberline {}Results}{14}{section.4}%
+\contentsline {subsection}{\numberline {}Assessing the Evolution Simulator}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {}Applying the Simulator to an ABC-MCMC}{17}{subsection.4.2}%
+\contentsline {section}{\numberline {}Discussion}{18}{section.5}%
+\contentsline {subsection}{\numberline {}1}{18}{subsection.5.1}%
+\contentsline {subsection}{\numberline {}2}{18}{subsection.5.2}%
+\contentsline {section}{\numberline {}References}{19}{section.6}%
+\contentsline {section}{\numberline {}Appendix 1: Low Complexity Region Evolution Simulator}{22}{section.7}%
+\contentsline {section}{\numberline {}Appendix 2: ABC-MCMC in C++}{30}{section.8}%
+\contentsline {section}{\numberline {}Appendix 3: }{37}{section.9}%
