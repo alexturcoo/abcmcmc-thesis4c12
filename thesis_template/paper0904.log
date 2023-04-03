@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  2 APR 2023 14:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  3 APR 2023 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1484,7 +1484,7 @@ be found on \T1/pcr/m/n/10 GitHub \T1/ptm/m/n/10 at [][]$\T1/pcr/m/n/10 https :
  []
 
 [10] [11] [12] [13]
-<im0.01-0.1-0.5.jpeg, id=361, 3613.5pt x 1806.75pt>
+<im0.01-0.1-0.5.jpeg, id=381, 3613.5pt x 1806.75pt>
 File: im0.01-0.1-0.5.jpeg Graphic file (type jpg)
 <use im0.01-0.1-0.5.jpeg>
 Package pdftex.def Info: im0.01-0.1-0.5.jpeg  used on input line 477.
@@ -1494,7 +1494,7 @@ Overfull \hbox (6.2271pt too wide) in paragraph at lines 477--478
 [][] 
  []
 
-<im1-2-10.jpeg, id=364, 3613.5pt x 1806.75pt>
+<im1-2-10.jpeg, id=384, 3613.5pt x 1806.75pt>
 File: im1-2-10.jpeg Graphic file (type jpg)
 <use im1-2-10.jpeg>
 Package pdftex.def Info: im1-2-10.jpeg  used on input line 485.
@@ -1505,7 +1505,7 @@ Overfull \hbox (6.2271pt too wide) in paragraph at lines 485--486
  []
 
 [14 <./im0.01-0.1-0.5.jpeg>]
-<m0.01-0.1-0.5.jpeg, id=376, 3613.5pt x 1806.75pt>
+<m0.01-0.1-0.5.jpeg, id=396, 3613.5pt x 1806.75pt>
 File: m0.01-0.1-0.5.jpeg Graphic file (type jpg)
 <use m0.01-0.1-0.5.jpeg>
 Package pdftex.def Info: m0.01-0.1-0.5.jpeg  used on input line 495.
@@ -1516,7 +1516,7 @@ Overfull \hbox (6.2271pt too wide) in paragraph at lines 495--496
  []
 
 [15 <./im1-2-10.jpeg>]
-<m1-2-10.jpeg, id=383, 3613.5pt x 1806.75pt>
+<m1-2-10.jpeg, id=403, 3613.5pt x 1806.75pt>
 File: m1-2-10.jpeg Graphic file (type jpg)
 <use m1-2-10.jpeg>
 Package pdftex.def Info: m1-2-10.jpeg  used on input line 501.
@@ -1527,7 +1527,7 @@ Overfull \hbox (6.2271pt too wide) in paragraph at lines 501--502
  []
 
 [16 <./m0.01-0.1-0.5.jpeg> <./m1-2-10.jpeg>]
-<distances.jpeg, id=389, 3613.5pt x 1806.75pt>
+<distances.jpeg, id=409, 3613.5pt x 1806.75pt>
 File: distances.jpeg Graphic file (type jpg)
 <use distances.jpeg>
 Package pdftex.def Info: distances.jpeg  used on input line 514.
@@ -1537,15 +1537,22 @@ Overfull \hbox (6.2271pt too wide) in paragraph at lines 514--515
 [][] 
  []
 
-[17 <./distances.jpeg>] [18]
+[17 <./distances.jpeg>] [18] [19] [20]
 
 Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer
  supported.
 (biblatex)                Please use 'sorting' option to '\newrefcontext'.
 
-[19
+[21
 
-] [20] [21] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+] [22]
+Overfull \hbox (1.86424pt too wide) in paragraph at lines 558--558
+[][]\T1/ptm/m/n/10 Pascarella S and Ar-gos P (1992). Anal-y-sis of in-ser-tion-
+s/dele-tions in pro-tein struc-tures. Jour-nal of molec-u-lar bi-ol-ogy 224(2),
+ 461^^U
+ []
+
+[23] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1554,32 +1561,38 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
-(../mutations_2_BG_vecs.cpp [22]
+(../mutations_2_BG_vecs.cpp [24]
 Overfull \hbox (51.71547pt too wide) in paragraph at lines 82--83
 [][][][] 
  []
 
-[23]
+[25]
 Overfull \hbox (51.71547pt too wide) in paragraph at lines 84--85
 [][][][] 
  []
 
-[24] [25] [26] [27] [28]) [29] (../abcmcmc.cpp [30] [31] [32] [33] [34]
-[35]) [36] [37] (./paper0904.aux)
+[26] [27] [28] [29] [30]) [31] (../abcmcmc.cpp [32] [33] [34] [35] [36]
+[37]) [38] (../simulated_protein.cpp [39]
+Overfull \hbox (1462.92982pt too wide) in paragraph at lines 64--65
+[][][][] 
+ []
+
+) [40] (../distance2.cpp [41]) [42] (../ttest.cpp [43] [44]) [45]
+(./paper0904.aux)
 Package rerunfilecheck Info: File `paper0904.out' has not changed.
-(rerunfilecheck)             Checksum: 4507A6B494F455B8EAF5A02E8086661A;5067.
+(rerunfilecheck)             Checksum: D49E97E76CC44F226001791000C3B475;6791.
 Package logreq Info: Writing requests to 'paper0904.run.xml'.
 \openout1 = `paper0904.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47513 strings out of 478287
- 1066261 string characters out of 5849290
- 2438290 words of memory out of 5000000
- 64260 multiletter control sequences out of 15000+600000
+ 47902 strings out of 478287
+ 1072690 string characters out of 5849290
+ 2443882 words of memory out of 5000000
+ 64392 multiletter control sequences out of 15000+600000
  513371 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,12n,117p,1519b,2116s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 114i,12n,117p,1639b,2116s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1591,10 +1604,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper0904.pdf (37 pages, 3202238 bytes).
+Output written on paper0904.pdf (45 pages, 3234224 bytes).
 PDF statistics:
- 1283 PDF objects out of 1440 (max. 8388607)
- 1204 compressed objects within 13 object streams
- 714 named destinations out of 1000 (max. 500000)
- 230 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1637 PDF objects out of 1728 (max. 8388607)
+ 1547 compressed objects within 16 object streams
+ 962 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

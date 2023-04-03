@@ -16,9 +16,13 @@
 \contentsline {subsection}{\numberline {}Assessing the Evolution Simulator}{14}{subsection.4.1}%
 \contentsline {subsection}{\numberline {}Applying the Simulator to an ABC-MCMC}{17}{subsection.4.2}%
 \contentsline {section}{\numberline {}Discussion}{18}{section.5}%
-\contentsline {subsection}{\numberline {}1}{18}{subsection.5.1}%
-\contentsline {subsection}{\numberline {}2}{18}{subsection.5.2}%
-\contentsline {section}{\numberline {}References}{19}{section.6}%
-\contentsline {section}{\numberline {}Appendix 1: Low Complexity Region Evolution Simulator}{22}{section.7}%
-\contentsline {section}{\numberline {}Appendix 2: ABC-MCMC in C++}{30}{section.8}%
-\contentsline {section}{\numberline {}Appendix 3: }{37}{section.9}%
+\contentsline {subsection}{\numberline {}Mutations Have the Ability to Destroy LCR Formation}{18}{subsection.5.1}%
+\contentsline {subsection}{\numberline {}Does the Length of a Repeat Play a Role in Insertions/Deletions}{19}{subsection.5.2}%
+\contentsline {subsection}{\numberline {}Why Parameters Could not be Estimated}{19}{subsection.5.3}%
+\contentsline {subsection}{\numberline {}Conclusion}{20}{subsection.5.4}%
+\contentsline {section}{\numberline {}References}{21}{section.6}%
+\contentsline {section}{\numberline {}Appendix 1: Low Complexity Region Evolution Simulator}{24}{section.7}%
+\contentsline {section}{\numberline {}Appendix 2: ABC-MCMC in C++}{32}{section.8}%
+\contentsline {section}{\numberline {}Appendix 3: Simulated Protein Summary Statistics}{39}{section.9}%
+\contentsline {section}{\numberline {}Appendix 4: Euclidean Distance and Normlization of Vectors}{41}{section.10}%
+\contentsline {section}{\numberline {}Appendix 5: One Sample t-test}{43}{section.11}%

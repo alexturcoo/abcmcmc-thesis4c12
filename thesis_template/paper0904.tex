@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[10pt]{article}
 %\documentclass[twocolumn]{article}
 %\documentclass[onecolumn]{article}
 % \usepackage{scrtime} % for \thistime (this package MUST be listed first!)
@@ -519,11 +519,34 @@ For each newly proposed parameter value in the ABC-MCMC, we run through the evol
 
 \section{Discussion}
 
+This study has developed a method of LCR simulation, which can be used in combination with an approximate bayesian computation markov chain monte carlo method. Due to timing, this study lacks estimates of parameter values that correspond to mutation and indel rates. However, this study does show the benefits of utilizing an approach that does not require calculation of the likelihood function. In the case of this study, mutations, insertions, and deletions alter the landscape of a protein sequence, making it extremely challenging to calculate the likelihood function. In the context of population genetics, ecology, epidemiology and systems biology, ABC approaches have been rapidly gaining popularity due to the massive increase in both the quantity and complexity of biological data \citep{sunnaaker2013approximate}. With the advent of technology and data collection, we are at a point in time where new, tractable approaches must be developed and tested.
+
+\subsection{Mutations Have the Ability to Destroy LCR Formation}
+
+Results obtained from the evolution simulator are heavily dependent on the selected mutation and indel rates. Although both are forms of mutation, each rate parameter corresponds to a different process underneath the hood. Mutation rate in this case refers to the rate at which a base substitution occurs (changing one amino acid into another), while the indel rate refers to the rate at which an insertion or deletion takes place (adding or removing an amino acid residue). By altering mutation and indel rates, we are able to prove the simulation is functioning, and qualitatively assess the effects of having more point mutations on indel formation and vice versa.
+
+With indel rates of 0.1 and 0.5 and a mutation rate of 1, very few low complexity regions are formed, and tend to be destroyed very easily. This is potentially due to the mutation rate being larger, as point mutations have the ability to destroy repetitive regions. As the indel rate is increased to 1,2, and 10, while still holding the mutation rate constant at 1, LCR's are formed in much higher quantities and remain in the sequence for much longer. The overall sequence entropy also decreases with these rates more than the previous rates, due to the increase of low complexity regions contributing to the decrease in sequence entropy. It is interesting to observe that an indel rate 10x larger than the mutation rate does not seem to produce more repetitive, low complexity regions, that swamp out the mutations being created. This could be due in part to the fact that since deletions are also simultaneously occuring, this process could affect how many LCRs are created.
+
+This is not the case however when mutation rates are adjusted and indel rates are held constant at 1. With mutation rates of 0.01, 0.1, and 0.5, many low complexity regions are being formed and the overall sequence entropy tends to fluctuate rapidly. Since the indel rate is higher than the mutation rate in this case, LCRs will be formed and remain stable throughout the entire simulation. When mutation rates are increased to values larger than the indel rates, very few LCRs will be formed and the average sequence entropy will remain close to maximum at about 4.3. With a mutation rate 10x larger than the indel rate, we see the formation of only 3 LCRs which are destroyed in the next iteration, and the average sequence entropy does not fluctuate. This suggests that when the mutation rate is much larger than the indel rate, we are very rarely forming repeats, and when we do, they seem to be immediately destroyed by mutation.
 
 
-\subsection{1}
+\subsection{Does the Length of a Repeat Play a Role in Insertions/Deletions}
 
-\subsection{2}
+Insertions and deletions (indels) are a very important type of spontaneous mutation, as they make up the majority of the divergence among species \citep{britten2002divergence, anzai2003comparative}. Indels however have been studied much less extensively compared to point mutations \citep{cartwright2009problems}. In this study, deviates were drawn from the exponential distribution and assigned to each individual amino acid residue. When deviates were assigned to residues that were part of a repetitive unit, the length of the repeat was multiplied by the indel rate, and this value was used as the scale parameter ($\beta$) of the exponential distribution. The reason for doing this is because it has been repeatedly observed in both DNA and proteins that the occurrence of indels declines monotonically as a function of their length \citep{pascarella1992analysis, benner1993empirical, qian2001distribution, loewenthal2021probabilistic}. As the length of a repeat increases, so does the scale parameter we use to draw deviates from the exponential distribution. With a larger scale parameter, the mean of the distribution also increases and there is a greater chance we draw deviates with larger values. This subsequently means that the longer the repeat is, the less likely it is to continue to gain repeats and hence we see this monotonic decrease in the occurrence of indels.
+
+This monotonic decrease could also explain why an indel rate 10x larger than the mutation rate does not produce a protein chalked full of repetitive regions. As the indel rate is increased, the number of LCRs increases, but as these LCRs continue to increase in length, it becomes increasingly rare to continue to add repeats in that region. An ideal extension of this research would be to explore alternative relationships which describe the role of the length of a repetitve region in its subsequent mutation. This could be done through assigning deviates for repeats based on different mathematical functions. Currently deviates are assigned to repeated amino acids by multiplying the length of the repeat by the indel rate, but this could be potentially changed to multiplying the indel rate by an exponential function, $e^{length}$. In this case, as the length of the repetitive region increases, the exponential part of the function would also increase exponentially. This means that when we have longer repeats, it will be more difficult to keep adding repeats due to the extremely large scale parameter that would be used to draw deviates from the exponential distribution.
+
+\subsection{Why Parameters Could not be Estimated}
+
+As previously stated, the ABC-MCMC did not produce posterior distributions to estimate parameter values for mutation and indel rates. Overall, the process behind an ABC-MCMC is very complex, but in this study we simplified many of the steps in the algorithm, which could potentially be the reason posterior distributions were not produced. 
+
+An area of major concern in this study stemmed from the chosen summary statistics. Summary statistics are vital in order to quantitatively capture relevent information about the data under analysis \citep{sunnaaker2013approximate}. One potential issue with the summary statistics is that they could not be explaining the characteristics we want in the best way. In this study, we utilized the average number of LCRs, the average entropy of those LCRs, and the length of the entire protein sequence as characteristics that explained the protein sequence. These summary statistics may be too general to accurately capture the differences between a protein of known low complexity (SRP40 \scshrt), and a randomly simulated protein sequence. The goal of the ABC-MCMC was to essentially simulate a protein similar to a known protein sequence using various mutation and indel rates, in order to estimate the rates that produce the known sequence. The way this simulated sequence is compared to the known sequence is only through these summary statistics, not by the composition of the sequence itself. This means for example that a simulated protein sequence could have 3 LCRs (Same as in SRP40), but these LCRs could be in different locations and made up of different amino acids, which means the simulated protein is still very different from the known protein, but we are inccurately saying they are similar based on this summary statistic.
+
+It could also be the case however that the summary statistics used in this study required specific weightings to minimize certain statistics from dominating the distance calculation. The length summary statistic tended to be a dominating force when running the ABC, which affected how often we accepted and rejected parameter values. Due to the fact that we attempted to estimate two parameters with the ABC, it is often the case that while a statistic may estimate one of these parameters well, it may not do the same for the other \citep{hamilton2005bayesian}. A potential workaround for this is to implement a weighting scheme that essentially gives greater weights to statistics carrying more information on the parameter of interest \citep{hamilton2005bayesian}. The way this could be done is to assess relationships between parameters and statistics using local regressions, and subsequently implement a weighted Euclidean distance using the results from the local regression. \citep{hamilton2005bayesian}. Through multiplying summary statistics by a certain weight, it could potentially allow for the acceptance of more parameters due to statistics like length not being the dominating factor in the Euclidean distance calculation.
+
+\subsection{Conclusion}
+
+In summary, the creation of a program that simulates the evolution of low complexity regions can enable the exploration of new model based approaches such as approximate bayesian computations. This can subsequently allow for predictions to be made regarding the evolutionary history of protein or DNA sequences. This research also contributes to the lack of knowledge there is surrounding indels and the way in which they evolve. Through adjusting models of indel evolution using the simulator, the way in which indels are formed can be better understood. This research provides the ground work that is required for utilizing approximate bayesian computation approaches in the context of low complexity regions. The evolution of low complexity regions is still a growing area of research, as the complexity behind how they evolve makes it very difficult to analyze the way they evolve. This research can help pave the way for future work into using model based analyses for exploring the evolutionary dynamics of low complexity regions in proteins.
 
 \clearpage\newpage
 \section{References}
@@ -543,7 +566,17 @@ For each newly proposed parameter value in the ABC-MCMC, we run through the evol
 \lstinputlisting[language=c++]{../abcmcmc.cpp}
 \newpage
 
-\section{Appendix 3: }
+\section{Appendix 3: Simulated Protein Summary Statistics}
+\lstinputlisting[language=c++]{../simulated_protein.cpp}
+\newpage
+
+\section{Appendix 4: Euclidean Distance and Normlization of Vectors}
+\lstinputlisting[language=c++]{../distance2.cpp}
+\newpage
+
+\section{Appendix 5: One Sample t-test}
+\lstinputlisting[language=c++]{../ttest.cpp}
+\newpage
 
 \end{document}
 

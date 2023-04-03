@@ -19,6 +19,84 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{anzai2003comparative}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=d2f05de2b6b7e87260a9b31c19a023dd}{%
+           family={Anzai},
+           familyi={A\bibinitperiod},
+           given={Tatsuya},
+           giveni={T\bibinitperiod}}}%
+        {{hash=ad8412aa9ffd0416770fdebbb0d61e76}{%
+           family={Shiina},
+           familyi={S\bibinitperiod},
+           given={Takashi},
+           giveni={T\bibinitperiod}}}%
+        {{hash=ffaee9502cff1b73b301938a5186d172}{%
+           family={Kimura},
+           familyi={K\bibinitperiod},
+           given={Natsuki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=cc518b576e07dd87b93592eb92cfea14}{%
+           family={Yanagiya},
+           familyi={Y\bibinitperiod},
+           given={Kazuyo},
+           giveni={K\bibinitperiod}}}%
+        {{hash=962200d0c1259cc65ca441a27b71181d}{%
+           family={Kohara},
+           familyi={K\bibinitperiod},
+           given={Sakae},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7bcca189f3188301353122a25e763b82}{%
+           family={Shigenari},
+           familyi={S\bibinitperiod},
+           given={Atsuko},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a07e6c1ea21df5768314222109f0600e}{%
+           family={Yamagata},
+           familyi={Y\bibinitperiod},
+           given={Tetsushi},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a41bc009e0d5d40e60fff16107a9d016}{%
+           family={Kulski},
+           familyi={K\bibinitperiod},
+           given={Jerzy\bibnamedelima K},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=b19a20385a8aceb25014da069682bb94}{%
+           family={Naruse},
+           familyi={N\bibinitperiod},
+           given={Taeko\bibnamedelima K},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=146cc9d3739f54c4de940c23cb47c679}{%
+           family={Fujimori},
+           familyi={F\bibinitperiod},
+           given={Yoshifumi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {National Acad Sciences}%
+      }
+      \strng{namehash}{22274e52b77218a6d151e5b5b8b632ff}
+      \strng{fullhash}{a313dad433c5a47c01d7c72745f170e1}
+      \strng{bibnamehash}{a313dad433c5a47c01d7c72745f170e1}
+      \strng{authorbibnamehash}{a313dad433c5a47c01d7c72745f170e1}
+      \strng{authornamehash}{22274e52b77218a6d151e5b5b8b632ff}
+      \strng{authorfullhash}{a313dad433c5a47c01d7c72745f170e1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{13}
+      \field{title}{Comparative sequencing of human and chimpanzee MHC class I regions unveils insertions/deletions as the major path to genomic divergence}
+      \field{volume}{100}
+      \field{year}{2003}
+      \field{pages}{7708\bibrangedash 7713}
+      \range{pages}{6}
+    \endentry
     \entry{bannen2007effect}{article}{}
       \name{author}{3}{}{%
         {{hash=d6b03368d89eb4005722d72f68e95b4e}{%
@@ -159,6 +237,48 @@
       \field{pages}{657\bibrangedash 666}
       \range{pages}{10}
     \endentry
+    \entry{benner1993empirical}{article}{}
+      \name{author}{3}{}{%
+        {{hash=985ccf6d3179f051733f86d4debf6c8c}{%
+           family={Benner},
+           familyi={B\bibinitperiod},
+           given={Steven\bibnamedelima A},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=92063ca1c7457371da2a27810fab1778}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Mark\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f2b174297dbe2cab7cffd276e0374fa4}{%
+           family={Gonnet},
+           familyi={G\bibinitperiod},
+           given={Gaston\bibnamedelima H},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{4cbe6c9b2aafb2e40ed64b80de99197d}
+      \strng{fullhash}{736f4045cb23dd58168a7691f88265e1}
+      \strng{bibnamehash}{736f4045cb23dd58168a7691f88265e1}
+      \strng{authorbibnamehash}{736f4045cb23dd58168a7691f88265e1}
+      \strng{authornamehash}{4cbe6c9b2aafb2e40ed64b80de99197d}
+      \strng{authorfullhash}{736f4045cb23dd58168a7691f88265e1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of molecular biology}
+      \field{number}{4}
+      \field{title}{Empirical and structural models for insertions and deletions in the divergent evolution of proteins}
+      \field{volume}{229}
+      \field{year}{1993}
+      \true{nocite}
+      \field{pages}{1065\bibrangedash 1082}
+      \range{pages}{18}
+    \endentry
     \entry{brinkmann1998mutation}{article}{}
       \name{author}{5}{}{%
         {{hash=a08adc47466357894f1f13d6c083f8a5}{%
@@ -208,6 +328,68 @@
       \field{volume}{62}
       \field{year}{1998}
       \field{pages}{1408\bibrangedash 1415}
+      \range{pages}{8}
+    \endentry
+    \entry{britten2002divergence}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5d5757bee275ff008c23389188cccc60}{%
+           family={Britten},
+           familyi={B\bibinitperiod},
+           given={Roy\bibnamedelima J},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {National Acad Sciences}%
+      }
+      \strng{namehash}{5d5757bee275ff008c23389188cccc60}
+      \strng{fullhash}{5d5757bee275ff008c23389188cccc60}
+      \strng{bibnamehash}{5d5757bee275ff008c23389188cccc60}
+      \strng{authorbibnamehash}{5d5757bee275ff008c23389188cccc60}
+      \strng{authornamehash}{5d5757bee275ff008c23389188cccc60}
+      \strng{authorfullhash}{5d5757bee275ff008c23389188cccc60}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{21}
+      \field{title}{Divergence between samples of chimpanzee and human DNA sequences is 5\%, counting indels}
+      \field{volume}{99}
+      \field{year}{2002}
+      \field{pages}{13633\bibrangedash 13635}
+      \range{pages}{3}
+    \endentry
+    \entry{cartwright2009problems}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2292d17cd9440d44a61bb6ef07f30147}{%
+           family={Cartwright},
+           familyi={C\bibinitperiod},
+           given={Reed\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{2292d17cd9440d44a61bb6ef07f30147}
+      \strng{fullhash}{2292d17cd9440d44a61bb6ef07f30147}
+      \strng{bibnamehash}{2292d17cd9440d44a61bb6ef07f30147}
+      \strng{authorbibnamehash}{2292d17cd9440d44a61bb6ef07f30147}
+      \strng{authornamehash}{2292d17cd9440d44a61bb6ef07f30147}
+      \strng{authorfullhash}{2292d17cd9440d44a61bb6ef07f30147}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Molecular biology and evolution}
+      \field{number}{2}
+      \field{title}{Problems and solutions for estimating indel rates and length distributions}
+      \field{volume}{26}
+      \field{year}{2009}
+      \field{pages}{473\bibrangedash 480}
       \range{pages}{8}
     \endentry
     \entry{coletta2010low}{article}{}
@@ -1125,6 +1307,85 @@
       \field{pages}{1797\bibrangedash 1799}
       \range{pages}{3}
     \endentry
+    \entry{loewenthal2021probabilistic}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=7c57731171928b44a9e84629472b36b8}{%
+           family={Loewenthal},
+           familyi={L\bibinitperiod},
+           given={Gil},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b40a45007686901d0ccbdd2f510e1218}{%
+           family={Rapoport},
+           familyi={R\bibinitperiod},
+           given={Dana},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3314f69aa724baad96ea0b114ea8f991}{%
+           family={Avram},
+           familyi={A\bibinitperiod},
+           given={Oren},
+           giveni={O\bibinitperiod}}}%
+        {{hash=7d931d14e525a8eb8fad190a450f510c}{%
+           family={Moshe},
+           familyi={M\bibinitperiod},
+           given={Asher},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0627e12e11fc4596b537cca658adb75e}{%
+           family={Wygoda},
+           familyi={W\bibinitperiod},
+           given={Elya},
+           giveni={E\bibinitperiod}}}%
+        {{hash=83da6af85699c2a1b8724a7610d274f5}{%
+           family={Itzkovitch},
+           familyi={I\bibinitperiod},
+           given={Alon},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6ddd9cb64672ff90727c71063d22e89b}{%
+           family={Israeli},
+           familyi={I\bibinitperiod},
+           given={Omer},
+           giveni={O\bibinitperiod}}}%
+        {{hash=e1d33e87c4e5e17a9818fbd2d89c930a}{%
+           family={Azouri},
+           familyi={A\bibinitperiod},
+           given={Dana},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2292d17cd9440d44a61bb6ef07f30147}{%
+           family={Cartwright},
+           familyi={C\bibinitperiod},
+           given={Reed\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8996f195d297d99cf2dea1af3a4aff24}{%
+           family={Mayrose},
+           familyi={M\bibinitperiod},
+           given={Itay},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{30387391a3325c0bf195a3d75a0a225d}
+      \strng{fullhash}{405eb5af2a9c626fcf1f93f3e617d694}
+      \strng{bibnamehash}{405eb5af2a9c626fcf1f93f3e617d694}
+      \strng{authorbibnamehash}{405eb5af2a9c626fcf1f93f3e617d694}
+      \strng{authornamehash}{30387391a3325c0bf195a3d75a0a225d}
+      \strng{authorfullhash}{405eb5af2a9c626fcf1f93f3e617d694}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Molecular biology and evolution}
+      \field{number}{12}
+      \field{title}{A probabilistic model for indel evolution: differentiating insertions from deletions}
+      \field{volume}{38}
+      \field{year}{2021}
+      \true{nocite}
+      \field{pages}{5769\bibrangedash 5781}
+      \range{pages}{13}
+    \endentry
     \entry{marcotte1999census}{article}{}
       \name{author}{4}{}{%
         {{hash=e4884cd4c7f3d71ad525a3a63952c3c0}{%
@@ -1545,6 +1806,80 @@
       \true{nocite}
       \field{pages}{201\bibrangedash 204}
       \range{pages}{4}
+    \endentry
+    \entry{pascarella1992analysis}{article}{}
+      \name{author}{2}{}{%
+        {{hash=386b59cf7e5224fbd02bcc1fa623bbcb}{%
+           family={Pascarella},
+           familyi={P\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=797e63682d511770ba458789226ea1b6}{%
+           family={Argos},
+           familyi={A\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a47ff31b0f2c2c4423bf7fce27b0d5ad}
+      \strng{fullhash}{a47ff31b0f2c2c4423bf7fce27b0d5ad}
+      \strng{bibnamehash}{a47ff31b0f2c2c4423bf7fce27b0d5ad}
+      \strng{authorbibnamehash}{a47ff31b0f2c2c4423bf7fce27b0d5ad}
+      \strng{authornamehash}{a47ff31b0f2c2c4423bf7fce27b0d5ad}
+      \strng{authorfullhash}{a47ff31b0f2c2c4423bf7fce27b0d5ad}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of molecular biology}
+      \field{number}{2}
+      \field{title}{Analysis of insertions/deletions in protein structures}
+      \field{volume}{224}
+      \field{year}{1992}
+      \true{nocite}
+      \field{pages}{461\bibrangedash 471}
+      \range{pages}{11}
+    \endentry
+    \entry{qian2001distribution}{article}{}
+      \name{author}{2}{}{%
+        {{hash=da11002068a7cdd63341516db248f202}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8e4f36039fa818c13d710f7c9580c9a4}{%
+           family={Goldstein},
+           familyi={G\bibinitperiod},
+           given={Richard\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{5db15d96ef84ee162e90a2057c703509}
+      \strng{fullhash}{5db15d96ef84ee162e90a2057c703509}
+      \strng{bibnamehash}{5db15d96ef84ee162e90a2057c703509}
+      \strng{authorbibnamehash}{5db15d96ef84ee162e90a2057c703509}
+      \strng{authornamehash}{5db15d96ef84ee162e90a2057c703509}
+      \strng{authorfullhash}{5db15d96ef84ee162e90a2057c703509}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proteins: Structure, Function, and Bioinformatics}
+      \field{number}{1}
+      \field{title}{Distribution of indel lengths}
+      \field{volume}{45}
+      \field{year}{2001}
+      \true{nocite}
+      \field{pages}{102\bibrangedash 104}
+      \range{pages}{3}
     \endentry
     \entry{ross1993genes}{article}{}
       \name{author}{4}{}{%
