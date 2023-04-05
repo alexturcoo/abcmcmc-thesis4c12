@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  5 APR 2023 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  5 APR 2023 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1265,12 +1265,12 @@ Package pdftex.def Info: drosophila.png  used on input line 218.
  [5
 
  <./drosophila.png>]
-<slippage2n.png, id=152, 413.545pt x 207.77625pt>
+<slippage2n.png, id=153, 413.545pt x 207.77625pt>
 File: slippage2n.png Graphic file (type png)
 <use slippage2n.png>
 Package pdftex.def Info: slippage2n.png  used on input line 243.
 (pdftex.def)             Requested size: 171.15102pt x 71.13123pt.
-<slippage1n.png, id=153, 446.66875pt x 208.78pt>
+<slippage1n.png, id=154, 446.66875pt x 208.78pt>
 File: slippage1n.png Graphic file (type png)
 <use slippage1n.png>
 Package pdftex.def Info: slippage1n.png  used on input line 243.
@@ -1279,7 +1279,7 @@ Package pdftex.def Info: slippage1n.png  used on input line 243.
 [6
 
  <./Slippage2n.png> <./slippage1n.png>]
-<unequal.png, id=164, 454.69875pt x 123.46124pt>
+<unequal.png, id=167, 454.69875pt x 123.46124pt>
 File: unequal.png Graphic file (type png)
 <use unequal.png>
 Package pdftex.def Info: unequal.png  used on input line 254.
@@ -1313,12 +1313,12 @@ Overfull \vbox (8.05865pt too high) detected at line 290
 [12
 
 ]
-<ind_figures/ii0.1.png, id=209, 461.725pt x 467.7475pt>
+<ind_figures/ii0.1.png, id=213, 461.725pt x 467.7475pt>
 File: ind_figures/ii0.1.png Graphic file (type png)
 <use ind_figures/ii0.1.png>
 Package pdftex.def Info: ind_figures/ii0.1.png  used on input line 310.
 (pdftex.def)             Requested size: 170.7158pt x 170.7157pt.
-<ind_figures/ii0.5.png, id=210, 461.725pt x 467.7475pt>
+<ind_figures/ii0.5.png, id=214, 461.725pt x 467.7475pt>
 File: ind_figures/ii0.5.png Graphic file (type png)
 <use ind_figures/ii0.5.png>
 Package pdftex.def Info: ind_figures/ii0.5.png  used on input line 310.
@@ -1345,17 +1345,17 @@ Overfull \vbox (3.2451pt too high) detected at line 310
 [14
 
 ]
-<ind_figures/ii1.png, id=226, 463.7325pt x 278.03876pt>
+<ind_figures/ii1.png, id=230, 463.7325pt x 278.03876pt>
 File: ind_figures/ii1.png Graphic file (type png)
 <use ind_figures/ii1.png>
 Package pdftex.def Info: ind_figures/ii1.png  used on input line 335.
 (pdftex.def)             Requested size: 170.71506pt x 85.35957pt.
-<ind_figures/ii2.png, id=227, 463.7325pt x 278.03876pt>
+<ind_figures/ii2.png, id=231, 463.7325pt x 278.03876pt>
 File: ind_figures/ii2.png Graphic file (type png)
 <use ind_figures/ii2.png>
 Package pdftex.def Info: ind_figures/ii2.png  used on input line 335.
 (pdftex.def)             Requested size: 170.71506pt x 85.35957pt.
-<ind_figures/ii10.png, id=228, 926.46124pt x 282.05376pt>
+<ind_figures/ii10.png, id=232, 926.46124pt x 282.05376pt>
 File: ind_figures/ii10.png Graphic file (type png)
 <use ind_figures/ii10.png>
 Package pdftex.def Info: ind_figures/ii10.png  used on input line 335.
@@ -1405,17 +1405,17 @@ Overfull \vbox (4.1669pt too high) detected at line 335
 [17
 
 ]
-<ind_figures/im0.01.png, id=250, 573.14125pt x 324.21124pt>
+<ind_figures/im0.01.png, id=254, 573.14125pt x 324.21124pt>
 File: ind_figures/im0.01.png Graphic file (type png)
 <use ind_figures/im0.01.png>
 Package pdftex.def Info: ind_figures/im0.01.png  used on input line 359.
 (pdftex.def)             Requested size: 170.71933pt x 85.35655pt.
-<ind_figures/im0.1.png, id=251, 573.14125pt x 324.21124pt>
+<ind_figures/im0.1.png, id=255, 573.14125pt x 324.21124pt>
 File: ind_figures/im0.1.png Graphic file (type png)
 <use ind_figures/im0.1.png>
 Package pdftex.def Info: ind_figures/im0.1.png  used on input line 359.
 (pdftex.def)             Requested size: 170.71933pt x 85.35655pt.
-<ind_figures/im0.5.png, id=252, 1142.2675pt x 323.2075pt>
+<ind_figures/im0.5.png, id=256, 1142.2675pt x 323.2075pt>
 File: ind_figures/im0.5.png Graphic file (type png)
 <use ind_figures/im0.5.png>
 Package pdftex.def Info: ind_figures/im0.5.png  used on input line 359.
@@ -1466,17 +1466,17 @@ Overfull \vbox (13.70135pt too high) detected at line 359
 [20
 
 ]
-<ind_figures/im1.png, id=275, 577.15625pt x 327.2225pt>
+<ind_figures/im1.png, id=279, 577.15625pt x 327.2225pt>
 File: ind_figures/im1.png Graphic file (type png)
 <use ind_figures/im1.png>
 Package pdftex.def Info: ind_figures/im1.png  used on input line 383.
 (pdftex.def)             Requested size: 170.71756pt x 85.35544pt.
-<ind_figures/im2.png, id=276, 577.15625pt x 327.2225pt>
+<ind_figures/im2.png, id=280, 577.15625pt x 327.2225pt>
 File: ind_figures/im2.png Graphic file (type png)
 <use ind_figures/im2.png>
 Package pdftex.def Info: ind_figures/im2.png  used on input line 383.
 (pdftex.def)             Requested size: 170.71756pt x 85.35544pt.
-<ind_figures/im10.png, id=277, 1139.25626pt x 317.185pt>
+<ind_figures/im10.png, id=281, 1139.25626pt x 317.185pt>
 File: ind_figures/im10.png Graphic file (type png)
 <use ind_figures/im10.png>
 Package pdftex.def Info: ind_figures/im10.png  used on input line 383.
@@ -1530,7 +1530,7 @@ Overfull \vbox (1.31625pt too high) detected at line 383
 ] [25
 
 ]
-<no.png, id=314, 963.6pt x 963.6pt>
+<no.png, id=318, 963.6pt x 963.6pt>
 File: no.png Graphic file (type png)
 <use no.png>
 Package pdftex.def Info: no.png  used on input line 438.
@@ -1549,7 +1549,7 @@ Package pdftex.def Info: no.png  used on input line 438.
 ] [29
 
 ]
-<distances.jpeg, id=345, 3613.5pt x 1806.75pt>
+<distances.jpeg, id=351, 3613.5pt x 1806.75pt>
 File: distances.jpeg Graphic file (type jpg)
 <use distances.jpeg>
 Package pdftex.def Info: distances.jpeg  used on input line 473.
@@ -1579,30 +1579,45 @@ Package logreq Info: Writing requests to 'beap_pres_dec.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33827 strings out of 478287
- 686401 string characters out of 5849290
- 1338883 words of memory out of 5000000
- 51323 multiletter control sequences out of 15000+600000
- 479688 words of font info for 67 fonts, out of 8000000 for 9000
+ 33798 strings out of 478287
+ 685857 string characters out of 5849290
+ 1338906 words of memory out of 5000000
+ 51296 multiletter control sequences out of 15000+600000
+ 477192 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,746b,1294s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on beap_pres_dec.pdf (32 pages, 2144423 bytes).
+ 128i,15n,122p,746b,1130s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{cite.0@marjoram2003markov} has been referenced bu
+t does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@mirkin2007expandable} has been referenced bu
+t does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@sehn2015insertions} has been referenced but 
+does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@levinson1987slipped} has been referenced but
+ does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@newfeld1991interspecific} has been reference
+d but does not exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on beap_pres_dec.pdf (32 pages, 2146138 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 289 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 77 named destinations out of 1000 (max. 500000)
  403 words of extra memory for PDF output out of 10000 (max. 10000000)
 
