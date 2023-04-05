@@ -35,7 +35,7 @@
 % Title page details: 
 \title[BEAP Dec 2022]{Creating an Evolution Simulator for Protein Low Complexity Regions and Attempting to Utilize it for an Approximate Bayesian Computation} 
 \author{Alexander Turco}
-\date{April 5, 2023}
+\date{April 13, 2023}
 \logo{\includegraphics[height=1cm, width=1cm]{logo.png}}
 
 % Bibliography stuff
@@ -44,6 +44,8 @@
 
 %Extra packages
 \usepackage{makecell}
+\usepackage{verbatim}
+\usepackage{setspace}
 
 %For itemize
 \setbeamertemplate{itemize item}[triangle]
@@ -63,21 +65,69 @@
 	\logo{}
 	
 	% Outline frame - SLIDE 2
-	\begin{frame}{Overview}
-		
-		\begin{center}
-		\begin{minipage}{6cm}
-				
-		  		\begin{block}{} \hyperlink{link1}{Background Information} \end{block}
-		  		\begin{block}{} Simulating LCR Evolution \end{block}
-		  		\begin{block}{} Applications to ABC-MCMC \end{block}
-		  		\begin{block}{} Conclusions \end{block}
-		  		\begin{block}{} Acknowledgements \end{block}
+	\begin{comment}
+		\begin{frame}{Overview}
+			
+			\begin{center}
+				\begin{minipage}{6cm}
+					
+					\begin{block}{} \hyperlink{link1}{Background Information} \end{block}
+					\begin{block}{} Simulating LCR Evolution \end{block}
+					\begin{block}{} Applications to ABC-MCMC \end{block}
+					\begin{block}{} Conclusions \end{block}
+					\begin{block}{} Acknowledgements \end{block}
+					
+				\end{minipage}
+			\end{center}
+			
+		\end{frame}
+	\end{comment}
 
-		\end{minipage}
+	%SLIDE 8 - Why Care About LCR Evolution?
+	\begin{frame}{Why Care about Low Complexity Regions and their Evolution?}
+		
+		\begin{center}	
+			\begin{tikzpicture}[node distance=2cm]
+				\node[startstop] (1) {Disease};
+				\node[startstop, right of=1, xshift=2cm] (2) {Biological Processes};
+				\node[startstop, right of=2, xshift=2cm] (3) {Presence in Bacteria};
+				\node[startstop, above=2, xshift=4cm, yshift=1cm] (4) {LCRs};
+				
+				\draw [arrow] (4) -- (1);
+				\draw [arrow] (4) -- (2);
+				\draw [arrow] (4) -- (3);
+				
+			\end{tikzpicture}
 		\end{center}
-	
+		
+		\begin{columns}
+			
+			\column{0.33\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[width=\columnwidth, height=2.5cm]{huntington.jpg} \\~\\
+				\caption{\centering \textit{Huntington's Disease}}
+			\end{figure}
+			
+			\column{0.33\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[width=2.5cm, height=2.5cm]{chrom.png} \\~\\
+				\caption{\centering \textit{Genetic Recombination}}
+			\end{figure}
+			
+			\column{0.33\textwidth}
+			\centering
+			\begin{figure}
+				\vspace{-0.4cm}
+				\includegraphics[width=\columnwidth, height=2.5cm]{menin.jpg} \\~\\
+				\caption{\centering \textit{Neisseria meningitidis}}
+			\end{figure}
+			
+		\end{columns}
+		
 	\end{frame}
+	
 	
 	% For my Background slides, I will talk about important things such as WHat LCRs are, their evolution, stuff like that
 	% SLIDE 3 - WHAT ARE LCRs%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,56 +253,12 @@
 	\footnotetext[3]{\tiny\cite{mirkin2007expandable}}	
 	\end{frame}
 	
-	%SLIDE 8 - Why Care About LCR Evolution?
-	\begin{frame}{Why Care about LCRs and their Evolution?}
-	
-	\begin{center}	
-		\begin{tikzpicture}[node distance=2cm]
-			\node[startstop] (1) {Disease};
-			\node[startstop, right of=1, xshift=2cm] (2) {Biological Processes};
-			\node[startstop, right of=2, xshift=2cm] (3) {Presence in Bacteria};
-			\node[startstop, above=2, xshift=4cm, yshift=1cm] (4) {LCRs};
-			
-			\draw [arrow] (4) -- (1);
-			\draw [arrow] (4) -- (2);
-			\draw [arrow] (4) -- (3);
-			
-		\end{tikzpicture}
-	\end{center}
-
-		\begin{columns}
-			
-			\column{0.33\textwidth}
-			\centering
-			\begin{figure}
-				\includegraphics[width=\columnwidth, height=2.5cm]{huntington.jpg} \\~\\
-				\caption{\centering \textit{Huntington's Disease}}
-			\end{figure}
-			
-			\column{0.33\textwidth}
-			\centering
-			\begin{figure}
-				\includegraphics[width=2.5cm, height=2.5cm]{chrom.png} \\~\\
-				\caption{\centering \textit{Genetic Recombination}}
-			\end{figure}
-		
-			\column{0.33\textwidth}
-			\centering
-			\begin{figure}
-				\vspace{-0.4cm}
-				\includegraphics[width=\columnwidth, height=2.5cm]{menin.jpg} \\~\\
-				\caption{\centering \textit{Neisseria meningitidis}}
-			\end{figure}
-			
-		\end{columns}
-	
-	\end{frame}
 
 	\begin{frame}{What we Did in this Study}
 		\begin{itemize}
 			\item Utilized \texttt{C++} to build an evolution simulator which altered protein sequences via point mutations, insertions, and deletions \newline
 			\item Tested the simulator with various insertion/deletion rates and mutation rates \newline
-			\item Attempted to program an ABC-MCMC in \texttt{C++} using the evolution simulator as an important step in the algorithm, in order to estimate parameters like mutation and indel rates.
+			\item Attempted to program an approximate bayesian computation markov chain monte carlo algorithm (ABC-MCMC) in \texttt{C++} using the evolution simulator as an important step in the algorithm, in order to estimate parameters like mutation and indel rates.
 		\end{itemize}
 	\end{frame}
 
@@ -284,19 +290,96 @@
 	\end{frame}
 
 	\begin{frame}{Lower Indel Rates Produce Less LCRs}
-		\includegraphics[height=6cm, width=\textwidth]{im0.01-0.1-0.5.jpeg}
+		\begin{columns}	
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+					\includegraphics[height=6cm, width=6cm]{ind_figures/ii0.1} \\~\\
+				\caption{\centering Indel Rate = 0.1 Mutation Rate = 1}
+			\end{figure} \pause
+			
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[height=6cm, width=6cm]{ind_figures/ii0.5} \\~\\
+				\caption{\centering Indel Rate = 0.5 Mutation Rate = 1}
+			\end{figure}
+			
+		\end{columns}
+
 	\end{frame}
 
 	\begin{frame}{Higher Indel Rates Produce More LCRs}
-		\includegraphics[height=7cm, width=\textwidth]{im1-2-10.jpeg}
+		\begin{columns}	
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[height=3cm, width=6cm]{ind_figures/ii1} \\~\\
+				\vspace{-0.5cm}\tiny\caption{\centering Indel Rate = 1 Mutation Rate = 1}
+			\end{figure} \pause
+			
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[height=3cm, width=6cm]{ind_figures/ii2} \\~\\
+				\vspace{-0.5cm}\tiny\caption{\centering Indel Rate = 2 Mutation Rate = 1}
+			\end{figure} \pause
+			
+		\end{columns}
+		
+		\begin{figure}
+			\includegraphics[height=3cm, width=\textwidth]{ind_figures/ii10}
+			\vspace{-1cm}\caption{\centering Indel Rate = 10 Mutation Rate = 1}
+		\end{figure}
+	
 	\end{frame}
 
 	\begin{frame}{Lower Mutation Rates Produce More LCRs}
-		\includegraphics[height=7cm, width=\textwidth]{m0.01-0.1-0.5.jpeg}
+		\begin{columns}	
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[height=3cm, width=6cm]{ind_figures/im0.01} \\~\\
+				\vspace{-0.5cm}\tiny\caption{\centering Indel Rate = 1 Mutation Rate = 0.01}
+			\end{figure} \pause
+			
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[height=3cm, width=6cm]{ind_figures/im0.1} \\~\\
+				\vspace{-0.5cm}\tiny\caption{\centering Indel Rate = 1 Mutation Rate = 0.1}
+			\end{figure} \pause
+			
+		\end{columns}
+		
+		\begin{figure}
+			\includegraphics[height=3cm, width=\textwidth]{ind_figures/im0.5}
+			\vspace{-0.7cm}\caption{\centering Indel Rate = 1 Mutation Rate = 0.5}
+		\end{figure}
 	\end{frame}
 
 	\begin{frame}{Large Mutation Rates Prevent the Formation of LCRs}
-		\includegraphics[height=7cm, width=\textwidth]{m1-2-10.jpeg}
+		\begin{columns}	
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[height=3cm, width=6cm]{ind_figures/im1} \\~\\
+				\vspace{-0.5cm}\tiny\caption{\centering Indel Rate = 1 Mutation Rate = 1}
+			\end{figure} \pause
+			
+			\column{0.5\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[height=3cm, width=6cm]{ind_figures/im2} \\~\\
+				\vspace{-0.5cm}\tiny\caption{\centering Indel Rate = 1 Mutation Rate = 2}
+			\end{figure} \pause
+			
+		\end{columns}
+		
+		\begin{figure}
+			\vspace{-0.4cm}\includegraphics[height=3cm, width=\textwidth]{ind_figures/im10}
+			\vspace{-0.7cm}\caption{\centering Indel Rate = 1 Mutation Rate = 10}
+		\end{figure}
 	\end{frame}
 	
 	%Say something like, before we get into how this simulation can be used in an approximate bayesian computation, were just going to go through a very simple overview of bayesian statistics

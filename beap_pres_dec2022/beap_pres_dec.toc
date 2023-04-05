@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Introduction}{1}{0}{1}
 \beamer@sectionintoc {2}{Background}{3}{0}{2}
-\beamer@sectionintoc {3}{Simulating LCR Evolution}{10}{0}{3}
-\beamer@sectionintoc {4}{Applications to ABC-MCMC}{18}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{25}{0}{5}
-\beamer@sectionintoc {6}{Acknowledgements}{26}{0}{6}
+\beamer@sectionintoc {3}{Simulating LCR Evolution}{9}{0}{3}
+\beamer@sectionintoc {4}{Applications to ABC-MCMC}{24}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{31}{0}{5}
+\beamer@sectionintoc {6}{Acknowledgements}{32}{0}{6}

@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'beap_pres_dec.blg'
-[46] biber:340> INFO - === Sun Nov 27, 2022, 21:10:45
-[54] Biber.pm:418> INFO - Reading 'beap_pres_dec.bcf'
-[97] Biber.pm:972> INFO - Found 5 citekeys in bib section 0
-[106] Biber.pm:4383> INFO - Processing section 0
-[112] Biber.pm:4574> INFO - Looking for bibtex file 'ABC1.bib' for section 0
-[113] bibtex.pm:1713> INFO - LaTeX decoding ...
-[148] bibtex.pm:1518> INFO - Found BibTeX data source 'ABC1.bib'
-[190] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[190] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[190] Biber.pm:4203> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[190] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[193] bbl.pm:654> INFO - Writing 'beap_pres_dec.bbl' with encoding 'UTF-8'
-[195] bbl.pm:757> INFO - Output to beap_pres_dec.bbl
+[40] biber:340> INFO - === Wed Apr  5, 2023, 17:10:21
+[48] Biber.pm:418> INFO - Reading 'beap_pres_dec.bcf'
+[86] Biber.pm:972> INFO - Found 5 citekeys in bib section 0
+[94] Biber.pm:4383> INFO - Processing section 0
+[100] Biber.pm:4574> INFO - Looking for bibtex file 'ABC1.bib' for section 0
+[101] bibtex.pm:1713> INFO - LaTeX decoding ...
+[128] bibtex.pm:1518> INFO - Found BibTeX data source 'ABC1.bib'
+[167] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[167] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[167] Biber.pm:4203> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[167] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[170] bbl.pm:654> INFO - Writing 'beap_pres_dec.bbl' with encoding 'UTF-8'
+[172] bbl.pm:757> INFO - Output to beap_pres_dec.bbl
