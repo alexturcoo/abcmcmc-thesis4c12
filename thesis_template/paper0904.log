@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  3 APR 2023 15:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.6)  19 APR 2023 14:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1323,29 +1323,29 @@ Package csquotes Info: ... none found.
 
 
 Package csquotes Warning: No multilingual support.
-(csquotes)                Cannot enable multilingual quotes on input line 212.
+(csquotes)                Cannot enable multilingual quotes on input line 211.
 
 (./paper0904.aux)
 \openout1 = `paper0904.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1416,7 +1416,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 212.
+ on input line 211.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -1442,9 +1442,9 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'paper0904.bbl' found.
 
 (./paper0904.bbl)
-Package biblatex Info: Reference section=0 on input line 212.
-Package biblatex Info: Reference segment=0 on input line 212.
-Package hyperref Info: Link coloring ON on input line 212.
+Package biblatex Info: Reference section=0 on input line 211.
+Package biblatex Info: Reference segment=0 on input line 211.
+Package hyperref Info: Link coloring ON on input line 211.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1455,9 +1455,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count496
 )
-LaTeX Info: Redefining \ref on input line 212.
-LaTeX Info: Redefining \pageref on input line 212.
-LaTeX Info: Redefining \nameref on input line 212.
+LaTeX Info: Redefining \ref on input line 211.
+LaTeX Info: Redefining \pageref on input line 211.
+LaTeX Info: Redefining \nameref on input line 211.
 
 (./paper0904.out) (./paper0904.out)
 \@outlinefile=\write5
@@ -1470,70 +1470,74 @@ LaTeX Info: Redefining \nameref on input line 212.
 \tf@toc=\write6
 \openout6 = `paper0904.toc'.
 
- [3] [4] [5] [6] [7] [8] [9]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 38
-0.
+ [3] [4] [5] [6] [7] [8]
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 338.
+
+[9]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 37
+6.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (16.027pt too wide) in paragraph at lines 380--382
+Overfull \hbox (16.027pt too wide) in paragraph at lines 376--378
 []\T1/ptm/m/n/10 Custom scripts and com-mands uti-lized in this anal-y-sis can 
 be found on \T1/pcr/m/n/10 GitHub \T1/ptm/m/n/10 at [][]$\T1/pcr/m/n/10 https :
  / / github . com / opticrom /
  []
 
 [10] [11] [12] [13]
-<im0.01-0.1-0.5.jpeg, id=381, 3613.5pt x 1806.75pt>
+<im0.01-0.1-0.5.jpeg, id=383, 3613.5pt x 1806.75pt>
 File: im0.01-0.1-0.5.jpeg Graphic file (type jpg)
 <use im0.01-0.1-0.5.jpeg>
-Package pdftex.def Info: im0.01-0.1-0.5.jpeg  used on input line 477.
+Package pdftex.def Info: im0.01-0.1-0.5.jpeg  used on input line 473.
 (pdftex.def)             Requested size: 512.1171pt x 284.50949pt.
 
-Overfull \hbox (6.2271pt too wide) in paragraph at lines 477--478
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 473--474
 [][] 
  []
 
-<im1-2-10.jpeg, id=384, 3613.5pt x 1806.75pt>
+<im1-2-10.jpeg, id=386, 3613.5pt x 1806.75pt>
 File: im1-2-10.jpeg Graphic file (type jpg)
 <use im1-2-10.jpeg>
-Package pdftex.def Info: im1-2-10.jpeg  used on input line 485.
+Package pdftex.def Info: im1-2-10.jpeg  used on input line 481.
 (pdftex.def)             Requested size: 512.1171pt x 284.50949pt.
 
-Overfull \hbox (6.2271pt too wide) in paragraph at lines 485--486
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 481--482
 [][] 
  []
 
 [14 <./im0.01-0.1-0.5.jpeg>]
-<m0.01-0.1-0.5.jpeg, id=396, 3613.5pt x 1806.75pt>
+<m0.01-0.1-0.5.jpeg, id=398, 3613.5pt x 1806.75pt>
 File: m0.01-0.1-0.5.jpeg Graphic file (type jpg)
 <use m0.01-0.1-0.5.jpeg>
-Package pdftex.def Info: m0.01-0.1-0.5.jpeg  used on input line 495.
+Package pdftex.def Info: m0.01-0.1-0.5.jpeg  used on input line 491.
 (pdftex.def)             Requested size: 512.1171pt x 284.50949pt.
 
-Overfull \hbox (6.2271pt too wide) in paragraph at lines 495--496
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 491--492
 [][] 
  []
 
 [15 <./im1-2-10.jpeg>]
-<m1-2-10.jpeg, id=403, 3613.5pt x 1806.75pt>
+<m1-2-10.jpeg, id=405, 3613.5pt x 1806.75pt>
 File: m1-2-10.jpeg Graphic file (type jpg)
 <use m1-2-10.jpeg>
-Package pdftex.def Info: m1-2-10.jpeg  used on input line 501.
+Package pdftex.def Info: m1-2-10.jpeg  used on input line 497.
 (pdftex.def)             Requested size: 512.1171pt x 284.50949pt.
 
-Overfull \hbox (6.2271pt too wide) in paragraph at lines 501--502
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 497--498
 [][] 
  []
 
 [16 <./m0.01-0.1-0.5.jpeg> <./m1-2-10.jpeg>]
-<distances.jpeg, id=409, 3613.5pt x 1806.75pt>
+<distances.jpeg, id=411, 3613.5pt x 1806.75pt>
 File: distances.jpeg Graphic file (type jpg)
 <use distances.jpeg>
-Package pdftex.def Info: distances.jpeg  used on input line 514.
+Package pdftex.def Info: distances.jpeg  used on input line 510.
 (pdftex.def)             Requested size: 512.1171pt x 256.05855pt.
 
-Overfull \hbox (6.2271pt too wide) in paragraph at lines 514--515
+Overfull \hbox (6.2271pt too wide) in paragraph at lines 510--511
 [][] 
  []
 
@@ -1546,7 +1550,7 @@ Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer
 [21
 
 ] [22]
-Overfull \hbox (1.86424pt too wide) in paragraph at lines 558--558
+Overfull \hbox (1.86424pt too wide) in paragraph at lines 554--554
 [][]\T1/ptm/m/n/10 Pascarella S and Ar-gos P (1992). Anal-y-sis of in-ser-tion-
 s/dele-tions in pro-tein struc-tures. Jour-nal of molec-u-lar bi-ol-ogy 224(2),
  461^^U
@@ -1561,12 +1565,12 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
-(../mutations_2_BG_vecs.cpp [24]
+(../mutations_2_BG_vecs.cpp [24] [25]
 Overfull \hbox (51.71547pt too wide) in paragraph at lines 82--83
 [][][][] 
  []
 
-[25]
+
 Overfull \hbox (51.71547pt too wide) in paragraph at lines 84--85
 [][][][] 
  []
@@ -1580,19 +1584,19 @@ Overfull \hbox (1462.92982pt too wide) in paragraph at lines 64--65
 ) [40] (../distance2.cpp [41]) [42] (../ttest.cpp [43] [44]) [45]
 (./paper0904.aux)
 Package rerunfilecheck Info: File `paper0904.out' has not changed.
-(rerunfilecheck)             Checksum: D49E97E76CC44F226001791000C3B475;6791.
+(rerunfilecheck)             Checksum: FCD46863110FADC9FC7A3A4A1FC506AF;7116.
 Package logreq Info: Writing requests to 'paper0904.run.xml'.
 \openout1 = `paper0904.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  47902 strings out of 478287
- 1072690 string characters out of 5849290
- 2443882 words of memory out of 5000000
+ 1072693 string characters out of 5849290
+ 2437051 words of memory out of 5000000
  64392 multiletter control sequences out of 15000+600000
  513371 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,12n,117p,1639b,2116s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 114i,12n,117p,1639b,2114s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1604,10 +1608,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper0904.pdf (45 pages, 3234224 bytes).
+Output written on paper0904.pdf (45 pages, 3237010 bytes).
 PDF statistics:
- 1637 PDF objects out of 1728 (max. 8388607)
- 1547 compressed objects within 16 object streams
+ 1639 PDF objects out of 1728 (max. 8388607)
+ 1549 compressed objects within 16 object streams
  962 named destinations out of 1000 (max. 500000)
  262 words of extra memory for PDF output out of 10000 (max. 10000000)
 
