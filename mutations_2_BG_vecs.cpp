@@ -1,4 +1,4 @@
-#include "functions.cpp"
+#include "functions.cpp
 #include "getindex.cpp"
 //#include "simulated_protein.cpp"
 #include <bits/stdc++.h>
