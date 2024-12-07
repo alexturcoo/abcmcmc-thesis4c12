@@ -4,4 +4,4 @@ Low complexity regions (LCRs) are sequences of DNA or Amino Acids that have a bi
 
 For my undergraduate thesis in Biology at McMaster University, I programmed an ABC-MCMC using C++ to predict evolutionary parameters associated with LCRs in order to better understand how these regions form. These regions tend to have extremely high mutation rates and are known to be evolutionarily relevant in the context of human development.
 
-![workflow](/imgs/"Screenshot 2024-12-07 at 12.27.58 PM.png")
+![workflow](/imgs/workflow.png)
